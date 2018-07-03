@@ -11,6 +11,6 @@ class Registration extends CI_Controller {
 	public function index()
 	{
 			$data['main_view'] = 'registration';
-			$this->load->view('template', $data);
+			$this->load->view('template_awal', $data);
 	}
 }
