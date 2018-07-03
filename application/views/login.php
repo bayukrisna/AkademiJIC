@@ -1,4 +1,15 @@
-                    <div class="panel panel-primary">
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Horizontal Form -->
+          <div class="panel panel-primary">
                         <div class="panel-heading">
                         <i class="fa fa-sign-in"></i> Masuk</div>
                         <div class="panel-body">
@@ -23,3 +34,12 @@
                             </div></div>
                         </div>
                     </div>
+          </div>
+          <!-- /.box -->
+          <!-- general form elements disabled -->
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
