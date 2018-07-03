@@ -3,10 +3,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>B-Fam | SMM Panel</title>
+        <title>Akademi JIC</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <meta name="description" content="O2 SMM panel is the world. Largest and cheapest Social Media smm panel for resellers. Provide you all kind of social media at cheap price and instant Delivery.">
-        <meta name="keywords" content="SMM Panel, Panel all sosmed, Social Media Panel, Social Media Server, SMM Reseller Panel, cheap social panel, cheap smm panel, followers, admin panel instagram">
+        <meta name="description" content="description">
         <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
         <link href="<?php echo base_url() ?>assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
