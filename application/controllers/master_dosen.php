@@ -11,13 +11,13 @@ class Master_dosen extends CI_Controller {
 
 	public function index()
 	{
-		$data['main_view'] = 'master_dosen_view';
+		$data['main_view'] = 'Dosen/master_dosen_view';
 		$data['dosen'] = $this->dosen_model->data_dosen();
 		$this->load->view('template', $data);
 	}
 
 	public function page_tambah_dosen(){
-		$data['main_view'] = 'master_tambah_dosen_view';
+		$data['main_view'] = 'Dosen/tambah_dosen_view';
 		$this->load->view('template', $data);
 	}
 
