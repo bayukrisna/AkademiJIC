@@ -14,7 +14,7 @@ class Login extends CI_Controller {
 		// {
 		// 	redirect(base_url('dashboard'));
 		// } else {
-			$data['main_view'] = 'form';
+			$data['main_view'] = 'login';
 			$this->load->view('template_awal', $data);
 		// }
 	}

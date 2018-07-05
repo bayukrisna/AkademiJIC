@@ -1,88 +1,181 @@
 <div class="row"> 
-    <div class="col-md-12">
-				<div>
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-						<i class="fa fa-user-plus"></i> Daftar</div>
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-lg-12">
-									<?php echo $this->session->flashdata('message');?>
-									<?php echo form_open('registration/signup'); ?>
-									<h4><b>I. PERSONAL DATA</b></h4>
-										  <div class="form-group">
-											  <label for="email">Full Name/NIM</label>
-											  <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Input Full Name" required>
-										  </div>
-										  <div class="form-group">
-										  	<label for="sex">Sex	:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										  <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        								  <input type ="radio" name = "sex" value= "female" required/> Female
-        								</div>
-        								
-        								<div class="form-group">
-											  <label for="email">Place & date of birth</label>
-											  <input type="text" name="placedate" class="form-control" id="placedate" placeholder="Input Place & Date of birth" required>
-										  </div>
-										  <div class="form-group">
-											  <label for="address">Home Address</label>
-											  <input type="text" name="address" class="form-control" id="address" placeholder="Input Home Address" required>
-										  </div>
-										  <div class="form-group">
-											  <label for="phone">Phone Number</label>
-											  <input type="number" name="phone" class="form-control" id="phone" placeholder="Input Phone Number" required>
-										  </div>
-										  <div class="form-group">
-											  <label for="phone">Mobile Phone Number</label>
-											  <input type="number" name="mphone" class="form-control" id="mphone" placeholder="Input Mobile Phone Number" required>
-										  </div>
-										  <div class="form-group">
-											  <label for="religion">Religion</label>
-											  <input type="text" name="religion" class="form-control" id="religion" placeholder="Input Religion" required>
-										  </div>
-										  <div class="form-group">
-											  <label for="preschool">Previous School</label>
-											  <input type="text" name="preschool" class="form-control" id="preschool" placeholder="Input Previous School" required>
-										  </div>
-										  <div class="form-group">
-											  <label for="nik">NIK</label>
-											  <input type="number" name="nik" class="form-control" id="nik" placeholder="Input NIK" required>
-										  </div>
-										  <h4><b>II. PROGRAM STUDY</b></h4>
-										  <ol type="1">
-										  <li>Management :</li>
-										  <ul>
-										  	<input type ="radio" name = "management" value="marketing" required/> Marketing Management<br>
-										  	<input type ="radio" name = "management" value="finance" required/> Finance Management
-										  </ul>
-										  <li>Accounting :</li>
-										  <ul>
-										  	<input type ="radio" name = "accounting" value="auditing" required/> Auditing<br>
-										  	<input type ="radio" name = "accounting" value="taxation" required/>Taxation
-										  </ul>
-										  <li>Time :</li>
-										  <ul>
-										  	<input type ="radio" name = "time" value="morning" required/> Morning<br>
-										  	<input type ="radio" name = "time" value="evening" required/> Evening
-										  </ul>
-										  </ol>
-										  <h4><b>III. INTAKE</b></h4>
-										  <ul>
-										  	<input type ="radio" name = "intake" value="february" required/> February<br>
-										  	<input type ="radio" name = "intake" value="september" required/> September<br><br>
-										  </ul>
-										  <h4><b>IV. BEASISWA</b></h4>
-										  <ul>
-										  	<input type ="radio" name = "beasiswa" value="grade_a" required/> 100% / Grade A<br>
-										  	<input type ="radio" name = "beasiswa" value="grade_b" required/> 75% / Grade B<br>
-										  	<input type ="radio" name = "beasiswa" value="grade_c" required/> 50% / Grade C<br><br>
-										  </ul>
-										  <button type="submit" class="btn btn-info">Daftar</button>
-										  <button type="reset" class="btn btn-default">Reset</button>
-									<?php echo form_close();?>
-							</div></div>
-						</div>
-					</div>
-				</div>
-					</div>
-				</div></div>
+	<?php echo $this->session->flashdata('message');?>
+	<?php echo form_open('registration/signup'); ?>
+	<div class="col-md-12">
+
+	<div class="box box-primary">
+
+		<h3 style="text-align:center">Enrolment Form</h3>
+	<div class="box-body">
+    <div class="col-md-6"><br>
+            <!-- /.box-header -->
+            <!-- form start -->
+              	<div class="form-group">
+              		<label for="email">Full Name/NIM</label>
+              		<input type="text" name="fullname" class="form-control" id="fullname" placeholder="Input Full Name" required .input-sm>
+              	</div>
+              	<div class="form-group">
+              		<label for="gender">Gender</label>
+              		<select id="gender" class="form-control" required="">
+						<option value="">Select Gender</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+
+					</select>                                     
+              		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              		<input type ="radio" name = "sex" value= "female" required/> Female -->
+              	</div>
+              	<div class="form-group">
+              		<label for="email">Date of birth</label>
+              		<input type="date" name="date" class="form-control" id="date" required>
+              	</div>
+              	<div class="form-group">
+              		<label for="place">Birth Place</label>
+              		<input type="text" name="birth_place" class="form-control" id="birth_place" placeholder="Input Birth Place" required>
+              	</div>
+              	<div class="form-group">
+              		<label for="religion">Religion</label>
+              		<input type="text" name="religion" class="form-control" id="religion" placeholder="Input Religion" required>
+              	</div>
+              	<div class="form-group">
+              		<label for="address">Home Address</label>
+              		<input type="text" name="address" class="form-control" id="address" placeholder="Input Home Address" required>
+              	</div>
+              	<div class="form-group">
+              		<label for="phone">Phone Number</label>
+              		<input type="number" name="phone" class="form-control" id="phone" placeholder="Input Phone Number" required>
+              	</div>
+              	<div class="form-group">
+              		<label for="phone">Mobile Phone Number</label>
+              		<input type="number" name="mphone" class="form-control" id="mphone" placeholder="Input Mobile Phone Number" required>
+              	</div>
+              	<div class="form-group">
+              		<label for="email">Email</label>
+              		<input type="email" name="email" class="form-control" id="email" placeholder="Input Email" required>
+              	</div>
+
+              </div>
+              <div class="col-md-6">
+          <!-- Horizontal Form -->
+          
+            <!-- /.box-header -->
+            <!-- form start -->
+                <br>
+                <div class="form-group">
+              		<label for="preschool">Previous School</label>
+              		<input type="text" name="preschool" class="form-control" id="preschool" placeholder="Input Previous School" required>
+              	</div>
+              	<div class="form-group">
+              		<label for="nik">NIK</label>
+              		<input type="number" name="nik" class="form-control" id="nik" placeholder="Input NIK" required>
+              	</div>
+              	<div class="form-group">
+              		<label for="mother">Mother's Name</label>
+              		<input type="text" name="mother" class="form-control" id="mother" placeholder="Input Mother's Nmae" required>
+              	</div>
+              	<div class="form-group">
+              		<label for="prodi">Program Study</label>
+              		<select id="prodi" class="form-control" name="prodi" required="" onchange="return get_concentrate(this.value)">
+              			<option value="">Select Program Study</option>
+
+              			 <?php 
+
+            			foreach($getProdi as $row)
+            			{ 
+              			echo '<option value="'.$row->id_prodi.'">'.$row->nama_prodi.'</option>';
+            			}
+            			?>
+
+
+					</select>                                     
+              		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              		<input type ="radio" name = "sex" value= "female" required/> Female -->
+              	</div>
+              	<div class="form-group">
+              		<label for="concentrate">Concentrate</label>
+              		<select id="concentrate" name="concentrate" class="form-control" required="">
+						<option value="">Select Concentrate</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+
+					</select>                                     
+              		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              		<input type ="radio" name = "sex" value= "female" required/> Female -->
+              	</div>
+              	<div class="form-group">
+              		<label for="intake">Intake</label>
+              		<select id="intake" class="form-control" required="">
+						<option value="">Select Intake</option>
+						      <?php 
+
+                  foreach($getIntake as $row)
+                  { 
+                    echo '<option value="'.$row->id_intake.'">'.$row->intake.'</option>';
+                  }
+                  ?>
+
+					</select>                                     
+              		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              		<input type ="radio" name = "sex" value= "female" required/> Female -->
+              	</div>
+              	<div class="form-group">
+              		<label for="time">Time</label>
+              		<select id="time" class="form-control" required="">
+						<option value="">Select Time</option>
+						<option value="morning">Morning</option>
+						<option value="evening">Evening</option>
+
+					</select>                                     
+              		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              		<input type ="radio" name = "sex" value= "female" required/> Female -->
+              	</div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-info pull-right">Submit</button>
+              </div>
+              <!-- /.box-footer -->
+              		<?php echo form_close();?>
+            
+          
+	</div>
+            </form>
+        </div></div>
+          
+      </div>
+          </div>
+</div>
+</div>
+<script type="text/javascript">
+            function get_concentrate(p) {
+                var prodi = p;
+
+                $.ajax({
+                    url: '<?php echo base_url(); ?>registration/get_concentrate/'+prodi,
+                    data: 'prodi='+prodi,
+                    type: 'GET',
+                    dataType: 'html',
+                    success: function(msg) {
+                        $("#concentrate").html(msg);
+
+                    }
+                });
+            }
+            // function get_price(p) {
+            //     var produk = p;
+
+            //     $.ajax({
+            //         url: 'order/order_price/'+produk,
+            //         data: 'produk='+produk,
+            //         type: 'GET',
+            //         dataType: 'html',
+            //         success: function(msg) {
+            //             var data = msg.split("|");
+            //             var harga = data[0] * 1000;
+            //             $("#js_hts").html(harga);
+            //             $("#js_min").html(data[1]);
+            //             $("#js_max").html(data[2]);
+            //         }
+            //     });
+            // };
+        </script>
