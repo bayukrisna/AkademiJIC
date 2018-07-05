@@ -8,22 +8,22 @@
               <div class="row">
                 <div class="col-lg-12">
                   <?php echo $this->session->flashdata('message');?>
-                  <?php echo form_open('registration/signup'); ?>
+                  <?php echo form_open('master_dosen/save_dosen'); ?>
                       <div class="form-group">
                         <label for="email">Nama Dosen</label>
                         <input type="text" name="nama_dosen" class="form-control" id="nama_dosen" placeholder="Masukkan Nama Dosen">
                       </div>
                       <div class="form-group">
                         <label for="email">Kode Dosen</label>
-                        <input type="text" name="subjectname" class="form-control" id="subjectname" placeholder="Masukkan Kode Dosen">
+                        <input type="text" name="kode_dosen" class="form-control" id="kode_dosen" placeholder="Masukkan Kode Dosen">
                       </div>
                       <div class="form-group">
                         <label for="email">No HP</label>
-                        <input type="text" name="credits" class="form-control" id="credits" placeholder="Masukkan No HP">
+                        <input type="number" name="no_hp" class="form-control" id="no_hp" placeholder="Masukkan No HP">
                       </div>
                       <div class="form-group">
                         <label for="email">Keterangan</label>
-                        <input type="text" name="semester" class="form-control" id="semester" placeholder="Masukkan Keterangan">
+                        <input type="text" name="keterangan" class="form-control" id="keterangan" placeholder="Masukkan Keterangan">
                       </div>
                       <button type="submit" class="btn btn-info">Tambah</button>
                       <button type="reset" class="btn btn-default">Reset</button>
