@@ -30,7 +30,7 @@ class Registration_model extends CI_Model {
     public function signup()
     {        
         $data = array(
-            'no_pendaftaran'                => $this->buat_no_pendaftar(),
+            'no_pendaftaran'                => $this->buat_kode(),
             'nama_pendaftar'      => $this->input->post('fullname', TRUE),
             'jk_pendaftar'      => $this->input->post('gender', TRUE),
             'tgl_lahir_pendaftar'     => $this->input->post('date', TRUE),
@@ -59,24 +59,6 @@ class Registration_model extends CI_Model {
         }
 
     }
-        public function  buat_no_pendaftar()   {
-          $this->db->SELECT('RIGHT(tb_pendaftar.no_pendaftaran,3) as kode', FALSE);
-          $this->db->order_by('no_pendaftaran','DESC');    
-          $this->db->limit(1);    
-          $query = $this->db->get('tb_pendaftar');      //cek dulu apakah ada sudah ada kode di tabel.    
-          if($query->num_rows() <> 0){      
-           //jika kode ternyata sudah ada.      
-           $data = $query->row();      
-           $kode = intval($data->kode) + 1;    
-          }
-          else {      
-           //jika kode belum ada      
-           $kode = 1;    
-          }
-          $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT); // angka 4 menunjukkan jumlah digit angka 0
-          $kodejadi = "PO".$kodemax;    // hasilnya ODJ-9921-0001 dst.
-          return $kodejadi; 
-    }
 
      function getProdi()
     {
@@ -87,7 +69,7 @@ class Registration_model extends CI_Model {
     public function getConcentrate($data){
     $this->db->select('tb_prodi.id_prodi, tb_konsentrasi.id_konsentrasi, tb_konsentrasi.nama_konsentrasi');
     $this->db->from('tb_prodi'); //dari tabel data_users
-    $this->db->join('tb_konsentrasi', 'tb_prodi.id_prodi = tb_konsentrasi.id_prodii');
+    $this->db->join('tb_konsentrasi', 'tb_prodi.id_prodi = tb_konsentrasi.id_prodi2');
     $this->db->where($data); //menyatukan tabel users menggunakan left join
     $data = $this->db->get(); //mengambil seluruh data
     return $data->result(); //mengembalikan data
@@ -95,6 +77,12 @@ class Registration_model extends CI_Model {
     function getIntake()
     {
         return $this->db->get('tb_intake')
+                    ->result();
+
+    }
+    function getPreschool()
+    {
+        return $this->db->get('tb_sekolah')
                     ->result();
 
     }

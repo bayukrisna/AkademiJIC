@@ -15,16 +15,17 @@ class Registration extends CI_Controller {
 			$data['main_view'] = 'registration';
 			$data['getProdi'] = $this->registration_model->getProdi();
 			$data['getIntake'] = $this->registration_model->getIntake();
+			$data['getPreschool'] = $this->registration_model->getPreschool();
 			$this->load->view('template_awal', $data);
 	}
 	public function signup()
 	{
 			if($this->registration_model->signup() == TRUE){
 				$username = $this->input->post('fullname');
-				$this->session->set_flashdata('message', '<div class="alert alert-success"> Registrasi '.$username.' berhasil didaftarkan. </div>');
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Registrasi '.$username.' berhasil didaftarkan. </div>');
             	redirect('registration');
 			} else{
-				$this->session->set_flashdata('message', '<div class="alert alert-danger"> Username/password sudah ada. </div>');
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
             	redirect('registration');
 			} 
 	} 

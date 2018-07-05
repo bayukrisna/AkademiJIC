@@ -20,7 +20,7 @@
               	</div>
               	<div class="form-group">
               		<label for="gender">Gender</label>
-              		<select id="gender" class="form-control" required="">
+              		<select id="gender" name="gender" class="form-control" required="">
 						<option value="">Select Gender</option>
 						<option value="male">Male</option>
 						<option value="female">Female</option>
@@ -67,7 +67,17 @@
                 <br>
                 <div class="form-group">
               		<label for="preschool">Previous School</label>
-              		<input type="text" name="preschool" class="form-control" id="preschool" placeholder="Input Previous School" required>
+              		<select id="preschool" name="preschool"class="form-control" required="">
+                  <option value="">Select Intake</option>
+                  <?php 
+
+                  foreach($getPreschool as $row)
+                  { 
+                    echo '<option value="'.$row->id_sekolah.'">'.$row->nama_sekolah.'</option>';
+                  }
+                  ?>
+
+                </select>   
               	</div>
               	<div class="form-group">
               		<label for="nik">NIK</label>
@@ -99,8 +109,6 @@
               		<label for="concentrate">Concentrate</label>
               		<select id="concentrate" name="concentrate" class="form-control" required="">
 						<option value="">Select Concentrate</option>
-						<option value="male">Male</option>
-						<option value="female">Female</option>
 
 					</select>                                     
               		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -108,7 +116,7 @@
               	</div>
               	<div class="form-group">
               		<label for="intake">Intake</label>
-              		<select id="intake" class="form-control" required="">
+              		<select id="intake" name="intake"class="form-control" required="">
 						<option value="">Select Intake</option>
 						      <?php 
 
@@ -124,7 +132,7 @@
               	</div>
               	<div class="form-group">
               		<label for="time">Time</label>
-              		<select id="time" class="form-control" required="">
+              		<select id="time" name="time" class="form-control" required="">
 						<option value="">Select Time</option>
 						<option value="morning">Morning</option>
 						<option value="evening">Evening</option>

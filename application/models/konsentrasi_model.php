@@ -12,7 +12,7 @@ class Konsentrasi_model extends CI_Model {
 	public function data_konsentrasi(){
 		$this->db->select('*');
 		 $this->db->from('tb_konsentrasi');
-		 $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_konsentrasi.id_prodi');
+		 $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_konsentrasi.id_prodi2');
 		 $query = $this->db->get();
 		 return $query->result();
 	}
@@ -45,7 +45,7 @@ class Konsentrasi_model extends CI_Model {
         $data = array(
             'id_konsentrasi'        => $this->input->post('id_konsentrasi'),
             'nama_konsentrasi'      	=> $this->input->post('nama_konsentrasi'),
-            'id_prodi'      		=> $this->input->post('id_prodi')
+            'id_prodi2'      		=> $this->input->post('id_prodi')
             
         );
     
