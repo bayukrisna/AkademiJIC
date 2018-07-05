@@ -11,7 +11,7 @@
             <!-- /.box-header -->
             <!-- form start -->
                 <div class="form-group">
-                  <label for="email">No. Pendaftaran</label>
+                  <label for="no">No. Pendaftaran</label>
                   <input type="text" name="no_pendaftaran" class="form-control" id="no_pendaftaran" placeholder="" required .input-sm value="<?= $kodeunik; ?>" readonly>
                 </div>
               	<div class="form-group">
@@ -39,7 +39,15 @@
               	</div>
               	<div class="form-group">
               		<label for="religion">Religion</label>
-              		<input type="text" name="religion" class="form-control" id="religion" placeholder="Input Religion" required>
+              	<select id="religion" name="religion" class="form-control" required="">
+                  <option value="">Select Religion</option>
+                  <option value="kristen">Kristen</option>
+                  <option value="islam">Islam</option>
+                  <option value="hindu">Hindu</option>
+                  <option value="buddha">Buddha</option>
+                  <option value="konghuchu">Konghuchu</option>
+
+                </select>                                     
               	</div>
               	<div class="form-group">
               		<label for="address">Home Address</label>
@@ -53,10 +61,6 @@
               		<label for="phone">Mobile Phone Number</label>
               		<input type="number" name="mphone" class="form-control" id="mphone" placeholder="Input Mobile Phone Number" required>
               	</div>
-              	<div class="form-group">
-              		<label for="email">Email</label>
-              		<input type="email" name="email" class="form-control" id="email" placeholder="Input Email" required>
-              	</div>
 
               </div>
               <div class="col-md-6">
@@ -65,6 +69,10 @@
             <!-- /.box-header -->
             <!-- form start -->
                 <br>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" class="form-control" id="email" placeholder="Input Email" required>
+                </div>
                 <div class="form-group">
               		<label for="preschool">Previous School</label>
               		<select id="preschool" name="preschool"class="form-control" required="">
@@ -79,6 +87,17 @@
 
                 </select>   
               	</div>
+                <div class="form-group">
+                  <label for="major">Majoring in Previous School</label>
+                <select id="major" name="major" class="form-control" required="">
+                  <option value="">Select Major</option>
+                  <option value="ipa">IPA</option>
+                  <option value="ips">IPS</option>
+                  <option value="tkj">TKJ</option>
+                  <option value="rpl">RPL</option>
+
+                </select>                                     
+                </div>
               	<div class="form-group">
               		<label for="nik">NIK</label>
               		<input type="number" name="nik" class="form-control" id="nik" placeholder="Input NIK" required>
@@ -108,7 +127,7 @@
               	<div class="form-group">
               		<label for="concentrate">Concentrate</label>
               		<select id="concentrate" name="concentrate" class="form-control" required="">
-						<option value="">Select Concentrate</option>
+						<option value="">Select Program Study First</option>
 
 					</select>                                     
               		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
