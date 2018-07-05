@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2018 at 06:20 AM
+-- Generation Time: Jul 05, 2018 at 06:29 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -166,6 +166,7 @@ CREATE TABLE IF NOT EXISTS `tb_pendaftar` (
   `id_sekolah` varchar(5) NOT NULL,
   `id_prodi` varchar(5) NOT NULL,
   `id_konsentrasi` varchar(6) NOT NULL,
+  `id_intake` varchar(6) NOT NULL,
   `waktu` text NOT NULL,
   `status` enum('aktif','non-aktif') NOT NULL,
   PRIMARY KEY (`no_pendaftaran`),
@@ -179,8 +180,8 @@ CREATE TABLE IF NOT EXISTS `tb_pendaftar` (
 -- Dumping data for table `tb_pendaftar`
 --
 
-INSERT INTO `tb_pendaftar` (`no_pendaftaran`, `nama_pendaftar`, `jk_pendaftar`, `tpt_lahir_pendaftar`, `tgl_lahir_pendaftar`, `alamat_pendaftar`, `no_telp_pendaftar`, `no_telpm_pendaftar`, `email_pendaftar`, `agama_pendaftar`, `nik_pendaftar`, `ibu_kandung_pendaftar`, `id_sekolah`, `id_prodi`, `id_konsentrasi`, `waktu`, `status`) VALUES
-('PE001', 'Aldi', 'Male', '', '2018-05-01', 'Malang', '0987654', '987654', 'aldi@gmail.com', 'islam', '98765', 'Bu Wati', 'SE001', 'PR002', '', 'Pagi', 'aktif');
+INSERT INTO `tb_pendaftar` (`no_pendaftaran`, `nama_pendaftar`, `jk_pendaftar`, `tpt_lahir_pendaftar`, `tgl_lahir_pendaftar`, `alamat_pendaftar`, `no_telp_pendaftar`, `no_telpm_pendaftar`, `email_pendaftar`, `agama_pendaftar`, `nik_pendaftar`, `ibu_kandung_pendaftar`, `id_sekolah`, `id_prodi`, `id_konsentrasi`, `id_intake`, `waktu`, `status`) VALUES
+('PE001', 'Aldi', 'Male', '', '2018-05-01', 'Malang', '0987654', '987654', 'aldi@gmail.com', 'islam', '98765', 'Bu Wati', 'SE001', 'PR002', '', '', 'Pagi', 'aktif');
 
 -- --------------------------------------------------------
 

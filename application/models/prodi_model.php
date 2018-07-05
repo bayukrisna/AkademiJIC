@@ -35,14 +35,6 @@ class Prodi_model extends CI_Model {
         }
 
     }
-<<<<<<< HEAD
-=======
-
-    // public function buat_kode(){
-    //     $query = "SELECT id_prodi FROM tb_prodi DESC";
-    //     $result_arr = $this->db->query($query, array(3, 0))->result_array();
-    // }
->>>>>>> 8e5cbfda0d44989c227ab2c186235d550e5b7b16
     
   
     public function  buat_kode()   {
