@@ -23,7 +23,7 @@ class Registration_model extends CI_Model {
            $kode = 1;    
           }
           $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT); // angka 4 menunjukkan jumlah digit angka 0
-          $kodejadi = "KO".$kodemax;    // hasilnya ODJ-9921-0001 dst.
+          $kodejadi = "PE".$kodemax;    // hasilnya ODJ-9921-0001 dst.
           return $kodejadi; 
     }
 
