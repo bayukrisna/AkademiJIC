@@ -11,6 +11,7 @@ class Registration extends CI_Controller {
 
 	public function index()
 	{
+			$data['kodeunik'] = $this->registration_model->buat_kode();
 			$data['main_view'] = 'registration';
 			$data['getProdi'] = $this->registration_model->getProdi();
 			$data['getIntake'] = $this->registration_model->getIntake();

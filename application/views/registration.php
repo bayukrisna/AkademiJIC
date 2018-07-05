@@ -10,6 +10,10 @@
     <div class="col-md-6"><br>
             <!-- /.box-header -->
             <!-- form start -->
+                <div class="form-group">
+                  <label for="email">No. Pendaftaran</label>
+                  <input type="text" name="no_pendaftaran" class="form-control" id="no_pendaftaran" placeholder="" required .input-sm value="<?= $kodeunik; ?>" readonly>
+                </div>
               	<div class="form-group">
               		<label for="email">Full Name/NIM</label>
               		<input type="text" name="fullname" class="form-control" id="fullname" placeholder="Input Full Name" required .input-sm>
