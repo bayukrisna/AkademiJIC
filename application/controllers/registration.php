@@ -12,6 +12,8 @@ class Registration extends CI_Controller {
 	public function index()
 	{
 			$data['main_view'] = 'registration';
+			$data['getProdi'] = $this->registration_model->getProdi();
+			$data['getIntake'] = $this->registration_model->getIntake();
 			$this->load->view('template_awal', $data);
 	}
 	public function signup()
@@ -25,4 +27,18 @@ class Registration extends CI_Controller {
             	redirect('registration');
 			} 
 	} 
+	public function get_concentrate($param = NULL) {
+		// $layanan =$this->input->post('layanan');
+		$prodi = $param;
+		$dt = array('id_prodi' => $prodi);
+		$result = $this->registration_model->getConcentrate($dt);
+		$option = "";
+		$option .= '<option value="">Pilih Produk</option>';
+		foreach ($result as $data) {
+			$option .= "<option value='".$data->id_konsentrasi."' >".$data->nama_konsentrasi."</option>";
+			
+		}
+		echo $option;
+
+	}
 }
