@@ -42,6 +42,16 @@ class Master_prodi extends CI_Controller {
 		}
 	}
 
+	public function hapus_prodi($id_prodi){
+		if ($this->prodi_model->hapus_prodi($id_prodi) == TRUE) {
+			$this->session->set_flashdata('notif', 'Hapus Program Studi Berhasil');
+			redirect('master_prodi');
+		} else {
+			$this->session->set_flashdata('notif', 'Hapus Program Studi Berhasil');
+			redirect('master_prodi');
+		}
+	}
+
 
 	
 

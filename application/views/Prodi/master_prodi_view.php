@@ -14,6 +14,7 @@
                   <th>Id Prodi</th>
                   <th>Nama Prodi</th>
                   <th>Ketua Prodi</th>
+                  <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,9 @@
                   </td>
                   <td>'.$data->nama_prodi.'</td>
                   <td>'.$data->ketua_prodi.'</td>
+                  <td>
+                      <a href="'.base_url('index.php/master_prodi/hapus_prodi/'.$data->id_prodi).'" class="btn btn-danger btn-sm">Hapus</a>
+                  </td>
                 </tr>
                 ';
                 
