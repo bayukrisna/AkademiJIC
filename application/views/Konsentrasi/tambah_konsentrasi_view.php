@@ -23,18 +23,15 @@
                                <select class="form-control select2" style="width: 100%;">
                               <option value=""> -- Pilih Prodi -- </option>
                                   <?php 
-                                  foreach ($drop_down_prodi as $prodi) {
-                                    if ($prodi->id_prodi != $this->session->userdata('id_prodi') && $prodi->id_prodi > $this->session->userdata('id_prodi')) {
-                                      echo '
-                                      <option value="'.$prodi->id_prodi.'">'.$prodi->nama_prodi.'</option>
-                                      ';
 
-                                    }
-                                  }
-                                  ?>
+                                        foreach($drop_down_prodi as $row)
+                                        { 
+                                          echo '<option value="'.$row->id_prodi.'">'.$row->nama_prodi.'</option>';
+                                        }
+                                    ?>
                             </select>
                         <br>
-                        
+
                       <button type="submit" class="btn btn-info">Tambah</button>
                       <button type="reset" class="btn btn-default">Reset</button>
                   <?php echo form_close();?>

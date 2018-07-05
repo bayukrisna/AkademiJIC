@@ -33,7 +33,7 @@ class Master_konsentrasi extends CI_Controller {
 		//set rule di setiap form input
 		$this->form_validation->set_rules('id_konsentrasi', 'Id Konsnetrasi', 'trim|required');		
 		$this->form_validation->set_rules('nama_konsentrasi', 'Nama Konsentrasi', 'trim|required');	
-		$this->form_validation->set_rules('id_prodi', 'Id Prodi', 'trim|required');	
+		$this->form_validation->set_rules('id_prodi', 'Nama Prodi', 'trim|required');	
 		
 		if ($this->form_validation->run() == TRUE){
 			if($this->konsentrasi_model->save_konsentrasi() == TRUE){
