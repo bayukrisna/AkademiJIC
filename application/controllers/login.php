@@ -14,9 +14,35 @@ class Login extends CI_Controller {
 		// {
 		// 	redirect(base_url('dashboard'));
 		// } else {
-			$data['main_view'] = 'login';
+			$data['main_view'] = 'form';
 			$this->load->view('template_awal', $data);
 		// }
+	}
+	public function masuk()
+	{
+		if($this->input->post('submit')){
+
+		//set rule di setiap form input
+		$this->form_validation->set_rules('username', 'Username', 'trim|required');		
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');	
+
+		if ($this->form_validation->run() == TRUE)	{
+			
+			if($this->login_model->cek_user() == TRUE){
+						redirect(base_url('index.php/registration'));
+			} else {
+					$data['notif'] = 'Login Gagal';
+					$data['main_view'] = 'login';
+					$this->load->view('template_awal', $data);
+			}
+			//jika sukses
+		}else {
+			//jika gagal
+			$data['notif'] = validation_errors();
+			$data['main_view'] = 'login_view';
+			$this->load->view('template', $data);
+			}
+		}
 	}
 	public function login()
 	{
