@@ -15,6 +15,8 @@ class Akuntansi_model extends CI_Model {
 		->result();
 	}
 
+	
+
 }
 
 /* End of file akuntansi_model.php */

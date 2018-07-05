@@ -52,6 +52,42 @@ class Master_prodi extends CI_Controller {
 		}
 	}
 
+	public function edit_prodi(){
+			
+				$data['main_view'] = 'Prodi/edit_prodi_view';
+				$id_prodi = $this->uri->segment(3);
+				$data['edit'] = $this->prodi_model->get_prodi_by_id($id_prodi);
+				$this->load->view('template', $data);
+	
+
+	}
+
+
+	public function save_edit_prodi(){
+			$id_prodi = $this->uri->segment(3);
+
+			if ($this->input->post('submit')) {
+				$this->form_validation->set_rules('id_prodi', 'Id prodi', 'trim|required');		
+				$this->form_validation->set_rules('nama_prodi', 'Nama prodi', 'trim|required');	
+				$this->form_validation->set_rules('ketua_prodi', 'Ketua Prodi', 'trim|required');
+
+				if ($this->form_validation->run() == TRUE) {
+					if ($this->prodi_model->save_edit_prodi($id_prodi) == TRUE) {
+						$data['notif'] = 'Edit prodi berhasil';
+						redirect('master_prodi');
+					} else {
+						$data['main_view'] = 'Prodi/master_prodi_view';
+						$data['notif'] = 'Edit prodi gagal';
+						redirect('master_prodi/edit_prodi');
+					}
+				} else {
+					$data['main_view'] = 'Prodi/edit_prodi_view';
+					$data['notif'] = validation_errors();
+					$this->load->view('template', $data);
+				}
+			}
+		}
+
 
 	
 

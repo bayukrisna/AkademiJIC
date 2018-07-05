@@ -11,9 +11,9 @@
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>Id Prodi</th>
-                  <th>Nama Prodi</th>
-                  <th>Ketua Prodi</th>
+                  <th>Id Konsentrasi</th>
+                  <th>Nama Konsentrasi</th>
+                  <th>Jenis Prodi</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -21,15 +21,15 @@
 
                 <?php 
                 $no = 0;
-                foreach ($prodi as $data) {
+                foreach ($konsentrasi as $data) {
                   echo '
                   
                 <tr>
                   <td>'.++$no.'</td>
-                  <td>'.$data->id_prodi.'
+                  <td>'.$data->id_konsentrasi.'
                   </td>
+                  <td>'.$data->nama_konsentrasi.'</td>
                   <td>'.$data->nama_prodi.'</td>
-                  <td>'.$data->ketua_prodi.'</td>
                   <td>
                       <a href="'.base_url('index.php/master_prodi/edit_prodi/'.$data->id_prodi).'" class="btn btn-info btn-sm" >Edit </a>
                       <a href="'.base_url('index.php/master_prodi/hapus_prodi/'.$data->id_prodi).'" class="btn btn-danger btn-sm">Hapus</a>

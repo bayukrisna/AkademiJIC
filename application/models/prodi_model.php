@@ -66,6 +66,29 @@ class Prodi_model extends CI_Model {
         return FALSE;
       }
     }
+
+    public function get_prodi_by_id($id_prodi){
+      return $this->db->where('id_prodi', $id_prodi)
+              ->get('tb_prodi')
+              ->row();
+  }
+
+  public function save_edit_prodi($id_prodi){
+    $data = array(
+        'id_prodi'        => $this->input->post('id_prodi'),
+        'nama_prodi'      => $this->input->post('nama_prodi'),
+        'ketua_prodi'     => $this->input->post('ketua_prodi')
+      );
+
+    $this->db->where('id_prodi', $id_prodi)
+        ->update('tb_prodi', $data);
+
+    if ($this->db->affected_rows() > 0) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  }
 }
 
 /* End of file prodi_model.php */
