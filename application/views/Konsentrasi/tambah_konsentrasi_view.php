@@ -20,7 +20,7 @@
                      
                           <div class="form-group">
                             <label>Nama Prodi</label>
-                               <select class="form-control select2" style="width: 100%;">
+                               <select name="id_prodi" class="form-control select2" style="width: 100%;">
                               <option value=""> -- Pilih Prodi -- </option>
                                   <?php 
 
