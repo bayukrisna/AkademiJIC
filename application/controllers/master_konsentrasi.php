@@ -37,8 +37,8 @@ class Master_konsentrasi extends CI_Controller {
 		
 		if ($this->form_validation->run() == TRUE){
 			if($this->konsentrasi_model->save_konsentrasi() == TRUE){
-				$konsentrasi = $this->input->post('konsentrasi');
-				$this->session->set_flashdata('message', '<div class="alert alert-success"> Registrasi '.$nama_konsentrasi.' berhasil didaftarkan. </div>');
+				$username = $this->input->post('nama_konsentrasi');
+				$this->session->set_flashdata('message', '<div class="alert alert-success"> Registrasi '.$username.' berhasil didaftarkan. </div>');
             	redirect('master_konsentrasi');
 			} 
 			} else{
