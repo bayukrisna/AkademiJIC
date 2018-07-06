@@ -5,42 +5,42 @@
 
 	<div class="box box-primary">
 
-		<h3 style="text-align:center">Enrolment Form</h3>
+		<h3 style="text-align:center">Daftar Ulang</h3>
 	<div class="box-body">
     <div class="col-md-6"><br>
             <!-- /.box-header -->
             <!-- form start -->
                 <div class="form-group">
-                  <label for="no">No. Pendaftaran</label>
+                  <label for="no">No. Daftar Ulang</label>
                   <input type="text" name="no_pendaftaran" class="form-control" id="no_pendaftaran" placeholder="" required .input-sm value="<?= $kodeunik; ?>" readonly>
                 </div>
               	<div class="form-group">
-              		<label for="email">Full Name/NIM</label>
+              		<label for="email">Nama Lengkap</label>
               		<input type="text" name="fullname" class="form-control" id="fullname" placeholder="Input Full Name" required .input-sm>
               	</div>
               	<div class="form-group">
-              		<label for="gender">Gender</label>
+              		<label for="gender">Jenis Kelamin</label>
               		<select id="gender" name="gender" class="form-control" required="">
 						<option value="">Select Gender</option>
-						<option value="male">Male</option>
-						<option value="female">Female</option>
+						<option value="laki-laki">Laki - laki</option>
+						<option value="perempuan">Perempuan</option>
 
 					</select>                                     
               		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               		<input type ="radio" name = "sex" value= "female" required/> Female -->
               	</div>
               	<div class="form-group">
-              		<label for="email">Date of birth</label>
+              		<label for="email">Tanggal Lahir</label>
               		<input type="date" name="date" class="form-control" id="date" required>
               	</div>
               	<div class="form-group">
-              		<label for="place">Birth Place</label>
+              		<label for="place">Tempat Lahir</label>
               		<input type="text" name="birth_place" class="form-control" id="birth_place" placeholder="Input Birth Place" required>
               	</div>
               	<div class="form-group">
-              		<label for="religion">Religion</label>
+              		<label for="religion">Agama</label>
               	<select id="religion" name="religion" class="form-control" required="">
-                  <option value="">Select Religion</option>
+                  <option value="">Pilih Agama</option>
                   <option value="kristen">Kristen</option>
                   <option value="islam">Islam</option>
                   <option value="hindu">Hindu</option>
@@ -50,15 +50,15 @@
                 </select>                                     
               	</div>
               	<div class="form-group">
-              		<label for="address">Home Address</label>
+              		<label for="address">Alamat Rumah</label>
               		<input type="text" name="address" class="form-control" id="address" placeholder="Input Home Address" required>
               	</div>
               	<div class="form-group">
-              		<label for="phone">Phone Number</label>
+              		<label for="phone">Nomor Telepon</label>
               		<input type="number" name="phone" class="form-control" id="phone" placeholder="Input Phone Number" required>
               	</div>
               	<div class="form-group">
-              		<label for="phone">Mobile Phone Number</label>
+              		<label for="phone">Nomor HP</label>
               		<input type="number" name="mphone" class="form-control" id="mphone" placeholder="Input Mobile Phone Number" required>
               	</div>
 
@@ -74,7 +74,7 @@
                   <input type="email" name="email" class="form-control" id="email" placeholder="Input Email" required>
                 </div>
                 <div class="form-group">
-              		<label for="preschool">Previous School</label>
+              		<label for="preschool">Asal Sekolah</label>
               		<select id="preschool" name="preschool"class="form-control" required="">
                   <option value="">Select Intake</option>
                   <?php 
@@ -88,9 +88,9 @@
                 </select>   
               	</div>
                 <div class="form-group">
-                  <label for="major">Majoring in Previous School</label>
+                  <label for="major">Jurusan Asal Sekolah</label>
                 <select id="major" name="major" class="form-control" required="">
-                  <option value="">Select Major</option>
+                  <option value="">Pilih Jurusan</option>
                   <option value="ipa">IPA</option>
                   <option value="ips">IPS</option>
                   <option value="tkj">TKJ</option>
@@ -103,13 +103,13 @@
               		<input type="number" name="nik" class="form-control" id="nik" placeholder="Input NIK" required>
               	</div>
               	<div class="form-group">
-              		<label for="mother">Mother's Name</label>
+              		<label for="mother">Nama Ibu</label>
               		<input type="text" name="mother" class="form-control" id="mother" placeholder="Input Mother's Nmae" required>
               	</div>
               	<div class="form-group">
-              		<label for="prodi">Program Study</label>
+              		<label for="prodi">Program Studi</label>
               		<select id="prodi" class="form-control" name="prodi" required="" onchange="return get_concentrate(this.value)">
-              			<option value="">Select Program Study</option>
+              			<option value="">Pilih Program Studi</option>
 
               			 <?php 
 
@@ -125,7 +125,7 @@
               		<input type ="radio" name = "sex" value= "female" required/> Female -->
               	</div>
               	<div class="form-group">
-              		<label for="concentrate">Concentrate</label>
+              		<label for="concentrate">Konsentrasi</label>
               		<select id="concentrate" name="concentrate" class="form-control" required="">
 						<option value="">Select Program Study First</option>
 
@@ -135,22 +135,17 @@
               	</div>
               	<div class="form-group">
               		<label for="intake">Intake</label>
-              		<select id="intake" name="intake"class="form-control" required="">
-						<option value="">Select Intake</option>
-						      <?php 
+              		<select id="intake" name="intake" class="form-control" required="">
+                  <option value="">Pilih Intake</option>
+                  <option value="Januari">Januari</option>
+                  <option value="Februari">Februari</option>
 
-                  foreach($getIntake as $row)
-                  { 
-                    echo '<option value="'.$row->id_intake.'">'.$row->intake.'</option>';
-                  }
-                  ?>
-
-					</select>                                     
+                  </select>                                                                          
               		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               		<input type ="radio" name = "sex" value= "female" required/> Female -->
               	</div>
               	<div class="form-group">
-              		<label for="time">Time</label>
+              		<label for="time">Waktu</label>
               		<select id="time" name="time" class="form-control" required="">
 						<option value="">Select Time</option>
 						<option value="morning">Morning</option>
@@ -182,7 +177,7 @@
                 var prodi = p;
 
                 $.ajax({
-                    url: '<?php echo base_url(); ?>registration/get_concentrate/'+prodi,
+                    url: '<?php echo base_url(); ?>master_daftar_ulang/get_concentrate/'+prodi,
                     data: 'prodi='+prodi,
                     type: 'GET',
                     dataType: 'html',

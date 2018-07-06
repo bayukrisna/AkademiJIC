@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Registration_model extends CI_Model {
+class Daftar_ulang_model extends CI_Model {
 
     public function __construct()
     {
@@ -45,7 +45,7 @@ class Registration_model extends CI_Model {
             'id_prodi'     => $this->input->post('prodi', TRUE),
             'id_konsentrasi'     => $this->input->post('concentrate', TRUE),
             'waktu'     => $this->input->post('time', TRUE),
-            'id_intake'     => $this->input->post('intake', TRUE)
+            'intake'     => $this->input->post('intake', TRUE)
         );
     
         $this->db->insert('tb_pendaftar', $data);

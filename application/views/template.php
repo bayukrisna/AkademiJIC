@@ -86,6 +86,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url(); ?>master_prodi"><i class="fa fa-circle-o"></i> Prodi</a></li>
             <li><a href="<?php echo base_url(); ?>master_konsentrasi"><i class="fa fa-circle-o"></i> Konsentrasi</a></li>
+            <li><a href="<?php echo base_url(); ?>master_daftar_ulang"><i class="fa fa-circle-o"></i> Daftar Ulang</a></li>
           </ul>
         </li>
         
