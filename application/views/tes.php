@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <!-- saved from url=(0014)about:internet -->
 <HTML>
@@ -92,3 +93,20 @@ function lI1IllI111IlI1I1llll1lIIl()
 </DIV>
 </BODY>
 </HTML>
+=======
+<div class="col-md-12">
+	<div class="box">
+
+	<div class="box-body">
+      
+
+        
+        	<p>
+            <img src="http://jic.ac.id/v2/images/jic-logo.png" alt="" width="124" height="50" />
+            <span class="pull-right">Date: 2/10/2014</span>
+        
+          <br>Jl.Perunggu No 53-54<br />&nbsp;Cempak Putih<br />&nbsp;Jakarta Pusat 10640</p>
+  </div>
+</div>
+</div>
+>>>>>>> 1489ded62f5ab3982b64a957786e164219ca3a5c
