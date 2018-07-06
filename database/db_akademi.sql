@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2018 at 06:29 AM
+-- Generation Time: Jul 06, 2018 at 03:39 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -100,49 +100,29 @@ CREATE TABLE IF NOT EXISTS `tb_intake` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_jurusan`
---
-
-CREATE TABLE IF NOT EXISTS `tb_jurusan` (
-  `id_jurusan` varchar(6) NOT NULL,
-  `id_sekolah` varchar(6) NOT NULL,
-  `nama_jurusan` text NOT NULL,
-  PRIMARY KEY (`id_jurusan`),
-  KEY `id_sekolah` (`id_sekolah`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tb_jurusan`
---
-
-INSERT INTO `tb_jurusan` (`id_jurusan`, `id_sekolah`, `nama_jurusan`) VALUES
-('JU001', 'SE001', 'RPL'),
-('JU002', 'SE002', 'RPL'),
-('JU003', 'SE001', 'TKJ');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tb_konsentrasi`
 --
 
 CREATE TABLE IF NOT EXISTS `tb_konsentrasi` (
   `id_konsentrasi` varchar(6) NOT NULL,
   `nama_konsentrasi` varchar(20) NOT NULL,
-  `id_prodi` varchar(6) NOT NULL,
+  `id_prodi2` varchar(6) NOT NULL,
   PRIMARY KEY (`id_konsentrasi`),
-  KEY `id_prodi` (`id_prodi`)
+  KEY `id_prodi` (`id_prodi2`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_konsentrasi`
 --
 
-INSERT INTO `tb_konsentrasi` (`id_konsentrasi`, `nama_konsentrasi`, `id_prodi`) VALUES
+INSERT INTO `tb_konsentrasi` (`id_konsentrasi`, `nama_konsentrasi`, `id_prodi2`) VALUES
 ('KO001', 'Marketing Management', 'PR001'),
-('KO002', 'Finance Management', 'PR001'),
+('KO002', 'Finance Management', 'PR004'),
 ('KO003', 'Auditing', 'PR002'),
-('KO004', 'Taxation', 'PR002');
+('KO004', 'Taxation', 'PR002'),
+('KO005', 'Kupukupu', 'PR001'),
+('KO006', 'Gantrung', 'PR003'),
+('KO007', 'yuyu', 'PR002');
 
 -- --------------------------------------------------------
 
@@ -201,9 +181,11 @@ CREATE TABLE IF NOT EXISTS `tb_prodi` (
 --
 
 INSERT INTO `tb_prodi` (`id_prodi`, `nama_prodi`, `ketua_prodi`) VALUES
-('PR001', 'Management', 'Dr. Iqbal'),
+('PR001', 'Management', 'Dr. Lucinta Luna'),
 ('PR002', 'Accounting', 'Dra. Tiffany'),
-('PR003', 'halu', 'haa');
+('PR003', 'halu', 'haa'),
+('PR004', 'Tata Boga', 'Dr. Boga'),
+('PR005', 'wes', 'uyt');
 
 -- --------------------------------------------------------
 
@@ -231,29 +213,10 @@ INSERT INTO `tb_sekolah` (`id_sekolah`, `nama_sekolah`, `alamat_sekolah`) VALUES
 --
 
 --
--- Constraints for table `tb_hasiltes`
---
-ALTER TABLE `tb_hasiltes`
-  ADD CONSTRAINT `tb_hasiltes_ibfk_1` FOREIGN KEY (`no_pendaftaran`) REFERENCES `tb_pendaftar` (`no_pendaftaran`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `tb_jurusan`
---
-ALTER TABLE `tb_jurusan`
-  ADD CONSTRAINT `tb_jurusan_ibfk_1` FOREIGN KEY (`id_sekolah`) REFERENCES `tb_sekolah` (`id_sekolah`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `tb_konsentrasi`
 --
 ALTER TABLE `tb_konsentrasi`
-  ADD CONSTRAINT `tb_konsentrasi_ibfk_1` FOREIGN KEY (`id_prodi`) REFERENCES `tb_prodi` (`id_prodi`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `tb_pendaftar`
---
-ALTER TABLE `tb_pendaftar`
-  ADD CONSTRAINT `tb_pendaftar_ibfk_1` FOREIGN KEY (`id_prodi`) REFERENCES `tb_prodi` (`id_prodi`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_pendaftar_ibfk_2` FOREIGN KEY (`id_sekolah`) REFERENCES `tb_sekolah` (`id_sekolah`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `tb_konsentrasi_ibfk_1` FOREIGN KEY (`id_prodi2`) REFERENCES `tb_prodi` (`id_prodi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
