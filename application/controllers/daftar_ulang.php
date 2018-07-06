@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Master_daftar_ulang extends CI_Controller {
+class daftar_ulang extends CI_Controller {
 
 	public function __construct()
 	{
@@ -23,10 +23,10 @@ class Master_daftar_ulang extends CI_Controller {
 			if($this->daftar_ulang_model->signup() == TRUE){
 				$username = $this->input->post('fullname');
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Registrasi '.$username.' berhasil didaftarkan. </div>');
-            	redirect('master_daftar_ulang');
+            	redirect('daftar_ulang');
 			} else{
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
-            	redirect('master_daftar_ulang');
+            	redirect('daftar_ulang');
 			} 
 	} 
 	public function get_concentrate($param = NULL) {

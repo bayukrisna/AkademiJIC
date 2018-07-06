@@ -9,10 +9,10 @@ class Daftar_ulang_model extends CI_Model {
     }
 
     public function  buat_kode()   {
-          $this->db->SELECT('RIGHT(tb_pendaftar.no_pendaftaran,3) as kode', FALSE);
-          $this->db->order_by('no_pendaftaran','DESC');    
+          $this->db->SELECT('RIGHT(tb_du.no_du,3) as kode', FALSE);
+          $this->db->order_by('no_du','DESC');    
           $this->db->limit(1);    
-          $query = $this->db->get('tb_pendaftar');      //cek dulu apakah ada sudah ada kode di tabel.    
+          $query = $this->db->get('tb_du');      //cek dulu apakah ada sudah ada kode di tabel.    
           if($query->num_rows() <> 0){      
            //jika kode ternyata sudah ada.      
            $data = $query->row();      
@@ -30,25 +30,25 @@ class Daftar_ulang_model extends CI_Model {
     public function signup()
     {        
         $data = array(
-            'no_pendaftaran'                => $this->buat_kode(),
-            'nama_pendaftar'      => $this->input->post('fullname', TRUE),
-            'jk_pendaftar'      => $this->input->post('gender', TRUE),
-            'tgl_lahir_pendaftar'     => $this->input->post('date', TRUE),
-            'tpt_lahir_pendaftar'     => $this->input->post('birth_place', TRUE),
-            'alamat_pendaftar'     => $this->input->post('address', TRUE),
-            'no_telp_pendaftar'     => $this->input->post('phone', TRUE),
-            'no_telpm_pendaftar'     => $this->input->post('mphone', TRUE),
-            'email_pendaftar'      => $this->input->post('email', TRUE),
-            'agama_pendaftar'     => $this->input->post('religion', TRUE),
+            'no_du'                => $this->buat_kode(),
+            'nama_du'      => $this->input->post('fullname', TRUE),
+            'jk_du'      => $this->input->post('gender', TRUE),
+            'tgl_lahir_du'     => $this->input->post('date', TRUE),
+            'tpt_lahir_du'     => $this->input->post('birth_place', TRUE),
+            'alamat_du'     => $this->input->post('address', TRUE),
+            'no_telp_du'     => $this->input->post('phone', TRUE),
+            'no_telpm_du'     => $this->input->post('mphone', TRUE),
+            'email_du'      => $this->input->post('email', TRUE),
+            'agama_du'     => $this->input->post('religion', TRUE),
             'id_sekolah'     => $this->input->post('preschool', TRUE),
-            'nik_pendaftar'     => $this->input->post('nik', TRUE),
+            'nik_du'     => $this->input->post('nik', TRUE),
             'id_prodi'     => $this->input->post('prodi', TRUE),
             'id_konsentrasi'     => $this->input->post('concentrate', TRUE),
             'waktu'     => $this->input->post('time', TRUE),
             'intake'     => $this->input->post('intake', TRUE)
         );
     
-        $this->db->insert('tb_pendaftar', $data);
+        $this->db->insert('tb_du', $data);
 
         if($this->db->affected_rows() > 0){
             
