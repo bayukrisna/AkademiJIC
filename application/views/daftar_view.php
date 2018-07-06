@@ -1,7 +1,7 @@
 <div class="row"> 
-  <div class="col-md-12">
-   <div class="box box-primary">
-     <div class="box-body">
+	<div class="col-md-12">
+	 <div class="box box-primary">
+	   <div class="box-body">
 
         <div class="form-group">
           <h3>Pilihan Kelas  : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -25,7 +25,7 @@
                 var kelas = p;
 
                 $.ajax({
-                    url: '<?php echo base_url(); ?>pendaftaran/get_kelas/'+kelas,
+                    url: '<?php echo base_url(); ?>daftar/get_kelas/'+kelas,
                     data: 'kelas='+kelas,
                     type: 'GET',
                     dataType: 'html',
