@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2018 at 03:39 AM
+-- Generation Time: Jul 06, 2018 at 09:28 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -72,6 +72,45 @@ INSERT INTO `matkul_akuntansi` (`id_matkul_akuntansi`, `subject_code`, `subject_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_du`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_du` (
+  `no_du` varchar(6) NOT NULL,
+  `nama_du` varchar(100) NOT NULL,
+  `jk_daftar_du` varchar(12) NOT NULL,
+  `tpt_lahir_du` varchar(20) NOT NULL,
+  `tgl_lahir_du` date NOT NULL,
+  `alamat_du` text NOT NULL,
+  `no_telp_du` varchar(15) NOT NULL,
+  `no_telpm_du` varchar(30) NOT NULL,
+  `email_du` varchar(50) NOT NULL,
+  `agama_du` text NOT NULL,
+  `nik_du` varchar(50) NOT NULL,
+  `ibu_kandung_du` text NOT NULL,
+  `id_sekolah` varchar(5) NOT NULL,
+  `id_prodi` varchar(5) NOT NULL,
+  `id_konsentrasi` varchar(6) NOT NULL,
+  `intake` varchar(6) NOT NULL,
+  `waktu` text NOT NULL,
+  `status` enum('aktif','non-aktif') NOT NULL,
+  PRIMARY KEY (`no_du`),
+  KEY `id_sekolah` (`id_sekolah`),
+  KEY `id_prodi` (`id_prodi`),
+  KEY `id_prodi_2` (`id_prodi`),
+  KEY `id_konsentrasi` (`id_konsentrasi`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_du`
+--
+
+INSERT INTO `tb_du` (`no_du`, `nama_du`, `jk_daftar_du`, `tpt_lahir_du`, `tgl_lahir_du`, `alamat_du`, `no_telp_du`, `no_telpm_du`, `email_du`, `agama_du`, `nik_du`, `ibu_kandung_du`, `id_sekolah`, `id_prodi`, `id_konsentrasi`, `intake`, `waktu`, `status`) VALUES
+('PE001', 'Aldi', 'Male', '', '2018-05-01', 'Malang', '0987654', '987654', 'aldi@gmail.com', 'islam', '98765', 'Bu Wati', 'SE001', 'PR002', '', '', 'Pagi', 'aktif');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_hasiltes`
 --
 
@@ -127,41 +166,29 @@ INSERT INTO `tb_konsentrasi` (`id_konsentrasi`, `nama_konsentrasi`, `id_prodi2`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pendaftar`
+-- Table structure for table `tb_pendaftaran`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_pendaftar` (
-  `no_pendaftaran` varchar(6) NOT NULL,
-  `nama_pendaftar` varchar(100) NOT NULL,
-  `jk_pendaftar` varchar(12) NOT NULL,
-  `tpt_lahir_pendaftar` varchar(20) NOT NULL,
-  `tgl_lahir_pendaftar` date NOT NULL,
-  `alamat_pendaftar` text NOT NULL,
-  `no_telp_pendaftar` varchar(15) NOT NULL,
-  `no_telpm_pendaftar` varchar(30) NOT NULL,
-  `email_pendaftar` varchar(50) NOT NULL,
-  `agama_pendaftar` text NOT NULL,
-  `nik_pendaftar` varchar(50) NOT NULL,
-  `ibu_kandung_pendaftar` text NOT NULL,
-  `id_sekolah` varchar(5) NOT NULL,
-  `id_prodi` varchar(5) NOT NULL,
-  `id_konsentrasi` varchar(6) NOT NULL,
-  `id_intake` varchar(6) NOT NULL,
-  `waktu` text NOT NULL,
-  `status` enum('aktif','non-aktif') NOT NULL,
-  PRIMARY KEY (`no_pendaftaran`),
-  KEY `id_sekolah` (`id_sekolah`),
-  KEY `id_prodi` (`id_prodi`),
-  KEY `id_prodi_2` (`id_prodi`),
-  KEY `id_konsentrasi` (`id_konsentrasi`)
+CREATE TABLE IF NOT EXISTS `tb_pendaftaran` (
+  `id_pendaftaran` varchar(6) NOT NULL,
+  `tanggal_pendaftaran` date NOT NULL,
+  `nama_pendaftar` varchar(50) NOT NULL,
+  `id_sekolah` varchar(6) NOT NULL,
+  `jurusan` varchar(20) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `no_telp` varchar(15) NOT NULL,
+  PRIMARY KEY (`id_pendaftaran`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_pendaftar`
+-- Dumping data for table `tb_pendaftaran`
 --
 
-INSERT INTO `tb_pendaftar` (`no_pendaftaran`, `nama_pendaftar`, `jk_pendaftar`, `tpt_lahir_pendaftar`, `tgl_lahir_pendaftar`, `alamat_pendaftar`, `no_telp_pendaftar`, `no_telpm_pendaftar`, `email_pendaftar`, `agama_pendaftar`, `nik_pendaftar`, `ibu_kandung_pendaftar`, `id_sekolah`, `id_prodi`, `id_konsentrasi`, `id_intake`, `waktu`, `status`) VALUES
-('PE001', 'Aldi', 'Male', '', '2018-05-01', 'Malang', '0987654', '987654', 'aldi@gmail.com', 'islam', '98765', 'Bu Wati', 'SE001', 'PR002', '', '', 'Pagi', 'aktif');
+INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tanggal_pendaftaran`, `nama_pendaftar`, `id_sekolah`, `jurusan`, `alamat`, `email`, `no_telp`) VALUES
+('PE001', '2018-07-06', 'Jessica Jung', 'SE002', '', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875'),
+('PE002', '2018-07-06', 'Jessica Jung', 'SE002', '', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875'),
+('PE003', '2018-07-06', 'taeyeon', 'SE001', '', 'malang', 'bayu_krisna_24rpl@student.smkt', '545435');
 
 -- --------------------------------------------------------
 

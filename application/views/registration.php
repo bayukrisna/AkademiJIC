@@ -177,7 +177,7 @@
                 var prodi = p;
 
                 $.ajax({
-                    url: '<?php echo base_url(); ?>master_daftar_ulang/get_concentrate/'+prodi,
+                    url: '<?php echo base_url(); ?>daftar_ulang/get_concentrate/'+prodi,
                     data: 'prodi='+prodi,
                     type: 'GET',
                     dataType: 'html',
