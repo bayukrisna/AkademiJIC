@@ -22,8 +22,6 @@
                         <input type="text" name="ketua_prodi" class="form-control" id="ketua_prodi" placeholder="Masukkan Ketua Prodi" value="<?php echo $edit->ketua_prodi; ?>">
                       </div>
                       <div class="form-group mb-n">
-                  
-                  
                   <div class="col-sm-8">
                   <label for="exampleInputFile" class="">    </label>
                     <input type="submit" name="submit" class="btn btn-default" background_color="orange" id="largeinput" placeholder="Large Input" value="Edit">

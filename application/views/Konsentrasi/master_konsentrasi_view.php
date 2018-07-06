@@ -4,11 +4,12 @@
           <div class="box">
             <div class="box-header">
               <?php echo $this->session->flashdata('message');?>
-              <h3 class="box-title">Data Dosen</h3>
+              <h3 class="box-title">Data Konsentrasi</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
+              <a href="<?php echo base_url() ?>master_konsentrasi/page_tambah_konsentrasi" class="btn btn-info btn-sm" > Tambah Konsentrasi</a> <br> <br>
                 <thead>
                 <tr>
                   <th>No</th>
@@ -32,8 +33,8 @@
                   <td>'.$data->nama_konsentrasi.'</td>
                   <td>'.$data->nama_prodi.'</td>
                   <td>
-                      <a href="'.base_url('index.php/master_prodi/edit_prodi/'.$data->id_prodi).'" class="btn btn-info btn-sm" >Edit </a>
-                      <a href="'.base_url('index.php/master_prodi/hapus_prodi/'.$data->id_prodi).'" class="btn btn-danger btn-sm">Hapus</a>
+                      <a href="'.base_url('index.php/master_konsentrasi/edit_konsentrasi/'.$data->id_konsentrasi).'" class="btn btn-warning btn-sm" >Edit </a>
+                      <a href="'.base_url('index.php/master_konsentrasi/hapus_konsentrasi/'.$data->id_konsentrasi).'" class="btn btn-danger btn-sm">Hapus</a>
                   </td>
                 </tr>
                 ';

@@ -47,6 +47,52 @@ class Master_konsentrasi extends CI_Controller {
 		}
 	}
 
+	public function hapus_konsentrasi($id_konsentrasi){
+		if ($this->konsentrasi_model->hapus_konsentrasi($id_konsentrasi) == TRUE) {
+			$this->session->set_flashdata('message', 'Hapus Konsentrasi Berhasil');
+			redirect('master_konsentrasi');
+		} else {
+			$this->session->set_flashdata('message', 'Hapus Konsentrasi Berhasil');
+			redirect('master_konsentrasi');
+		}
+	}
+
+	public function edit_konsentrasi(){
+				$data['konsentrasi'] = $this->konsentrasi_model->data_konsentrasi();
+			    $data['drop_down_prodi'] = $this->konsentrasi_model->get_prodi();
+				$data['main_view'] = 'Konsentrasi/edit_konsentrasi_view';
+				$id_konsentrasi = $this->uri->segment(3);
+				$data['edit'] = $this->konsentrasi_model->get_konsentrasi_by_id($id_konsentrasi);
+				$this->load->view('template', $data);
+	}
+
+
+	public function save_edit_konsentrasi(){
+			$id_konsentrasi = $this->uri->segment(3);
+
+			if ($this->input->post('submit')) {
+				$this->form_validation->set_rules('id_konsentrasi', 'Id Konsnetrasi', 'trim|required');		
+				$this->form_validation->set_rules('nama_konsentrasi', 'Nama Konsentrasi', 'trim|required');	
+				$this->form_validation->set_rules('id_prodi', 'Nama Prodi', 'trim|required');	
+
+				if ($this->form_validation->run() == TRUE) {
+					if ($this->konsentrasi_model->save_edit_konsentrasi($id_konsentrasi) == TRUE) {
+						$data['message'] = 'Edit Konsentrasi berhasil';
+						redirect('master_konsentrasi');
+					} else {
+						$data['main_view'] = 'Prodi/master_konsentrasi_view';
+						$data['message'] = 'Edit Konsentrasi gagal';
+						redirect('master_konsentrasi/edit_konsentrasi');
+					}
+				} else {
+					$data['main_view'] = 'Prodi/edit_konsentrasi_view';
+					$data['message'] = validation_errors();
+					$this->load->view('template', $data);
+				}
+			}
+		}
+
+
 }
 
 /* End of file master_konsentrasi.php */

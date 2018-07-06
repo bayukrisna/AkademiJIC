@@ -17,6 +17,13 @@ class Konsentrasi_model extends CI_Model {
 		 return $query->result();
 	}
 
+   public function get_konsentrasi_by_id($id_konsentrasi){
+      return $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_konsentrasi.id_prodi2')
+              ->where('id_konsentrasi', $id_konsentrasi)
+              ->get('tb_konsentrasi')
+              ->row();
+  }
+
 	public function get_prodi(){
 		return $this->db->get('tb_prodi')->result();
 	}
@@ -60,6 +67,35 @@ class Konsentrasi_model extends CI_Model {
         }
 
     }
+
+    public function hapus_konsentrasi($id_konsentrasi){
+        $this->db->where('id_konsentrasi', $id_konsentrasi)
+          ->delete('tb_konsentrasi');
+
+    if ($this->db->affected_rows() > 0) {
+      return TRUE;
+      } else {
+        return FALSE;
+      }
+    }
+
+
+  public function save_edit_konsentrasi($id_konsentrasi){
+    $data = array(
+       'id_konsentrasi'     => $this->input->post('id_konsentrasi'),
+        'nama_konsentrasi'  => $this->input->post('nama_konsentrasi'),
+        'id_prodi2'         => $this->input->post('id_prodi')
+      );
+
+    $this->db->where('id_konsentrasi', $id_konsentrasi)
+        ->update('tb_konsentrasi', $data);
+
+    if ($this->db->affected_rows() > 0) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  }
 
 }
 
