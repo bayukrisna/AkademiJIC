@@ -13,7 +13,7 @@ class Pendaftaran extends CI_Controller {
 	{
 		$data['kodeunik'] = $this->pendaftaran_model->buat_kode();
 		$data['getPreschool'] = $this->pendaftaran_model->getPreschool();
-		$data['main_view'] = 'Daftar/pendaftaran_view';
+		$data['main_view'] = 'Daftar/pendaftaran_view';  
 		$this->load->view('template', $data);
 	}
 
@@ -32,17 +32,9 @@ class Pendaftaran extends CI_Controller {
 		// $layanan =$this->input->post('layanan');
 		$kelas = $param;
 		$kodeunik = $this->pendaftaran_model->buat_kode();
-		$getPreschool = $this->pendaftaran_model->getPreschool();
-		$yoi = 
-		for ($i= 1; $i <= 10; $i++)
-		{
-  		echo "Saya sedang belajar PHP";
-  		echo "<br />";
-			}
-
-
-		foreach($getPreschool as $row){
-		'<option value="'.$row->id_sekolah.'">'.$row->nama_sekolah.'</option>'} ;
+		
+		$data_sekolah = $this->load->view('data_sekolah');
+		
 		$option = "";
 		if($kelas == "k_pagi"){
 			$option.='<div class="col-md-6"><br>
@@ -55,13 +47,12 @@ class Pendaftaran extends CI_Controller {
               		<input type="text" name="nama_pendaftar" class="form-control" id="nama_pendaftar" placeholder="Masukan Nama Pendaftar" required .input-sm>
               	</div>
               	<div class="form-group">
-              		<label for="gender">Asal Sekolah</label>
-              		<select id="id_sekolah" name="id_sekolah" class="form-control" required="">
-        						<option value="">Pilih Sekolah</option>
-        						 '.$yoi.'
-					       </select>                                     
-              		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		<input type ="radio" name = "sex" value= "female" required/> Female -->
+              		<label for="preschool">Asal Sekolah</label>
+              		<select id="preschool" name="preschool"class="form-control" required="">
+                  <option value="">Select Intake</option>
+                  '.$data_sekolah.'
+
+                </select>   
               	</div>
                  <div class="form-group">
                   <label for="major">Jurusan di Sekolah Sebelumnya</label>

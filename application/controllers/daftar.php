@@ -19,9 +19,9 @@ class Daftar extends CI_Controller {
 		$kelas = $param;
 		$option = "";
 		if($kelas == "k_pagi"){
-			$option.='<p>kk</p>';
+			$option.='<p>kelas pagi</p>';
 		} elseif ($kelas == "k_sore") {
-			$option.='<p>kk</p>';
+			$option.='<p>kelas sore</p>';
 		} else {
 		} 
 		echo $option;
