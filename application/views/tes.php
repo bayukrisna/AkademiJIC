@@ -91,5 +91,7 @@ function lI1IllI111IlI1I1llll1lIIl()
 <P class="p3 ft1">Jakarta Pusat 10640</P>
 <a href="<?php echo base_url("index.php/tes/cetak"); ?>">Cetak Data</a><br><br>
 </DIV>
+
+
 </BODY>
 </HTML>

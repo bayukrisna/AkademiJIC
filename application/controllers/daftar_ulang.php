@@ -7,6 +7,7 @@ class daftar_ulang extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('daftar_ulang_model');
+		$this->load->model('pendaftaran_model');
 	}
 
 	public function index()
@@ -18,6 +19,19 @@ class daftar_ulang extends CI_Controller {
 			$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
 			$this->load->view('template', $data);
 	}
+
+	public function save_pendaftaran_sore()
+	{
+			if($this->pendaftaran_model->save_pendaftaran_sore() == TRUE){
+				$nama_du = $this->input->post('nama_du');
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$nama_du.' berhasil didaftarkan. </div>');
+            	redirect('pendaftaran');
+			} else{
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
+            	redirect('pendaftaran');
+			} 
+	} 
+
 	public function signup()
 	{
 			if($this->daftar_ulang_model->signup() == TRUE){

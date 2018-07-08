@@ -1,4 +1,5 @@
 <div class="row"> 
+  <?php echo $this->session->flashdata('message');?>
   <div class="col-md-12">
    <div class="box box-primary">
      <div class="box-body">
@@ -35,4 +36,38 @@
                     }
                 });
             }
+        </script>
+
+        <script type="text/javascript">
+            function get_concentrate(p) {
+                var prodi = p;
+
+                $.ajax({
+                    url: '<?php echo base_url(); ?>daftar_ulang/get_concentrate/'+prodi,
+                    data: 'prodi='+prodi,
+                    type: 'GET',
+                    dataType: 'html',
+                    success: function(msg) {
+                        $("#concentrate").html(msg);
+
+                    }
+                });
+            }
+            // function get_price(p) {
+            //     var produk = p;
+
+            //     $.ajax({
+            //         url: 'order/order_price/'+produk,
+            //         data: 'produk='+produk,
+            //         type: 'GET',
+            //         dataType: 'html',
+            //         success: function(msg) {
+            //             var data = msg.split("|");
+            //             var harga = data[0] * 1000;
+            //             $("#js_hts").html(harga);
+            //             $("#js_min").html(data[1]);
+            //             $("#js_max").html(data[2]);
+            //         }
+            //     });
+            // };
         </script>
