@@ -1,4 +1,4 @@
-<form  method="post" action="<?php echo base_url(); ?>index.php/dafta_ulang/save_edit_du/<?php echo $du->no_du; ?>" enctype="multipart/form-data">
+<form  method="post" action="<?php echo base_url(); ?>index.php/daftar_ulang/save_edit_du/<?php echo $du->no_du; ?>" enctype="multipart/form-data">
 <div class="row"> 
     <div class="col-md-12">
         <div>
@@ -19,8 +19,8 @@
                 </div>
                 <div class="form-group">
                   <label for="gender">Jenis Kelamin</label>
-                  <select id="gender" name="gender" class="form-control" required="">
-            <option value=""><?php echo $du->jk_daftar_du; ?></option>
+                  <select id="gender" name="gender" class="form-control">
+            <option value="<?php echo $du->jk_daftar_du; ?>"><?php echo $du->jk_daftar_du; ?></option>
             <option value="laki-laki">Laki - laki</option>
             <option value="perempuan">Perempuan</option>
 
@@ -37,8 +37,8 @@
                 </div>
                 <div class="form-group">
                   <label for="religion">Agama</label>
-                <select id="agama_du" name="agama_du" class="form-control" required="">
-                  <option value=""><?php echo $du->agama_du; ?></option>
+                <select id="agama_du" name="agama_du" class="form-control">
+                  <option value="<?php echo $du->agama_du; ?>"><?php echo $du->agama_du; ?></option>
                   <option value="kristen">Kristen</option>
                   <option value="islam">Islam</option>
                   <option value="hindu">Hindu</option>
@@ -68,8 +68,8 @@
                 </div>
                 <div class="form-group">
                   <label for="preschool">Asal Sekolah</label>
-                  <select id="id_sekolah" name="id_sekolah"class="form-control" required="">
-                  <option value=""><?php echo $du->nama_sekolah; ?></option>
+                  <select id="id_sekolah" name="id_sekolah"class="form-control">
+                  <option value="<?php echo $du->id_sekolah; ?>"><?php echo $du->nama_sekolah; ?></option>
                    <?php 
 
                   foreach($getPreschool as $row)
@@ -82,8 +82,8 @@
                 </div>
                 <div class="form-group">
                   <label for="major">Jurusan Asal Sekolah</label>
-                <select id="jurusan" name="jurusan" class="form-control" required="">
-                  <option value=""><?php echo $du->jurusan; ?></option>
+                <select id="jurusan" name="jurusan" class="form-control" >
+                  <option value="<?php echo $du->jurusan; ?>"><?php echo $du->jurusan; ?></option>
                   <option value="ipa">IPA</option>
                   <option value="ips">IPS</option>
                   <option value="tkj">TKJ</option>
@@ -100,8 +100,8 @@
                 </div>
                 <div class="form-group">
                   <label for="prodi">Program Studi</label>
-                  <select id="id_prodi" class="form-control" name="id_prodi" required="" onchange="return get_concentrate(this.value)">
-                    <option value=""><?php echo $du->nama_prodi; ?></option>   
+                  <select id="id_prodi" class="form-control" name="id_prodi" onchange="return get_concentrate(this.value)">
+                    <option value="<?php echo $du->id_prodi; ?>"><?php echo $du->nama_prodi; ?></option>   
                      <?php 
 
                   foreach($getProdi as $row)
@@ -113,14 +113,14 @@
                 </div>
                 <div class="form-group">
                   <label for="concentrate">Konsentrasi</label>
-                  <select id="concentrate" name="concentrate" class="form-control" required="">
-                  <option value=""><?php echo $du->nama_konsentrasi; ?></option>
+                  <select id="concentrate" name="concentrate" class="form-control">
+                  <option value="<?php echo $du->id_konsentrasi; ?>"><?php echo $du->nama_konsentrasi; ?></option>
                   </select>                                     
                 </div>
                 <div class="form-group">
                   <label for="intake">Intake</label>
-                  <select id="intake" name="intake" class="form-control" required="">
-                    <option value=""><?php echo $du->intake; ?></option>
+                  <select id="intake" name="intake" class="form-control" >
+                    <option value="<?php echo $du->intake; ?>"><?php echo $du->intake; ?></option>
                     <option value="Januari">Januari</option>
                     <option value="Februari">Februari</option>
                   </select>                                                                          
@@ -131,16 +131,14 @@
                 <br>
                 <div class="box-footer">
                 <button type="submit" class="btn btn-info pull-right">Update</button>
-              		<?php echo form_close();?>
-            
-          
-	</div>
-            </form>
-        </div></div>
-          
-      </div>
-          </div>
-</div>
+                	</div>
+                  
+                            </form>
+                        </div></div>
+                          
+                      </div>
+                          </div>
+                </div>
 </div>
 <script type="text/javascript">
             function get_concentrate(p) {

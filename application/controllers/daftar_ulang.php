@@ -73,4 +73,16 @@ class daftar_ulang extends CI_Controller {
 		echo $option;
 
 	}
+
+	 public function save_edit_du(){
+      $no_du = $this->uri->segment(3);
+          if ($this->daftar_ulang_model->save_edit_du($no_du) == TRUE) {
+            $data['message'] = 'Edit Daftar Ulang berhasil';
+            redirect('daftar_ulang/data_du');
+          } else {
+            $data['main_view'] = 'Prodi/master_konsentrasi_view';
+            $data['message'] = 'Edit Konsentrasi gagal';
+            redirect('master_konsentrasi/edit_konsentrasi');
+          }
+        }
 }
