@@ -22,7 +22,7 @@
 
   <!-- Font Awesome -->
   <!-- DataTables -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/datatables/dataTables.bootstrap.css">
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -87,7 +87,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url(); ?>master_prodi"><i class="fa fa-circle-o"></i> Prodi</a></li>
             <li><a href="<?php echo base_url(); ?>master_konsentrasi"><i class="fa fa-circle-o"></i> Konsentrasi</a></li>
-            <li><a href="<?php echo base_url(); ?>master_daftar_ulang"><i class="fa fa-circle-o"></i> Daftar Ulang</a></li>
+            <li><a href="<?php echo base_url(); ?>daftar_ulang"><i class="fa fa-circle-o"></i> Daftar Ulang</a></li>
           </ul>
         </li>
         
@@ -107,12 +107,9 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.3.8
+ 
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+   
   </footer>
 
   <!-- Control Sidebar -->

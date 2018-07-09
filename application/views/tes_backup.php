@@ -3,7 +3,7 @@
 
 body {margin-top: 0px;margin-left: 0px;}
 
-#page_1 {position:relative; overflow: hidden;margin: 30px 0px 178px 50px;padding: 0px;border: none;width: 720px;}
+#page_1 {position:relative; overflow: hidden;margin: 30px 0px px 50px;padding: 0px;border: none;width: 720px;}
 
 #page_1 #p1dimg1 {position:absolute;top:0px;left:0px;z-index:-1;width:513px;height:87px;}
 #page_1 #p1dimg1 #p1img1 {width:513px;height:87px;}
@@ -1936,7 +1936,7 @@ function lI1IllI111IlI1I1llll1lIIl()
 <P class="p2 ft1">Jl. Perunggu No. <NOBR>53-54</NOBR></P>
 <P class="p3 ft1">Cempaka Putih</P>
 <P class="p3 ft1">Jakarta Pusat 10640</P>
-<P class="p4 ft1">Nama :</P>
+<P class="p4 ft1">Nama : <?php echo $edit->nama_pendaftar; ?></P> 
 <P class="p2 ft1">Asal Sekolah :</P>
 <P class="p5 ft1">Jurusan :</P>
 <P class="p2 ft1">Alamat :</P>

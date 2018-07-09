@@ -10,6 +10,13 @@ class Pendaftaran extends CI_Controller {
     $this->load->model('daftar_ulang_model');
 	}
 
+  public function data_pra_pendaftar()
+  {
+    $data['pra_pendaftar'] = $this->pendaftaran_model->data_pra_pendaftar();
+    $data['main_view'] = 'Daftar/data_prapendaftar_view';  
+    $this->load->view('template', $data);
+  }
+
 	public function index()
 	{
 		$data['kodeunik'] = $this->pendaftaran_model->buat_kode();
@@ -222,6 +229,14 @@ class Pendaftaran extends CI_Controller {
 		} 
 		echo $option;
 	}
+
+  public function print_pendaftaran(){
+        
+        $id_pendaftaran = $this->uri->segment(3);
+        $data['edit'] = $this->pendaftaran_model->get_pra_pendaftar($id_pendaftaran);
+        $data['main_view'] = 'tes_backup';
+        $this->load->view('template', $data);
+  }
 
 }
 

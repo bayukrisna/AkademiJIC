@@ -4,18 +4,22 @@
           <div class="box">
             <div class="box-header">
               <?php echo $this->session->flashdata('message');?>
-              <h3 class="box-title">Data Konsentrasi</h3>
+              <h3 class="box-title">Data Pra Pendaftar</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
-              <a href="<?php echo base_url() ?>master_konsentrasi/page_tambah_konsentrasi" class="btn btn-info btn-sm" > Tambah Konsentrasi</a> <br> <br>
+             
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>Id Konsentrasi</th>
-                  <th>Nama Konsentrasi</th>
-                  <th>Nama Prodi</th>
+                  <th>No. Pendafataran</th>
+                  <th>Nama Pendaftaran</th>
+                  <th>Asal Sekolah</th>
+                  <th>Jurusan</th>
+                  <th>Alamat</th>
+                  <th>Email</th>
+                  <th>No. Telp</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -23,18 +27,21 @@
 
                 <?php 
                 $no = 0;
-                foreach ($konsentrasi as $data) {
+                foreach ($pra_pendaftar as $data) {
                   echo '
                   
                 <tr>
                   <td>'.++$no.'</td>
-                  <td>'.$data->id_konsentrasi.'
+                  <td>'.$data->id_pendaftaran.'
                   </td>
-                  <td>'.$data->nama_konsentrasi.'</td>
-                  <td>'.$data->nama_prodi.'</td>
+                  <td>'.$data->nama_pendaftar.'</td>
+                  <td>'.$data->nama_sekolah.'</td>
+                  <td>'.$data->jurusan.'</td>
+                  <td>'.$data->alamat.'</td>
+                  <td>'.$data->email.'</td>
+                  <td>'.$data->no_telp.'</td>
                   <td>
-                      <a href="'.base_url('index.php/master_konsentrasi/edit_konsentrasi/'.$data->id_konsentrasi).'" class="btn btn-warning btn-sm" >Edit </a>
-                      <a href="'.base_url('index.php/master_konsentrasi/hapus_konsentrasi/'.$data->id_konsentrasi).'" class="btn btn-danger btn-sm">Hapus</a>
+                     <a href="'.base_url('index.php/pendaftaran/print_pendaftaran/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print </a>
                   </td>
                 </tr>
                 ';

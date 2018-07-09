@@ -49,7 +49,7 @@ class Pendaftaran_model extends CI_Model {
             'agama_du'      => $this->input->post('agama_du', TRUE),
             'nik_du'      => $this->input->post('nik_du', TRUE),
             'ibu_kandung_du'      => $this->input->post('ibu_kandung_du', TRUE),
-            'id_sekolah'      => $this->input->post('id_sekolah', TRUE),
+            'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
             'id_prodi'      => $this->input->post('id_prodi', TRUE),
             'id_konsentrasi'      => $this->input->post('concentrate', TRUE),
             'intake'      => $this->input->post('intake', TRUE),
@@ -96,6 +96,21 @@ class Pendaftaran_model extends CI_Model {
                     ->result();
 
     }
+
+    public function data_pra_pendaftar(){
+    $this->db->select('*');
+     $this->db->from('tb_pendaftaran');
+     $this->db->join('tb_sekolah','tb_sekolah.id_sekolah=tb_pendaftaran.id_sekolah2');
+     $query = $this->db->get();
+     return $query->result();
+  }
+
+  public function get_pra_pendaftar($id_pendaftaran){
+      return $this->db->join('tb_sekolah','tb_sekolah.id_sekolah=tb_pendaftaran.id_sekolah2')
+              ->where('id_pendaftaran', $id_pendaftaran)
+              ->get('tb_pendaftaran')
+              ->row();
+  }
 
     
 
