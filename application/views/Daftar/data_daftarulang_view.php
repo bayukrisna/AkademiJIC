@@ -41,7 +41,7 @@
                   <td>'.$data->nama_konsentrasi.'</td>
                   <td>'.$data->waktu.'</td>
                   <td>
-                    
+                    <a href="'.base_url('index.php/daftar_ulang/detail_du/'.$data->no_du).'" class="btn btn-warning btn-sm" >Detail</a>
                   </td>
                 </tr>
                 ';

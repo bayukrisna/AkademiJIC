@@ -15,7 +15,6 @@ class daftar_ulang extends CI_Controller {
 			$data['kodeunik'] = $this->daftar_ulang_model->buat_kode();
 			$data['main_view'] = 'registration';
 			$data['getProdi'] = $this->daftar_ulang_model->getProdi();
-			$data['getIntake'] = $this->daftar_ulang_model->getIntake();
 			$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
 			$this->load->view('template', $data);
 	}
@@ -24,6 +23,16 @@ class daftar_ulang extends CI_Controller {
 	{
 			$data['du'] = $this->daftar_ulang_model->data_du();
 			$data['main_view'] = 'Daftar/data_daftarulang_view';
+			$this->load->view('template', $data);
+	}
+
+	public function detail_du()
+	{
+			$id_du = $this->uri->segment(3);
+			$data['du'] = $this->daftar_ulang_model->detail_du($id_du);
+			$data['getProdi'] = $this->daftar_ulang_model->getProdi();
+			$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
+			$data['main_view'] = 'Daftar/edit_daftarulang_view';
 			$this->load->view('template', $data);
 	}
 

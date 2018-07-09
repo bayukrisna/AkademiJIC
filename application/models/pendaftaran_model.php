@@ -48,6 +48,7 @@ class Pendaftaran_model extends CI_Model {
             'email_du'     => $this->input->post('email_du', TRUE),
             'agama_du'      => $this->input->post('agama_du', TRUE),
             'nik_du'      => $this->input->post('nik_du', TRUE),
+            'jurusan'      => $this->input->post('jurusan', TRUE),
             'ibu_kandung_du'      => $this->input->post('ibu_kandung_du', TRUE),
             'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
             'id_prodi2'      => $this->input->post('id_prodi', TRUE),
