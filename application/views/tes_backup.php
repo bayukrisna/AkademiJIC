@@ -1937,15 +1937,17 @@ function lI1IllI111IlI1I1llll1lIIl()
 <P class="p3 ft1">Cempaka Putih</P>
 <P class="p3 ft1">Jakarta Pusat 10640</P>
 <P class="p4 ft1">Nama : <?php echo $edit->nama_pendaftar; ?></P> 
-<P class="p2 ft1">Asal Sekolah :</P>
-<P class="p5 ft1">Jurusan :</P>
-<P class="p2 ft1">Alamat :</P>
-<P class="p2 ft1">Email :</P>
-<P class="p5 ft1">No. Telp/ Hp :</P>
+<P class="p2 ft1">Asal Sekolah : <?php echo $edit->nama_sekolah; ?></P>
+<P class="p5 ft1">Jurusan : <?php echo $edit->jurusan; ?></P>
+<P class="p2 ft1">Alamat : <?php echo $edit->alamat; ?></P>
+<P class="p2 ft1">Email : <?php echo $edit->email; ?></P>
+<P class="p5 ft1">No. Telp/ Hp : <?php echo $edit->no_telp; ?></P>
 <P class="p6 ft2">Isi dengan diberi tanda silang (X) pada jawaban yang benar.</P>
 <!-- To remove the JavaScript and access tabular data please reach out to BCL at pdf2html@bcltechnologies.com -->
 <TABLE id="l111l1llI1IIl1l1ll1lI1I11" cellpadding=0 cellspacing=0 class="t0"></TABLE>
-<button onclick="printDiv('page-wrapper')" id="btnPrint" type="button" class="btn btn-success" ><span>Print</span></button>
+<br>
+<button onclick="printDiv('page-wrapper')" id="btnPrint" type="button" class="btn btn-success" ><span>Print</span>
+</button>
 
 </DIV>
  

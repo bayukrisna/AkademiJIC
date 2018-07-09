@@ -74,6 +74,7 @@ class Daftar_ulang_model extends CI_Model {
     $data = $this->db->get(); //mengambil seluruh data
     return $data->result(); //mengembalikan data
     }
+
     function getIntake()
     {
         return $this->db->get('tb_intake')
@@ -86,6 +87,14 @@ class Daftar_ulang_model extends CI_Model {
                     ->result();
 
     }
+
+    public function data_du(){
+      return $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_du.id_prodi2')
+              ->join('tb_sekolah','tb_sekolah.id_sekolah=tb_du.id_sekolah2')
+              ->join('tb_konsentrasi','tb_konsentrasi.id_konsentrasi=tb_du.id_konsentrasi2')
+              ->get('tb_du')
+              ->result();
+  }
 }
    // return $this->db->where('status', 'Tersedia')->where($data)->get('service')->result();
 /* End of file dosen_model.php */
