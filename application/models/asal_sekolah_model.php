@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Konsentrasi_model extends CI_Model {
+class Asal_sekolah_model extends CI_Model {
 
 	public function __construct()
 	{
@@ -9,24 +9,23 @@ class Konsentrasi_model extends CI_Model {
 		
 	}
 
-	public function data_konsentrasi(){
-		$this->db->select('*');
-		 $this->db->from('tb_konsentrasi');
-		 $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_konsentrasi.id_prodi2');
-		 $query = $this->db->get();
-		 return $query->result();
+
+	public function get_asal_sekolah(){
+		return $this->db->get('tb_sekolah')->result();
 	}
 
-   public function get_konsentrasi_by_id($id_konsentrasi){
-      return $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_konsentrasi.id_prodi2')
-              ->where('id_konsentrasi', $id_konsentrasi)
-              ->get('tb_konsentrasi')
+  public function data_asal_sekolah(){
+    $this->db->select('*');
+     $this->db->from('tb_as');
+     $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_konsentrasi.id_prodi2');
+     $query = $this->db->get();
+     return $query->result();
+  }
+  public function get_asal_sekolah_by_id($id_sekolah){
+      return $this->db->where('id_sekolah', $id_sekolah)
+              ->get('tb_sekolah')
               ->row();
   }
-
-	public function get_prodi(){
-		return $this->db->get('tb_prodi')->result();
-	}
 
 	public function  buat_kode()   {
           $this->db->SELECT('RIGHT(tb_konsentrasi.id_konsentrasi,3) as kode', FALSE);
@@ -68,9 +67,9 @@ class Konsentrasi_model extends CI_Model {
 
     }
 
-    public function hapus_konsentrasi($id_sekolah){
-        $this->db->where('id_sekolah', $id_sekolah)
-          ->delete('tb_sekolah');
+    public function hapus_konsentrasi($id_konsentrasi){
+        $this->db->where('id_konsentrasi', $id_konsentrasi)
+          ->delete('tb_konsentrasi');
 
     if ($this->db->affected_rows() > 0) {
       return TRUE;
@@ -82,14 +81,14 @@ class Konsentrasi_model extends CI_Model {
    
 
 
-  public function save_edit_konsentrasi($id_sekolah){
+  public function save_edit_konsentrasi($id_konsentrasi){
     $data = array(
        'id_konsentrasi'     => $this->input->post('id_konsentrasi'),
         'nama_konsentrasi'  => $this->input->post('nama_konsentrasi'),
         'id_prodi2'         => $this->input->post('id_prodi')
       );
 
-    $this->db->where('id_konsentrasi', $id_sekolah)
+    $this->db->where('id_konsentrasi', $id_konsentrasi)
         ->update('tb_konsentrasi', $data);
 
     if ($this->db->affected_rows() > 0) {
