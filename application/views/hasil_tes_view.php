@@ -83,14 +83,7 @@
                     <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?= $kodeunik; ?>" readonly>
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-md-3">
-                  <label for="inputEmail3" class="control-label pull-left">Nama Test</label>
-                </div>
-                  <div class="col-md-7">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="">
-                  </div>
-                </div>
+               
                 <div class="form-group">
                   <div class="col-md-3">
                   <label for="inputEmail3" class="control-label pull-left">Nilai</label>
@@ -103,9 +96,9 @@
                   </div>
                   <div class="col-md-2">
                     <input type="email" id="bing" name="bing" class="form-control input-sm" id="inputEmail3" placeholder="B.ing" onchange="sum()" >
-                  </div>
+                  </div> 
                   <div class="col-md-2">
-                  <button class=" btn pull-left input-sm ">Submit</button></div>
+                  <button class=" btn pull-left input-sm ">Input Nilai</button></div>
                 </div>
 
               </div>
