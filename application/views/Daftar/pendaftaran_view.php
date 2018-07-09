@@ -13,7 +13,6 @@
 
         <div class="form-group">
           <section id="form_kelas" name="form_kelas" required="">
-            
           </section>
         </div>
 

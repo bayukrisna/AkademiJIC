@@ -87,10 +87,21 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url(); ?>master_prodi"><i class="fa fa-circle-o"></i> Prodi</a></li>
             <li><a href="<?php echo base_url(); ?>master_konsentrasi"><i class="fa fa-circle-o"></i> Konsentrasi</a></li>
-            <li><a href="<?php echo base_url(); ?>daftar_ulang"><i class="fa fa-circle-o"></i> Daftar Ulang</a></li>
           </ul>
         </li>
-        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Pendaftaran</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url(); ?>daftar_ulang"><i class="fa fa-circle-o"></i> Pra Pendaftaran</a></li>
+            <li><a href="<?php echo base_url(); ?>registration"><i class="fa fa-circle-o"></i> Daftar Ulang</a></li>
+            <li><a href="<?php echo base_url(); ?>hasil_tes"><i class="fa fa-circle-o"></i> Hasil Tes</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

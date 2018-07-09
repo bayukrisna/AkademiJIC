@@ -144,23 +144,8 @@
               		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               		<input type ="radio" name = "sex" value= "female" required/> Female -->
               	</div>
-              	<div class="form-group">
-              		<label for="time">Waktu</label>
-              		<select id="time" name="time" class="form-control" required="">
-						<option value="">Select Time</option>
-						<option value="morning">Morning</option>
-						<option value="evening">Evening</option>
-
-					</select>                                     
-              		<!-- <input type ="radio" name = "sex" value="male" required/> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		<input type ="radio" name = "sex" value= "female" required/> Female -->
-              	</div>
               </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
                 <button type="submit" class="btn btn-info pull-right">Submit</button>
-              </div>
-              <!-- /.box-footer -->
               		<?php echo form_close();?>
             
           
