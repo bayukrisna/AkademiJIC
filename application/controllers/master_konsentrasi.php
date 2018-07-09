@@ -69,13 +69,6 @@ class Master_konsentrasi extends CI_Controller {
 
 	public function save_edit_konsentrasi(){
 			$id_konsentrasi = $this->uri->segment(3);
-
-			if ($this->input->post('submit')) {
-				$this->form_validation->set_rules('id_konsentrasi', 'Id Konsnetrasi', 'trim|required');		
-				$this->form_validation->set_rules('nama_konsentrasi', 'Nama Konsentrasi', 'trim|required');	
-				$this->form_validation->set_rules('id_prodi', 'Nama Prodi', 'trim|required');	
-
-				if ($this->form_validation->run() == TRUE) {
 					if ($this->konsentrasi_model->save_edit_konsentrasi($id_konsentrasi) == TRUE) {
 						$data['message'] = 'Edit Konsentrasi berhasil';
 						redirect('master_konsentrasi');
@@ -84,13 +77,8 @@ class Master_konsentrasi extends CI_Controller {
 						$data['message'] = 'Edit Konsentrasi gagal';
 						redirect('master_konsentrasi/edit_konsentrasi');
 					}
-				} else {
-					$data['main_view'] = 'Prodi/edit_konsentrasi_view';
-					$data['message'] = validation_errors();
-					$this->load->view('template', $data);
-				}
 			}
-		}
+		
 
 
 }

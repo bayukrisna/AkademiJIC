@@ -79,6 +79,8 @@ class Konsentrasi_model extends CI_Model {
       }
     }
 
+   
+
 
   public function save_edit_konsentrasi($id_konsentrasi){
     $data = array(

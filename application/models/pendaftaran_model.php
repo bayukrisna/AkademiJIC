@@ -13,7 +13,7 @@ class Pendaftaran_model extends CI_Model {
         $data = array(
             'id_pendaftaran'      => $this->buat_kode(),
             'nama_pendaftar'      => $this->input->post('nama_pendaftar', TRUE),
-            'id_sekolah'      => $this->input->post('id_sekolah', TRUE),
+            'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
             'jurusan'      => $this->input->post('jurusan', TRUE),
             'alamat'     => $this->input->post('alamat', TRUE),
             'email'     => $this->input->post('email', TRUE),
@@ -48,13 +48,14 @@ class Pendaftaran_model extends CI_Model {
             'email_du'     => $this->input->post('email_du', TRUE),
             'agama_du'      => $this->input->post('agama_du', TRUE),
             'nik_du'      => $this->input->post('nik_du', TRUE),
+            'jurusan'      => $this->input->post('jurusan', TRUE),
             'ibu_kandung_du'      => $this->input->post('ibu_kandung_du', TRUE),
             'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
-            'id_prodi'      => $this->input->post('id_prodi', TRUE),
-            'id_konsentrasi'      => $this->input->post('concentrate', TRUE),
+            'id_prodi2'      => $this->input->post('id_prodi', TRUE),
+            'id_konsentrasi2'      => $this->input->post('concentrate', TRUE),
             'intake'      => $this->input->post('intake', TRUE),
-            'waktu'      => 'sore',
-            'status'      => 'aktif',
+            'waktu'      => 'Sore',
+            'status'      => 'Aktif',
             'tanggal_du'      => date('Y-m-d')
 
         );

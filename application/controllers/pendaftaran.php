@@ -61,7 +61,7 @@ class Pendaftaran extends CI_Controller {
    
 		if($kelas == "k_pagi"){
 			$option=' '.$form_open_pagi.'
-                <div class="col-md-6">
+                <div class="col-md-6"><br>
                 <div class="form-group">
                   <label for="no">No. Pendaftaran</label>
                   <input type="text" name="id_pendaftaran" class="form-control" id="id_pendaftaran" placeholder="" required .input-sm value=" '.$kodeunik.'" readonly>
@@ -88,9 +88,6 @@ class Pendaftaran extends CI_Controller {
 
                 </select>                                     
                 </div>
-              </div>
-
-              <div class="col-md-6">
               	<div class="form-group">
               		<label for="place">Alamat</label>
               		<input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat" required>
@@ -220,6 +217,11 @@ class Pendaftaran extends CI_Controller {
                     <option value="Februari">Februari</option>
                   </select>                                                                          
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="box-footer">
                 <button type="submit" class="btn btn-info pull-right">Daftar Ulang</button>
                 '.$form_close.'
                 ';

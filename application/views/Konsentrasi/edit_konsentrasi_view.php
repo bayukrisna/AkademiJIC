@@ -22,7 +22,7 @@
                           <div class="form-group">
                             <label>Nama Prodi</label>
                                <select name="id_prodi" class="form-control select2" style="width: 100%;">
-                              <option value="" placeholder=""> <?php echo $edit->nama_prodi; ?> </option>
+                              <option value="<?php echo $edit->id_prodi; ?>" placeholder=""> <?php echo $edit->nama_prodi; ?> </option>
                                   <?php 
 
                                         foreach($drop_down_prodi as $row)
@@ -38,7 +38,7 @@
                   <label for="exampleInputFile" class="">    </label>
                     <input type="submit" name="submit" class="btn btn-iinfo" background_color="orange" id="largeinput" placeholder="Large Input" value="Update">
                   </div>
-                  <?php echo form_close();?>
+               
               </div></div>
             </div>
           </div>

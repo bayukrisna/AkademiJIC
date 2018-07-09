@@ -15,8 +15,24 @@ class daftar_ulang extends CI_Controller {
 			$data['kodeunik'] = $this->daftar_ulang_model->buat_kode();
 			$data['main_view'] = 'registration';
 			$data['getProdi'] = $this->daftar_ulang_model->getProdi();
-			$data['getIntake'] = $this->daftar_ulang_model->getIntake();
 			$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
+			$this->load->view('template', $data);
+	}
+
+	public function data_du()
+	{
+			$data['du'] = $this->daftar_ulang_model->data_du();
+			$data['main_view'] = 'Daftar/data_daftarulang_view';
+			$this->load->view('template', $data);
+	}
+
+	public function detail_du()
+	{
+			$id_du = $this->uri->segment(3);
+			$data['du'] = $this->daftar_ulang_model->detail_du($id_du);
+			$data['getProdi'] = $this->daftar_ulang_model->getProdi();
+			$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
+			$data['main_view'] = 'Daftar/edit_daftarulang_view';
 			$this->load->view('template', $data);
 	}
 
@@ -25,7 +41,7 @@ class daftar_ulang extends CI_Controller {
 			if($this->pendaftaran_model->save_pendaftaran_sore() == TRUE){
 				$nama_du = $this->input->post('nama_du');
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$nama_du.' berhasil didaftarkan. </div>');
-            	redirect('pendaftaran');
+            	redirect('daftar_ulang/data_du');
 			} else{
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
             	redirect('pendaftaran');
@@ -46,4 +62,16 @@ class daftar_ulang extends CI_Controller {
 		echo $option;
 
 	}
+
+	 public function save_edit_du(){
+      $no_du = $this->uri->segment(3);
+          if ($this->daftar_ulang_model->save_edit_du($no_du) == TRUE) {
+            $data['message'] = 'Edit Daftar Ulang berhasil';
+            redirect('daftar_ulang/data_du');
+          } else {
+            $data['main_view'] = 'Prodi/master_konsentrasi_view';
+            $data['message'] = 'Edit Konsentrasi gagal';
+            redirect('master_konsentrasi/edit_konsentrasi');
+          }
+        }
 }
