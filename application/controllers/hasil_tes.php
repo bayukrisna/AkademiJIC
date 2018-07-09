@@ -6,11 +6,13 @@ class Hasil_tes extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('prodi_model');
 	}
 
 	public function index()
 	{
 			$data['main_view'] = 'hasil_tes';
+			$data['prodi'] = $this->prodi_model->data_prodi();
 			$this->load->view('template', $data);
 	}
 }
