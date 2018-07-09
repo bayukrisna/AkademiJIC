@@ -6,11 +6,7 @@ class Hasil_tes extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-<<<<<<< HEAD
-		
-=======
 		$this->load->model('pendaftaran_model');
->>>>>>> 8b3b12f338432d8d84e844f0392ed3f2cecdfe89
 	}
 
 	public function index()
