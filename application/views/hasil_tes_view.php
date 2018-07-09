@@ -1,23 +1,21 @@
 <div class="row"> 
-	<?php echo $this->session->flashdata('message');?>
-	<?php echo form_open('registration/signup'); ?>
-	<div class="col-md-12">
+  <?php echo $this->session->flashdata('message');?>
+  <?php echo form_open('registration/signup'); ?>
+  <div class="col-md-12">
 
-	<div class="box box-primary">
+  <div class="box box-primary">
     <div class="form-horizontal">
-	<div class="box-body">
+  <div class="box-body">
     <div class="col-md-6"><br>
             <!-- /.box-header -->
             <!-- form start -->
                 <div class="form-group">
                   <div class="col-md-2">
-                  <label for="inputEmail3" class="control-label pull-left">Kode Tes</label>
+                  <label for="inputEmail3" class="control-label pull-left">No Daftar</label>
                 </div>
                   <div class="col-md-4">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                    <input type="input" class="form-control input-sm" id="inputEmail3" placeholder="Email" value="<?php echo $hasil_tes->id_pendaftaran; ?>" readonly>
                   </div>
-                    <button type="button" class="col-md-2 btn pull-left input-sm " data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-search"></i>Browse</button>
-                  
                 </div>
                 <div class="form-group">
                   <div class="col-md-2">
@@ -36,7 +34,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Nama</label>
                 </div>
                   <div class="col-md-9">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="">
+                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->nama_pendaftar; ?>">
                   </div>
                 </div>
                 <div class="form-group">
@@ -44,7 +42,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Alamat</label>
                 </div>
                   <div class="col-md-9">
-                    <textarea type="text" class="form-control input-sm" id="inputEmail3" placeholder="">
+                    <textarea type="text" class="form-control input-sm" id="inputEmail3" placeholder=""><?php echo $hasil_tes->alamat; ?>
                       </textarea>
                   </div>
                 </div>
@@ -53,7 +51,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Kode Pos</label>
                 </div>
                   <div class="col-md-3">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="">
+                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" >
                   </div>
                 </div>
                 <div class="form-group">
@@ -61,29 +59,29 @@
                   <label for="inputEmail3" class="control-label pull-left">Email</label>
                 </div>
                   <div class="col-md-9">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="">
+                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->email; ?>">
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-md-2">
-                  <label for="inputEmail3" class="control-label pull-left">No HP</label>
+                  <label for="inputEmail3" class="control-label pull-left">No. Telp</label>
                 </div>
                   <div class="col-md-6">
-                    <input type="number" class="form-control input-sm" id="inputEmail3" placeholder="">
+                    <input type="number" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->no_telp; ?>">
                   </div>
                 </div>
                 <div class="box-header with-border">
-                <h3 class="box-title">Hasil Test</h3>
+                  <br>
+                <h3 class="box-title">Input Nilai Tes</h3>
                 </div>
                 <br>
                 <div class="form-group">
                   <div class="col-md-3">
-                  <label for="inputEmail3" class="control-label pull-left">Kode Jenis Test</label>
+                  <label for="inputEmail3" class="control-label pull-left">Kode Tes</label>
                   </div>
                   <div class="col-md-4">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="">
+                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?= $kodeunik; ?>" readonly>
                   </div>
-                  <button class="col-md-2 btn pull-left input-sm "><i class="fa fa-fw fa-search"></i>Browse</button>
                 </div>
                 <div class="form-group">
                   <div class="col-md-3">
@@ -145,7 +143,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Kode Sekolah</label>
                   </div>
                   <div class="col-md-2">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="">
+                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->id_sekolah; ?>">
                   </div>
                 </div>
                 <div class="form-group">
@@ -153,7 +151,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Nama Sekolah</label>
                   </div>
                   <div class="col-md-9">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="">
+                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->nama_sekolah; ?>">
                   </div>
                 </div>
                 <div class="form-group">
@@ -161,7 +159,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Alamat Sekolah</label>
                   </div>
                   <div class="col-md-9">
-                    <textarea type="email" class="form-control input-sm" id="inputEmail3" placeholder=""></textarea>
+                    <textarea type="email" class="form-control input-sm" id="inputEmail3" placeholder=""><?php echo $hasil_tes->alamat_sekolah; ?></textarea>
                   </div>
                 </div>
                 <div class="form-group">
@@ -172,14 +170,12 @@
                     <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" >
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-md-3">
-                  <label for="inputEmail3" class="control-label pull-left">Jenis Sekolah</label>
-                  </div>
-                  <div class="col-md-9">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="">
-                  </div>
+                <br><br>
+                 <div class="box-header with-border">
+                  <br>
+                <h3 class="box-title">Keterangan Grade</h3>
                 </div>
+                
                 <div class="bg-gray disabled color-palette col-md-12"><br>
                 <div class="form-group">
                   <div class="col-md-5">
@@ -213,71 +209,7 @@
 </div>
 </div>
 
-        <div class="modal fade" id="modal-default">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              </div>
-              <div class="modal-body">
-                <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-              <a href="<?php echo base_url() ?>master_prodi/page_tambah_prodi" class="btn btn-info btn-sm" > Tambah Prodi</a> <br> <br>
-                <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Id Prodi</th>
-                  <th>Nama Prodi</th>
-                  <th>Ketua Prodi</th>
-                  <th>Aksi</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <?php 
-                $no = 0;
-                foreach ($prodi as $data) {
-                  echo '
-                  
-                <tr>
-                  <td>'.++$no.'</td>
-                  <td>'.$data->id_prodi.'
-                  </td>
-                  <td>'.$data->nama_prodi.'</td>
-                  <td>'.$data->ketua_prodi.'</td>
-                  <td>
-                      <a href="'.base_url('index.php/master_prodi/edit_prodi/'.$data->id_prodi).'" class="btn btn-warning btn-sm" >Edit </a>
-                      <a href="'.base_url('index.php/master_prodi/hapus_prodi/'.$data->id_prodi).'" class="btn btn-danger btn-sm">Hapus</a>
-                  </td>
-                </tr>
-                ';
-                
-              }
-              ?>
-                </tbody>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
+        
           <script type="text/javascript">
             
             function sum() {

@@ -16,10 +16,9 @@
                   <th>No. Pendafataran</th>
                   <th>Nama Pendaftaran</th>
                   <th>Asal Sekolah</th>
-                  <th>Jurusan</th>
-                  <th>Alamat</th>
+                  
                   <th>Email</th>
-                  <th>No. Telp</th>
+                  
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -36,12 +35,11 @@
                   </td>
                   <td>'.$data->nama_pendaftar.'</td>
                   <td>'.$data->nama_sekolah.'</td>
-                  <td>'.$data->jurusan.'</td>
-                  <td>'.$data->alamat.'</td>
                   <td>'.$data->email.'</td>
-                  <td>'.$data->no_telp.'</td>
+                  
                   <td>
                      <a href="'.base_url('index.php/pendaftaran/print_pendaftaran/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print </a>
+                      <a href="'.base_url('index.php/hasil_tes/index/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm" >Input Nilai</a>
                   </td>
                 </tr>
                 ';
