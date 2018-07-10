@@ -27,6 +27,8 @@
                 <?php 
                 $no = 0;
                 foreach ($pra_pendaftar as $data) {
+                  if ($data->status_tes != 'done') {
+                  
                   echo '
                   
                 <tr>
@@ -39,12 +41,31 @@
                   
                   <td>
                      <a href="'.base_url('index.php/pendaftaran/print_pendaftaran/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print </a>
+                    
                       <a href="'.base_url('index.php/hasil_tes/index/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm" >Input Nilai</a>
                   </td>
                 </tr>
                 ';
                 
-              }
+              } else {
+                  echo '
+                  
+                <tr>
+                  <td>'.++$no.'</td>
+                  <td>'.$data->id_pendaftaran.'
+                  </td>
+                  <td>'.$data->nama_pendaftar.'</td>
+                  <td>'.$data->nama_sekolah.'</td>
+                  <td>'.$data->email.'</td>
+                  
+                  <td>
+                     <a href="'.base_url('index.php/pendaftaran/print_pendaftaran/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print </a>
+                     
+                  </td>
+                </tr>
+                ';
+
+              } }
               ?>
                 </tbody>
               </table>

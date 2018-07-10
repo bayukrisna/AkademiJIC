@@ -21,10 +21,12 @@ class Hasil_tes extends CI_Controller {
 
 	public function save_hasil_tes()
 	{
+		$id_pendaftaran = $this->uri->segment(3);
+			
 			if($this->pendaftaran_model->save_hasil_tes() == TRUE){
 				$hasil_tes = $this->input->post('nama_pendaftar');
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> esHasil t '.$hasil_tes.' berhasil didaftarkan. </div>');
-            	redirect('pendaftaran');
+            	redirect('pendaftaran/data_pra_pendaftar');
 			} else{
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
             	redirect('pendaftaran');

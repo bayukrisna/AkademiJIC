@@ -1,6 +1,6 @@
 <div class="row"> 
   <?php echo $this->session->flashdata('message');?>
-  <?php echo form_open('registration/signup'); ?>
+  <?php echo form_open('hasil_tes/save_hasil_tes'); ?>
   <div class="col-md-12">
 
   <div class="box box-primary">
@@ -80,7 +80,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Kode Tes</label>
                   </div>
                   <div class="col-md-4">
-                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?= $kodeunik; ?>" readonly>
+                    <input type="text" class="form-control input-sm" id="id_hasil_tes"name="id_hasil_tes" placeholder="" value="<?= $kodeunik; ?>" readonly>
                   </div>
                 </div>
                
@@ -92,14 +92,15 @@
                     <input type="text" id="mtk" name="mtk" class="form-control input-sm" id="inputEmail3" placeholder="MTK" onchange="sum();" >
                   </div>
                   <div class="col-md-2">
-                    <input type="text" id="ipa" name="ipa" class="form-control input-sm" id="inputEmail3" placeholder="IPA" onchange="sum()" >
+                    <input type="text" id="psikotes" name="psikotes" class="form-control input-sm" id="inputEmail3" placeholder="PSIKOTES" onchange="sum()" >
                   </div>
                   <div class="col-md-2">
                     <input type="text" id="bing" name="bing" class="form-control input-sm" id="inputEmail3" placeholder="B.ing" onchange="sum()" >
                   </div> 
                   <div class="col-md-2">
-                  <button class=" btn pull-left input-sm ">Input Nilai</button></div>
+                  <button  class=" btn pull-left input-sm ">Input Nilai</button></div>
                 </div>
+                  
 
               </div>
               <div class="col-md-6">
@@ -175,7 +176,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Total Jawaban Benar</label>
                   </div>
                   <div class="col-md-5">
-                    <input type="text" name="total_nilai" id="total_nilai" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
+                    <input type="text" name="total_jawaban" id="total_jawaban" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
                   </div>
                 </div>
                 <div class="form-group">
@@ -191,7 +192,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Grade</label>
                   </div>
                   <div class="col-md-2">
-                    <input id="grade" name="grade" type="text" class="form-control input-sm" placeholder="" disabled="">
+                    <input id="grade" name="grade" type="text" class="form-control input-sm" placeholder="" readonly="">
                   </div>
                 </div>
               </div>
@@ -200,6 +201,7 @@
       </div>
           </div>
 </div>
+
 </div>
 <?php echo form_close(); ?>
         
@@ -207,9 +209,9 @@
             
             function sum() {
             var mtk = document.getElementById('mtk').value;
-            var ipa = document.getElementById('ipa').value;
             var bing = document.getElementById('bing').value;
-            var result = parseInt(mtk) + parseInt(ipa) + parseInt(bing);
+            var psikotes = document.getElementById('psikotes').value;
+            var result = parseInt(mtk) + parseInt(psikotes) + parseInt(bing);
             var nilai = result / 9 * 10;
             var pembulatan = nilai.toFixed(1);
             var grade = ""
@@ -223,7 +225,7 @@
               grade ="A"
             }
             if (!isNaN(result)) {
-            document.getElementById('total_nilai').value = result;
+            document.getElementById('total_jawaban').value = result;
             document.getElementById('nilai').value = pembulatan;
             document.getElementById("grade").value = grade;
             }

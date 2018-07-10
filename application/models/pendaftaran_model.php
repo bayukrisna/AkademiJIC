@@ -137,11 +137,13 @@ class Pendaftaran_model extends CI_Model {
         $data = array(
             'id_pendaftaran2'      => $this->input->post('id_pendaftaran2', TRUE),
             'id_hasil_tes'      => $this->input->post('id_hasil_tes', TRUE),
-            'nilai_mat'      => $this->input->post('nilai_mat', TRUE),
-            'nilai_bing'      => $this->input->post('nilai_bing', TRUE),
-            'nilai_psikotes'     => $this->input->post('nilai_psikotes', TRUE),
-            'total_nilai'     => $this->input->post('total_nilai', TRUE),
-            'grade_tes'     => $this->input->post('grade_tes', TRUE),
+            'nilai_mat'      => $this->input->post('mtk', TRUE),
+            'nilai_bing'      => $this->input->post('bing', TRUE),
+            'nilai_psikotes'     => $this->input->post('psikotes', TRUE),
+            'total_nilai'     => $this->input->post('nilai', TRUE),
+            'total_jawaban'     => $this->input->post('total_jawaban', TRUE),
+            'grade'     => $this->input->post('grade', TRUE),
+            'status_tes'     => 'done',
             'tanggal_hasil_tes'     => date('Y-m-d')
 
         );
@@ -157,6 +159,21 @@ class Pendaftaran_model extends CI_Model {
         }
 
     }
+
+    public function save_update_status($id_pendaftaran){
+    $data = array(
+       'status_tes'     => 'done'
+      );
+
+    $this->db->where('id_pendaftaran', $id_pendaftaran)
+        ->update('tb_pendaftaran', $data);
+
+    if ($this->db->affected_rows() > 0) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  }
 
 
     
