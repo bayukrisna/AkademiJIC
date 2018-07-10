@@ -183,7 +183,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Total Nilai</label>
                   </div>
                   <div class="col-md-5">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
+                    <input id="nilai" type="number" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
                   </div>
                 </div>
                 <div class="form-group">
@@ -191,7 +191,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Grade</label>
                   </div>
                   <div class="col-md-2">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
+                    <input id="grade" type="text" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
                   </div>
                 </div>
               </div>
@@ -210,8 +210,25 @@
             var ipa = document.getElementById('ipa').value;
             var bing = document.getElementById('bing').value;
             var result = parseInt(mtk) + parseInt(ipa) + parseInt(bing);
+            var nilai = result / 9 * 10;
+            var pembulatan = nilai.toFixed(2);
+            var grade = ""
+            if (nilai <= 100){
+              grade = "A"
+            } else if(nilai <= 75){
+              grade = "B"
+            } else if(nilai <= 50){
+              grade = "C"
+            } else {
+              grade ="D"
+            }
+
+            
+
             if (!isNaN(result)) {
             document.getElementById('total_nilai').value = result;
+            document.getElementById('nilai').value = pembulatan;
+            document.getElementById("grade").value = grade;
             }
           }
           function get_jumlah(p) {
