@@ -88,6 +88,8 @@ class Pendaftaran extends CI_Controller {
 
                 </select>                                     
                 </div>
+                </div>
+                <div class="col-md-6"><br>
               	<div class="form-group">
               		<label for="place">Alamat</label>
               		<input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat" required>
@@ -102,10 +104,6 @@ class Pendaftaran extends CI_Controller {
                   <label for="place">No Telepon</label>
                   <input type="number" name="no_telp" class="form-control" id="no_telp" placeholder="Masukan Nomor Telepon" required>
                 </div>
-
-                
-
-                <div class="box-footer">
                 <button type="submit" class="btn btn-info pull-right">Daftar</button>
               </div>
               '.$form_close.'
@@ -216,13 +214,8 @@ class Pendaftaran extends CI_Controller {
                     <option value="Januari">Januari</option>
                     <option value="Februari">Februari</option>
                   </select>                                                                          
-                </div>
-                <br>
-                <br>
-                <br>
-                <br>
-                <div class="box-footer">
-                <button type="submit" class="btn btn-info pull-right">Daftar Ulang</button>
+                </div>              
+                <button type="submit" class="btn btn-info pull-right">Daftar</button>
                 '.$form_close.'
                 ';
 		} else {
