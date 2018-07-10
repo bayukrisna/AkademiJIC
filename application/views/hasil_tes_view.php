@@ -14,7 +14,7 @@
                   <label for="inputEmail3" class="control-label pull-left">No Daftar</label>
                 </div>
                   <div class="col-md-4">
-                    <input type="input" class="form-control input-sm" id="id_hasil_tes2" name="id_hasil_tes2" placeholder="Email" value="<?php echo $hasil_tes->id_hasil_tes2; ?>" readonly>
+                    <input type="input" class="form-control input-sm" id="id_hasil_tes" name="id_hasil_tes" placeholder="Email" value="<?php echo $hasil_tes->id_hasil_tes2; ?>" readonly>
                   </div>
                 </div>
                 <div class="form-group">

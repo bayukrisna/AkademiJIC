@@ -169,7 +169,7 @@ class Pendaftaran_model extends CI_Model {
 
   public function get_pra_pendaftar($id_pendaftaran){
       return $this->db->join('tb_sekolah','tb_sekolah.id_sekolah=tb_pendaftaran.id_sekolah2')
-              ->join('tb_hasil_tes','tb_hasil_tes.id_hasil_tes=tb_pendaftaran.id_hasil_tes2')
+              
               ->where('id_pendaftaran', $id_pendaftaran)
               ->get('tb_pendaftaran')
               ->row();
@@ -178,7 +178,6 @@ class Pendaftaran_model extends CI_Model {
   public function save_hasil_tes()
     {        
         $data = array(
-            'id_pendaftaran2'      => $this->input->post('id_pendaftaran2', TRUE),
             'id_hasil_tes'      => $this->input->post('id_hasil_tes', TRUE),
             'nilai_mat'      => $this->input->post('mtk', TRUE),
             'nilai_bing'      => $this->input->post('bing', TRUE),
@@ -186,7 +185,6 @@ class Pendaftaran_model extends CI_Model {
             'total_nilai'     => $this->input->post('nilai', TRUE),
             'total_jawaban'     => $this->input->post('total_jawaban', TRUE),
             'grade'     => $this->input->post('grade', TRUE),
-            'status_tes'     => 'done',
             'tanggal_hasil_tes'     => date('Y-m-d')
 
         );

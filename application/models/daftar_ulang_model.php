@@ -27,38 +27,7 @@ class Daftar_ulang_model extends CI_Model {
           return $kodejadi; 
     }
 
-    public function signup()
-    {        
-        $data = array(
-            'no_du'                => $this->buat_kode(),
-            'nama_du'      => $this->input->post('fullname', TRUE),
-            'jk_du'      => $this->input->post('gender', TRUE),
-            'tgl_lahir_du'     => $this->input->post('date', TRUE),
-            'tpt_lahir_du'     => $this->input->post('birth_place', TRUE),
-            'alamat_du'     => $this->input->post('address', TRUE),
-            'no_telp_du'     => $this->input->post('phone', TRUE),
-            'no_telpm_du'     => $this->input->post('mphone', TRUE),
-            'email_du'      => $this->input->post('email', TRUE),
-            'agama_du'     => $this->input->post('religion', TRUE),
-            'id_sekolah'     => $this->input->post('preschool', TRUE),
-            'nik_du'     => $this->input->post('nik', TRUE),
-            'id_prodi'     => $this->input->post('prodi', TRUE),
-            'id_konsentrasi'     => $this->input->post('concentrate', TRUE),
-            'waktu'     => $this->input->post('time', TRUE),
-            'intake'     => $this->input->post('intake', TRUE)
-        );
-    
-        $this->db->insert('tb_du', $data);
-
-        if($this->db->affected_rows() > 0){
-            
-                return true;
-        } else {
-            return false;
-            
-        }
-
-    }
+  
 
      function getProdi()
     {
