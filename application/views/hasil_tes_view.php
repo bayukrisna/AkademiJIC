@@ -14,15 +14,15 @@
                   <label for="inputEmail3" class="control-label pull-left">No Daftar</label>
                 </div>
                   <div class="col-md-4">
-                    <input type="input" class="form-control input-sm" id="inputEmail3" placeholder="Email" value="<?php echo $hasil_tes->id_pendaftaran; ?>" readonly>
+                    <input type="input" class="form-control input-sm" id="id_pendaftaran2" name="id_pendaftaran2" placeholder="Email" value="<?php echo $hasil_tes->id_pendaftaran; ?>" readonly>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-md-2">
-                  <label for="inputPassword3" class="control-label pull-left">Tanggal</label>
+                 
                 </div>
                   <div class="col-md-6">
-                    <input type="date" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                   
                   </div>
                 </div>
                 <div class="box-header with-border">

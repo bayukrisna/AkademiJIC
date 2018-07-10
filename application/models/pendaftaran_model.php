@@ -132,6 +132,33 @@ class Pendaftaran_model extends CI_Model {
               ->row();
   }
 
+  public function save_hasil_tes()
+    {        
+        $data = array(
+            'id_pendaftaran2'      => $this->input->post('id_pendaftaran2', TRUE),
+            'id_hasil_tes'      => $this->input->post('id_hasil_tes', TRUE),
+            'nilai_mat'      => $this->input->post('nilai_mat', TRUE),
+            'nilai_bing'      => $this->input->post('nilai_bing', TRUE),
+            'nilai_psikotes'     => $this->input->post('nilai_psikotes', TRUE),
+            'total_nilai'     => $this->input->post('total_nilai', TRUE),
+            'grade_tes'     => $this->input->post('grade_tes', TRUE),
+            'tanggal_hasil_tes'     => date('Y-m-d')
+
+        );
+    
+        $this->db->insert('tb_hasil_tes', $data);
+
+        if($this->db->affected_rows() > 0){
+            
+                return true;
+        } else {
+            return false;
+            
+        }
+
+    }
+
+
     
 
 }
