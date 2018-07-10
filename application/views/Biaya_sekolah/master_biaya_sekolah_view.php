@@ -4,23 +4,18 @@
           <div class="box">
             <div class="box-header">
               <?php echo $this->session->flashdata('message');?>
-              <h3 class="box-title">Data Asal Sekolah</h3>
+              <h3 class="box-title">Data Konsentrasi</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
-<<<<<<< HEAD
-              <a href="<?php echo base_url() ?>master_asal_sekolah/page_tambah_asal_sekolah" class="btn btn-info btn-sm" > Tambah Asal Sekolah</a> <br> <br>
-=======
               <a href="<?php echo base_url() ?>master_asal_sekolah/page_tambah_asal_sekolah" class="btn btn-info btn-sm" > Tambah Sekolah</a> <br> <br>
->>>>>>> 6c05bcee4df0fd142ee16396e97f91da767f4a68
                 <thead>
                 <tr>
                   <th>No</th>
                   <th>Id Sekolah</th>
                   <th>Nama Sekolah</th>
-                  <th>Alamat</th>
-                  <th>Jenis</th>
+                  <th>Alamat Sekolah</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -37,10 +32,9 @@
                   </td>
                   <td>'.$data->nama_sekolah.'</td>
                   <td>'.$data->alamat_sekolah.'</td>
-                  <td>'.$data->jenis_sekolah.'</td>
                   <td>
                       <a href="'.base_url('index.php/master_asal_sekolah/edit_asal_sekolah/'.$data->id_sekolah).'" class="btn btn-warning btn-sm" >Edit </a>
-                      <a href="'.base_url('index.php/master_asal_sekolah/hapus_asal_sekolah/'.$data->id_sekolah).'" class="btn btn-danger btn-sm">Hapus</a>
+                      <a href="'.base_url('index.php/master_konsentrasi/hapus_konsentrasi/'.$data->id_sekolah).'" class="btn btn-danger btn-sm">Hapus</a>
                   </td>
                 </tr>
                 ';
