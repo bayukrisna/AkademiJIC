@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2018 at 09:33 AM
+-- Generation Time: Jul 10, 2018 at 11:32 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -94,17 +94,27 @@ CREATE TABLE `tb_du` (
   `waktu` text NOT NULL,
   `status` enum('aktif','non-aktif') NOT NULL,
   `jurusan` varchar(20) NOT NULL,
-  `tanggal_du` date NOT NULL
+  `tanggal_du` date NOT NULL,
+  `id_hasil_tes2` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_du`
 --
 
-INSERT INTO `tb_du` (`no_du`, `nama_du`, `jk_daftar_du`, `tpt_lahir_du`, `tgl_lahir_du`, `alamat_du`, `no_telp_du`, `no_telpm_du`, `email_du`, `agama_du`, `nik_du`, `ibu_kandung_du`, `id_sekolah2`, `id_prodi2`, `id_konsentrasi2`, `intake`, `waktu`, `status`, `jurusan`, `tanggal_du`) VALUES
-('DU009', 'Bayu', 'laki-laki', 'Malang', '2018-07-13', 'PAnjen', '877856', '678', 'bayuchrisna3@gmai.com', 'kristen', '43636', 'gerg', 'SE002', 'PR002', 'KO003', 'Januar', 'sore', 'aktif', 'rpl', '2018-07-08'),
-('DU010', 'Paris Hilton', 'perempuan', 'erter', '2018-07-13', 'ewew', '43643', '466', 'bayuchrisna3@gmai.com', 'islam', '4535', 'gerg', 'SE001', 'PR002', 'KO003', 'Februa', 'sore', 'aktif', 'tjk', '2018-07-09'),
-('DU011', 'Jlo', 'laki-laki', 'erter', '2018-07-09', 'efef', '3463', '46436', 'lady@gaga.com', 'buddha', '44353', 'ELy', 'SE001', 'PR001', 'KO001', 'Januar', 'Sore', 'aktif', 'hello', '2018-07-09');
+INSERT INTO `tb_du` (`no_du`, `nama_du`, `jk_daftar_du`, `tpt_lahir_du`, `tgl_lahir_du`, `alamat_du`, `no_telp_du`, `no_telpm_du`, `email_du`, `agama_du`, `nik_du`, `ibu_kandung_du`, `id_sekolah2`, `id_prodi2`, `id_konsentrasi2`, `intake`, `waktu`, `status`, `jurusan`, `tanggal_du`, `id_hasil_tes2`) VALUES
+('DU009', 'Bayu', 'laki-laki', 'Malang', '2018-07-13', 'PAnjen', '877856', '678', 'bayuchrisna3@gmai.com', 'kristen', '43636', 'gerg', 'SE002', 'PR002', 'KO003', 'Januar', 'sore', 'aktif', 'rpl', '2018-07-08', ''),
+('DU010', 'Paris Hilton', 'perempuan', 'erter', '2018-07-13', 'ewew', '43643', '466', 'bayuchrisna3@gmai.com', 'islam', '4535', 'gerg', 'SE001', 'PR002', 'KO003', 'Februa', 'sore', 'aktif', 'tjk', '2018-07-09', ''),
+('DU011', 'Jlo', 'laki-laki', 'erter', '2018-07-09', 'efef', '3463', '46436', 'lady@gaga.com', 'buddha', '44353', 'ELy', 'SE001', 'PR001', 'KO001', 'Januar', 'Sore', 'aktif', 'hello', '2018-07-09', ''),
+('DU012', 'Paris Hilton', 'perempuan', 'Malang blitar', '2018-07-21', 'efef', '8976', '8675', 'bayuchrisna3@gmai.com', 'kristen', '77865', 'ELy', 'SE001', 'PR001', 'KO001', 'Januar', 'Sore', 'aktif', 'ipa', '2018-07-10', ''),
+('DU013', 'Bayu', 'laki-laki', 'Malang', '2018-07-06', 'efef', '466', '45345', 'lady@gaga.com', 'islam', '45345', 'ELy', 'SE001', 'PR004', 'KO002', 'Februa', 'pagi', 'aktif', 'ipa', '2018-07-10', ''),
+('DU014', 'Jessica Jung', 'laki-laki', 'erter', '2018-07-06', 'PAnjen', '009875', '9876', 'bayuchrisna3@gmail.com', 'buddha', '98765', 'gerg', '', 'PR001', 'KO001', 'Januar', 'pagi', 'aktif', '', '2018-07-10', ''),
+('DU015', 'yaaa', 'laki-laki', 'Malang', '2018-07-06', 'efef', '87', '9786', 'yoona@gmail.com', 'buddha', '9876', 'ELy', 'SE001', 'PR002', 'KO004', 'Januar', 'pagi', 'aktif', 'IPS', '2018-07-10', ''),
+('DU016', 'Katy', 'laki-laki', 'Malang', '2018-07-07', 'PAnjen', '9876', '98765', 'lady@gaga.com', 'islam', '9786', 'ELy', 'SE001', 'PR001', 'KO001', 'Februa', 'Sore', 'aktif', 'ipa', '2018-07-10', ''),
+('DU017', 'yaaa', 'laki-laki', 'Malang blitar', '2018-07-20', '78', '87', '9876', 'yoona@gmail.com', 'islam', '90876', 'ELy', 'SMK T', 'PR003', 'KO005', 'Januar', 'Pagi', 'aktif', 'IPS', '2018-07-10', ''),
+('DU018', 'aldi', 'laki-laki', 'Malang', '2018-07-02', 'PAnjen', '1', '8976', 'as@asd.sads', 'kristen', '98', 'ELy', 'SE002', 'PR002', 'KO003', 'Januar', 'Pagi', 'aktif', 'TKJ', '2018-07-10', ''),
+('DU019', 'Orlando', 'laki-laki', 'f', '2018-07-13', 'efef', '8675', '978654', 'bayuchrisna3@gmai.com', 'islam', '7865', 'ELy', 'SE001', 'PR004', 'KO002', 'Januar', 'Sore', 'aktif', 'ipa', '2018-07-10', 'Tidak '),
+('DU020', 'Paris Hilton', 'perempuan', 'Malang', '2018-07-13', 'efef', '87978675', '8786576', 'lady@gaga.com', 'hindu', '7865', 'ELy', 'SE001', 'PR003', 'KO005', 'Januar', 'Sore', 'aktif', 'ipa', '2018-07-10', 'Tidak Tes');
 
 -- --------------------------------------------------------
 
@@ -196,16 +206,16 @@ CREATE TABLE `tb_pendaftaran` (
 --
 
 INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tanggal_pendaftaran`, `nama_pendaftar`, `id_sekolah2`, `jurusan`, `alamat`, `email`, `no_telp`, `waktu`, `id_hasil_tes2`, `status_tes`) VALUES
-('PE001', '2018-07-06', 'Jessica Jung', 'SE002', 'mb', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875', '', '', ''),
+('PE001', '2018-07-06', 'Jessica Jung', 'SE002', 'mb', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875', '', '', 'done'),
 ('PE002', '2018-07-06', 'Jessica Jung', 'SE002', 'mb', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875', '', '', ''),
 ('PE003', '2018-07-06', 'taeyeon', 'SE001', 'iya', 'malang', 'bayu_krisna_24rpl@student.smkt', '545435', '', '', ''),
 ('PE004', '2018-07-08', 'yaaa', 'SE001', '', 'as', 'as@asd.sads', '123', '', '', ''),
-('PE005', '2018-07-08', 'aldi', 'SE002', 'TKJ', 'as', 'as@asd.sads', '1', '', '', ''),
+('PE005', '2018-07-08', 'aldi', 'SE002', 'TKJ', 'as', 'as@asd.sads', '1', '', '', 'done'),
 ('PE006', '2018-07-08', 'LAdy Gaga', 'SE001', 'TKJ', 'Los Angeles', 'lady@gaga.com', '8987675645', '', '', ''),
 ('PE007', '2018-07-08', 'Yoona', 'SE001', 'IPS', 'MAlang', 'yoona@gmail.com', '9786786', 'pagi', '', ''),
 ('PE008', '2018-07-09', 'Paris ', 'SE001', 'IPA', 'gyugwd', 'as@asd.sads', '865786578', 'pagi', '', ''),
 ('PE009', '2018-07-09', 'uyewf', 'SE001', 'IPA', 'wre', 'as@asd.sads', '53', 'pagi', '', ''),
-('PE010', '2018-07-10', 'yaaa', 'SE001', 'IPS', 'as', 'yoona@gmail.com', '87', 'pagi', 'TES001', ''),
+('PE010', '2018-07-10', 'yaaa', 'SE001', 'IPS', 'as', 'yoona@gmail.com', '87', 'pagi', 'TES001', 'done'),
 ('PE011', '2018-07-10', 'LAdy Gaga', 'SE001', 'IPS', 'France', 'lady@gaga.com', '89765', 'pagi', 'TES002', 'not do');
 
 -- --------------------------------------------------------
