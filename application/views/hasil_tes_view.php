@@ -84,13 +84,13 @@
                   <label for="inputEmail3" class="control-label pull-left">Nilai</label>
                 </div>
                   <div class="col-md-2">
-                    <input type="text" id="mtk" name="mtk" class="form-control input-sm"  placeholder="MTK" onchange="sum();" >
+                    <input type="text" id="mtk" name="mtk" class="form-control input-sm"  placeholder="MTK" onkeyup="sum();" >
                   </div>
                   <div class="col-md-2">
-                    <input type="text" id="psikotes" name="psikotes" class="form-control input-sm"  placeholder="PSIKOTES" onchange="sum()" >
+                    <input type="text" id="psikotes" name="psikotes" class="form-control input-sm"  placeholder="PSIKOTES" onkeyup="sum()" >
                   </div>
                   <div class="col-md-2">
-                    <input type="text" id="bing" name="bing" class="form-control input-sm"  placeholder="B.ing" onchange="sum()" >
+                    <input type="text" id="bing" name="bing" class="form-control input-sm"  placeholder="B.ing" onkeyup="sum()" >
                   </div> 
                   <div class="col-md-2">
                   <button  class=" btn pull-left input-sm ">Input Nilai</button></div>
@@ -201,9 +201,6 @@
 <?php echo form_close(); ?>
         
           <script type="text/javascript">
-            myFunction(){
-
-            }
             
             function sum() {
             var mtk = document.getElementById('mtk').value;
