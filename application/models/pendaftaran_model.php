@@ -58,6 +58,7 @@ class Pendaftaran_model extends CI_Model {
             'intake'      => $this->input->post('intake', TRUE),
             'waktu'      => 'Sore',
             'status'      => 'Aktif',
+            'id_hasil_tes2'      => 'Tidak Tes',
             'tanggal_du'      => date('Y-m-d')
 
         );
@@ -168,7 +169,7 @@ class Pendaftaran_model extends CI_Model {
 
   public function get_pra_pendaftar($id_pendaftaran){
       return $this->db->join('tb_sekolah','tb_sekolah.id_sekolah=tb_pendaftaran.id_sekolah2')
-           
+              ->join('tb_hasil_tes','tb_hasil_tes.id_hasil_tes=tb_pendaftaran.id_hasil_tes2')
               ->where('id_pendaftaran', $id_pendaftaran)
               ->get('tb_pendaftaran')
               ->row();

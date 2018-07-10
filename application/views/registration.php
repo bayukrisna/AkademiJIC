@@ -15,6 +15,10 @@
                   <input type="text" name="no_du" class="form-control" id="no_du" placeholder=""  .input-sm value="<?php echo $kodeunik; ?>" readonly>
                 </div>
                 <div class="form-group">
+                  <label for="no">Kode Tes</label>
+                  <input type="text" name="no_du" class="form-control" id="no_du" placeholder=""  .input-sm value="<?php echo $du_pagi->id_hasil_tes2; ?>" readonly>
+                </div>
+                <div class="form-group">
                   <label for="email">Nama Lengkap</label>
                   <input type="text" name="nama_du" class="form-control" id="nama_du" placeholder="Input Full Name" value="<?php echo $du_pagi->nama_pendaftar; ?>">
                 </div>
