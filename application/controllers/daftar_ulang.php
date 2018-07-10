@@ -12,6 +12,8 @@ class daftar_ulang extends CI_Controller {
 
 	public function index()
 	{
+			$id_du = $this->uri->segment(3);
+			$data['du_pagi'] = $this->daftar_ulang_model->get_data_pagi($id_du);
 			$data['kodeunik'] = $this->daftar_ulang_model->buat_kode();
 			$data['main_view'] = 'registration';
 			$data['getProdi'] = $this->daftar_ulang_model->getProdi();
@@ -24,7 +26,7 @@ class daftar_ulang extends CI_Controller {
 			if($this->pendaftaran_model->daftar_ulang() == TRUE){
 				$nama_pendaftar = $this->input->post('nama_du');
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$nama_pendaftar.' berhasil didaftarkan. </div>');
-            	redirect('daftar_ulang');
+            	redirect('daftar_ulang/data_du');
 			} else{
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
             	redirect('daftar_ulang');

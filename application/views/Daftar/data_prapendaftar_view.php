@@ -60,6 +60,7 @@
                   
                   <td>
                      <a href="'.base_url('index.php/pendaftaran/print_pendaftaran/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print </a>
+                     <a href="'.base_url('index.php/daftar_ulang/index/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm" >Daftar Ulang</a>
                      
                   </td>
                 </tr>

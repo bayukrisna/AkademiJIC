@@ -94,7 +94,7 @@ class Pendaftaran_model extends CI_Model {
             'id_prodi2'      => $this->input->post('id_prodi', TRUE),
             'id_konsentrasi2'      => $this->input->post('concentrate', TRUE),
             'intake'      => $this->input->post('intake', TRUE),
-            'waktu'      => 'pagi',
+            'waktu'      => 'Pagi',
             'status'      => 'Aktif',
             'tanggal_du'      => date('Y-m-d')
 

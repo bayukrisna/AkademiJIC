@@ -105,6 +105,13 @@ class Daftar_ulang_model extends CI_Model {
               ->row();
   }
 
+  public function get_data_pagi($id_pendaftaran){
+      return $this->db->join('tb_sekolah','tb_sekolah.id_sekolah=tb_pendaftaran.id_sekolah2')
+              ->where('id_pendaftaran', $id_pendaftaran)
+              ->get('tb_pendaftaran')
+              ->row();
+  }
+
     public function save_edit_du($no_du){
     $data = array(
             'no_du'      => $this->input->post('no_du', TRUE),
