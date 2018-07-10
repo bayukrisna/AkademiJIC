@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2018 at 08:42 AM
+-- Generation Time: Jul 10, 2018 at 04:30 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -109,17 +109,18 @@ INSERT INTO `tb_du` (`no_du`, `nama_du`, `jk_daftar_du`, `tpt_lahir_du`, `tgl_la
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_hasiltes`
+-- Table structure for table `tb_hasil_tes`
 --
 
-CREATE TABLE `tb_hasiltes` (
-  `id_hasiltes` varchar(6) NOT NULL,
+CREATE TABLE `tb_hasil_tes` (
+  `id_hasil_tes` varchar(6) NOT NULL,
   `nilai_mat` int(11) NOT NULL,
   `nilai_bing` int(11) NOT NULL,
   `nilai_psikotes` int(11) NOT NULL,
   `total_nilai` int(11) NOT NULL,
   `grade_tes` varchar(1) NOT NULL,
-  `id_pendaftaran2` varchar(6) NOT NULL
+  `id_pendaftaran2` varchar(6) NOT NULL,
+  `tanggal_hasil_tes` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -262,10 +263,10 @@ ALTER TABLE `tb_du`
   ADD KEY `id_konsentrasi` (`id_konsentrasi2`);
 
 --
--- Indexes for table `tb_hasiltes`
+-- Indexes for table `tb_hasil_tes`
 --
-ALTER TABLE `tb_hasiltes`
-  ADD PRIMARY KEY (`id_hasiltes`),
+ALTER TABLE `tb_hasil_tes`
+  ADD PRIMARY KEY (`id_hasil_tes`),
   ADD KEY `no_pendaftaran` (`id_pendaftaran2`);
 
 --
