@@ -9,11 +9,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
-<<<<<<< HEAD
               <a href="<?php echo base_url() ?>master_asal_sekolah/page_tambah_asal_sekolah" class="btn btn-info btn-sm" > Tambah Asal Sekolah</a> <br> <br>
-=======
-              <a href="<?php echo base_url() ?>master_asal_sekolah/page_tambah_asal_sekolah" class="btn btn-info btn-sm" > Tambah Sekolah</a> <br> <br>
->>>>>>> 6c05bcee4df0fd142ee16396e97f91da767f4a68
                 <thead>
                 <tr>
                   <th>No</th>
