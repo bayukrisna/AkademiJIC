@@ -211,7 +211,7 @@
             var bing = document.getElementById('bing').value;
             var result = parseInt(mtk) + parseInt(ipa) + parseInt(bing);
             var nilai = result / 9 * 10;
-            var pembulatan = nilai.toFixed(2);
+            var pembulatan = nilai.toFixed(1);
             var grade = ""
             if (nilai <= 100){
               grade = "A"
@@ -222,29 +222,10 @@
             } else {
               grade ="D"
             }
-
-            
-
             if (!isNaN(result)) {
             document.getElementById('total_nilai').value = result;
             document.getElementById('nilai').value = pembulatan;
             document.getElementById("grade").value = grade;
             }
           }
-          function get_jumlah(p) {
-                var jumlah = p;
-
-                $.ajax({
-                    url: 'hasil_tes/get_jumlah/'+jumlah,
-                    data: 'jumlah='+jumlah,
-                    type: 'GET',
-                    dataType: 'html',
-                    success: function(msg) {
-                        var data = msg.split("|");
-                        var jumlah = data[0] + data[1] + data[2];
-                        $("#total_nilai").html(jumlah);
-                    }
-                });
-            };
-
         </script>
