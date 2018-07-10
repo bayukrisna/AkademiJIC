@@ -70,7 +70,7 @@
                 <div class="form-group">
                   <label for="preschool">Asal Sekolah</label>
                   <select id="id_sekolah" name="id_sekolah"class="form-control" ="">
-                  <option value="<?php echo $du_pagi->nama_sekolah; ?>"><?php echo $du_pagi->nama_sekolah; ?></option>
+                  <option value="<?php echo $du_pagi->id_sekolah2; ?>"><?php echo $du_pagi->nama_sekolah; ?></option>
                   <?php 
 
                   foreach($getPreschool as $row)
