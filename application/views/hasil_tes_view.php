@@ -34,7 +34,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Nama</label>
                 </div>
                   <div class="col-md-9">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->nama_pendaftar; ?>">
+                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->nama_pendaftar; ?>">
                   </div>
                 </div>
                 <div class="form-group">
@@ -51,7 +51,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Kode Pos</label>
                 </div>
                   <div class="col-md-3">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" >
+                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" >
                   </div>
                 </div>
                 <div class="form-group">
@@ -80,7 +80,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Kode Tes</label>
                   </div>
                   <div class="col-md-4">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?= $kodeunik; ?>" readonly>
+                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?= $kodeunik; ?>" readonly>
                   </div>
                 </div>
                
@@ -89,13 +89,13 @@
                   <label for="inputEmail3" class="control-label pull-left">Nilai</label>
                 </div>
                   <div class="col-md-2">
-                    <input type="email" id="mtk" name="mtk" class="form-control input-sm" id="inputEmail3" placeholder="MTK" onchange="sum();" >
+                    <input type="text" id="mtk" name="mtk" class="form-control input-sm" id="inputEmail3" placeholder="MTK" onchange="sum();" >
                   </div>
                   <div class="col-md-2">
-                    <input type="email" id="ipa" name="ipa" class="form-control input-sm" id="inputEmail3" placeholder="IPA" onchange="sum()" >
+                    <input type="text" id="ipa" name="ipa" class="form-control input-sm" id="inputEmail3" placeholder="IPA" onchange="sum()" >
                   </div>
                   <div class="col-md-2">
-                    <input type="email" id="bing" name="bing" class="form-control input-sm" id="inputEmail3" placeholder="B.ing" onchange="sum()" >
+                    <input type="text" id="bing" name="bing" class="form-control input-sm" id="inputEmail3" placeholder="B.ing" onchange="sum()" >
                   </div> 
                   <div class="col-md-2">
                   <button class=" btn pull-left input-sm ">Input Nilai</button></div>
@@ -136,7 +136,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Kode Sekolah</label>
                   </div>
                   <div class="col-md-2">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->id_sekolah; ?>">
+                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->id_sekolah; ?>">
                   </div>
                 </div>
                 <div class="form-group">
@@ -144,7 +144,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Nama Sekolah</label>
                   </div>
                   <div class="col-md-9">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->nama_sekolah; ?>">
+                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->nama_sekolah; ?>">
                   </div>
                 </div>
                 <div class="form-group">
@@ -152,7 +152,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Alamat Sekolah</label>
                   </div>
                   <div class="col-md-9">
-                    <textarea type="email" class="form-control input-sm" id="inputEmail3" placeholder=""><?php echo $hasil_tes->alamat_sekolah; ?></textarea>
+                    <textarea type="text" class="form-control input-sm" id="inputEmail3" placeholder=""><?php echo $hasil_tes->alamat_sekolah; ?></textarea>
                   </div>
                 </div>
                 <div class="form-group">
@@ -160,7 +160,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Jenis Sekolah</label>
                   </div>
                   <div class="col-md-2">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" >
+                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" >
                   </div>
                 </div>
                 <br><br>
@@ -175,7 +175,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Total Jawaban Benar</label>
                   </div>
                   <div class="col-md-5">
-                    <input type="email" id="total_nilai" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
+                    <input type="text" name="total_nilai" id="total_nilai" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
                   </div>
                 </div>
                 <div class="form-group">
@@ -183,7 +183,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Total Nilai</label>
                   </div>
                   <div class="col-md-5">
-                    <input id="nilai" type="number" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
+                    <input id="nilai" name="nilai" type="number" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
                   </div>
                 </div>
                 <div class="form-group">
@@ -191,7 +191,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Grade</label>
                   </div>
                   <div class="col-md-2">
-                    <input id="grade" type="text" class="form-control input-sm" id="inputEmail3" placeholder="" readonly="">
+                    <input id="grade" name="grade" type="text" class="form-control input-sm" placeholder="" disabled="">
                   </div>
                 </div>
               </div>
@@ -201,7 +201,7 @@
           </div>
 </div>
 </div>
-
+<?php echo form_close(); ?>
         
           <script type="text/javascript">
             
@@ -213,14 +213,14 @@
             var nilai = result / 9 * 10;
             var pembulatan = nilai.toFixed(1);
             var grade = ""
-            if (nilai <= 100){
-              grade = "A"
-            } else if(nilai <= 75){
-              grade = "B"
+            if (nilai <= 25){
+              grade = "D"
             } else if(nilai <= 50){
               grade = "C"
+            } else if(nilai <= 75){
+              grade = "B"
             } else {
-              grade ="D"
+              grade ="A"
             }
             if (!isNaN(result)) {
             document.getElementById('total_nilai').value = result;
