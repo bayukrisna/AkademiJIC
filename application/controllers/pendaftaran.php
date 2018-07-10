@@ -47,6 +47,7 @@ class Pendaftaran extends CI_Controller {
     $form_close = '';
 		$kodeunik = $this->pendaftaran_model->buat_kode();
     $kodeunik2 = $this->daftar_ulang_model->buat_kode();
+    $kodeunik3 = $this->pendaftaran_model->buat_kode3();
 		$getPreschool = $this->pendaftaran_model->getPreschool();
     $getProdi = $this->daftar_ulang_model->getProdi();
     $form_open_pagi .= form_open('pendaftaran/save_pendaftaran_pagi');
@@ -98,6 +99,11 @@ class Pendaftaran extends CI_Controller {
                 <div class="form-group">
                   <label for="place">Email</label>
                   <input type="email" name="email" class="form-control" id="email" placeholder="Masukan Email" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="place">Kode Tes</label>
+                  <input type="email" name="id_hasil_tes2" class="form-control" id="id_hasil_tes2" placeholder="Masukan Email" value="'.$kodeunik3.'" readonly>
                 </div>
 
                  <div class="form-group">

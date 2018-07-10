@@ -19,6 +19,8 @@ class Pendaftaran_model extends CI_Model {
             'email'     => $this->input->post('email', TRUE),
             'no_telp'     => $this->input->post('no_telp', TRUE),
             'tanggal_pendaftaran'     => date('Y-m-d'),
+            'status_tes'     => 'not done',
+            'id_hasil_tes2'     => $this->input->post('id_hasil_tes2', TRUE),
             'waktu'     => 'pagi'
         );
     
@@ -91,11 +93,11 @@ class Pendaftaran_model extends CI_Model {
           return $kodejadi; 
     }
 
-    public function  buat_kode_tes()   {
-          $this->db->SELECT('RIGHT(tb_hasil_tes.id_hasil_tes,3) as kode', FALSE);
-          $this->db->order_by('id_hasil_tes','DESC');    
+     public function  buat_kode3()   {
+          $this->db->SELECT('RIGHT(tb_pendaftaran.id_hasil_tes2,3) as kode', FALSE);
+          $this->db->order_by('id_hasil_tes2','DESC');    
           $this->db->limit(1);    
-          $query = $this->db->get('tb_hasil_tes');      //cek dulu apakah ada sudah ada kode di tabel.    
+          $query = $this->db->get('tb_pendaftaran');      //cek dulu apakah ada sudah ada kode di tabel.    
           if($query->num_rows() <> 0){      
            //jika kode ternyata sudah ada.      
            $data = $query->row();      
@@ -127,6 +129,7 @@ class Pendaftaran_model extends CI_Model {
 
   public function get_pra_pendaftar($id_pendaftaran){
       return $this->db->join('tb_sekolah','tb_sekolah.id_sekolah=tb_pendaftaran.id_sekolah2')
+           
               ->where('id_pendaftaran', $id_pendaftaran)
               ->get('tb_pendaftaran')
               ->row();

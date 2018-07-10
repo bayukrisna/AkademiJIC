@@ -14,7 +14,7 @@
                   <label for="inputEmail3" class="control-label pull-left">No Daftar</label>
                 </div>
                   <div class="col-md-4">
-                    <input type="input" class="form-control input-sm" id="id_pendaftaran2" name="id_pendaftaran2" placeholder="Email" value="<?php echo $hasil_tes->id_pendaftaran; ?>" readonly>
+                    <input type="input" class="form-control input-sm" id="id_hasil_tes2" name="id_hasil_tes2" placeholder="Email" value="<?php echo $hasil_tes->id_hasil_tes2; ?>" readonly>
                   </div>
                 </div>
                 <div class="form-group">
@@ -76,12 +76,7 @@
                 </div>
                 <br>
                 <div class="form-group">
-                  <div class="col-md-3">
-                  <label for="inputEmail3" class="control-label pull-left">Kode Tes</label>
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control input-sm" id="id_hasil_tes"name="id_hasil_tes" placeholder="" value="<?= $kodeunik; ?>" readonly>
-                  </div>
+                  
                 </div>
                
                 <div class="form-group">
@@ -89,13 +84,13 @@
                   <label for="inputEmail3" class="control-label pull-left">Nilai</label>
                 </div>
                   <div class="col-md-2">
-                    <input type="text" id="mtk" name="mtk" class="form-control input-sm" id="inputEmail3" placeholder="MTK" onchange="sum();" >
+                    <input type="text" id="mtk" name="mtk" class="form-control input-sm"  placeholder="MTK" onchange="sum();" >
                   </div>
                   <div class="col-md-2">
-                    <input type="text" id="psikotes" name="psikotes" class="form-control input-sm" id="inputEmail3" placeholder="PSIKOTES" onchange="sum()" >
+                    <input type="text" id="psikotes" name="psikotes" class="form-control input-sm"  placeholder="PSIKOTES" onchange="sum()" >
                   </div>
                   <div class="col-md-2">
-                    <input type="text" id="bing" name="bing" class="form-control input-sm" id="inputEmail3" placeholder="B.ing" onchange="sum()" >
+                    <input type="text" id="bing" name="bing" class="form-control input-sm"  placeholder="B.ing" onchange="sum()" >
                   </div> 
                   <div class="col-md-2">
                   <button  class=" btn pull-left input-sm ">Input Nilai</button></div>
@@ -206,6 +201,9 @@
 <?php echo form_close(); ?>
         
           <script type="text/javascript">
+            myFunction(){
+
+            }
             
             function sum() {
             var mtk = document.getElementById('mtk').value;
