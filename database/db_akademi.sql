@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2018 at 04:30 AM
+-- Generation Time: Jul 10, 2018 at 08:17 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -118,10 +118,24 @@ CREATE TABLE `tb_hasil_tes` (
   `nilai_bing` int(11) NOT NULL,
   `nilai_psikotes` int(11) NOT NULL,
   `total_nilai` int(11) NOT NULL,
-  `grade_tes` varchar(1) NOT NULL,
+  `total_jawaban` int(11) NOT NULL,
+  `grade` varchar(1) NOT NULL,
+  `tanggal_hasil_tes` date NOT NULL,
   `id_pendaftaran2` varchar(6) NOT NULL,
-  `tanggal_hasil_tes` date NOT NULL
+  `status_tes` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_hasil_tes`
+--
+
+INSERT INTO `tb_hasil_tes` (`id_hasil_tes`, `nilai_mat`, `nilai_bing`, `nilai_psikotes`, `total_nilai`, `total_jawaban`, `grade`, `tanggal_hasil_tes`, `id_pendaftaran2`, `status_tes`) VALUES
+('TES001', 21, 21, 20, 69, 62, 'B', '2018-07-10', '', ''),
+('TES002', 21, 15, 20, 62, 56, 'B', '2018-07-10', '', ''),
+('TES003', 21, 23, 21, 72, 65, 'B', '2018-07-10', '', ''),
+('TES004', 6, 2, 4, 13, 12, 'D', '2018-07-10', '', ''),
+('TES005', 12, 12, 12, 40, 36, 'C', '2018-07-10', 'PE004', 'done'),
+('TES006', 0, 0, 0, 0, 0, '', '2018-07-10', 'PE001', 'done');
 
 -- --------------------------------------------------------
 
@@ -174,23 +188,24 @@ CREATE TABLE `tb_pendaftaran` (
   `alamat` varchar(100) NOT NULL,
   `email` varchar(30) NOT NULL,
   `no_telp` varchar(15) NOT NULL,
-  `waktu` varchar(10) NOT NULL
+  `waktu` varchar(10) NOT NULL,
+  `status_tes` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_pendaftaran`
 --
 
-INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tanggal_pendaftaran`, `nama_pendaftar`, `id_sekolah2`, `jurusan`, `alamat`, `email`, `no_telp`, `waktu`) VALUES
-('PE001', '2018-07-06', 'Jessica Jung', 'SE002', 'mb', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875', ''),
-('PE002', '2018-07-06', 'Jessica Jung', 'SE002', 'mb', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875', ''),
-('PE003', '2018-07-06', 'taeyeon', 'SE001', 'iya', 'malang', 'bayu_krisna_24rpl@student.smkt', '545435', ''),
-('PE004', '2018-07-08', 'yaaa', 'SE001', '', 'as', 'as@asd.sads', '123', ''),
-('PE005', '2018-07-08', 'aldi', 'SE002', 'TKJ', 'as', 'as@asd.sads', '1', ''),
-('PE006', '2018-07-08', 'LAdy Gaga', 'SE001', 'TKJ', 'Los Angeles', 'lady@gaga.com', '8987675645', ''),
-('PE007', '2018-07-08', 'Yoona', 'SE001', 'IPS', 'MAlang', 'yoona@gmail.com', '9786786', 'pagi'),
-('PE008', '2018-07-09', 'Paris ', 'SE001', 'IPA', 'gyugwd', 'as@asd.sads', '865786578', 'pagi'),
-('PE009', '2018-07-09', 'uyewf', 'SE001', 'IPA', 'wre', 'as@asd.sads', '53', 'pagi');
+INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tanggal_pendaftaran`, `nama_pendaftar`, `id_sekolah2`, `jurusan`, `alamat`, `email`, `no_telp`, `waktu`, `status_tes`) VALUES
+('PE001', '2018-07-06', 'Jessica Jung', 'SE002', 'mb', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875', '', ''),
+('PE002', '2018-07-06', 'Jessica Jung', 'SE002', 'mb', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875', '', ''),
+('PE003', '2018-07-06', 'taeyeon', 'SE001', 'iya', 'malang', 'bayu_krisna_24rpl@student.smkt', '545435', '', ''),
+('PE004', '2018-07-08', 'yaaa', 'SE001', '', 'as', 'as@asd.sads', '123', '', ''),
+('PE005', '2018-07-08', 'aldi', 'SE002', 'TKJ', 'as', 'as@asd.sads', '1', '', ''),
+('PE006', '2018-07-08', 'LAdy Gaga', 'SE001', 'TKJ', 'Los Angeles', 'lady@gaga.com', '8987675645', '', ''),
+('PE007', '2018-07-08', 'Yoona', 'SE001', 'IPS', 'MAlang', 'yoona@gmail.com', '9786786', 'pagi', ''),
+('PE008', '2018-07-09', 'Paris ', 'SE001', 'IPA', 'gyugwd', 'as@asd.sads', '865786578', 'pagi', ''),
+('PE009', '2018-07-09', 'uyewf', 'SE001', 'IPA', 'wre', 'as@asd.sads', '53', 'pagi', '');
 
 -- --------------------------------------------------------
 
@@ -224,16 +239,17 @@ INSERT INTO `tb_prodi` (`id_prodi`, `nama_prodi`, `ketua_prodi`) VALUES
 CREATE TABLE `tb_sekolah` (
   `id_sekolah` varchar(6) NOT NULL,
   `nama_sekolah` varchar(30) NOT NULL,
-  `alamat_sekolah` text NOT NULL
+  `alamat_sekolah` text NOT NULL,
+  `jenis_sekolah` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_sekolah`
 --
 
-INSERT INTO `tb_sekolah` (`id_sekolah`, `nama_sekolah`, `alamat_sekolah`) VALUES
-('SE001', 'SMK Telkom Malang', 'Jl. Danau Ranau Sawojajar Malang'),
-('SE002', 'SMAN 3 Jakarta', 'Jl. Supriyadi No 47 jakarta');
+INSERT INTO `tb_sekolah` (`id_sekolah`, `nama_sekolah`, `alamat_sekolah`, `jenis_sekolah`) VALUES
+('SE001', 'SMK Telkom Malang', 'Jl. Danau Ranau Sawojajar Malang', ''),
+('SE002', 'SMAN 3 Jakarta', 'Jl. Supriyadi No 47 jakarta', '');
 
 --
 -- Indexes for dumped tables
@@ -266,8 +282,7 @@ ALTER TABLE `tb_du`
 -- Indexes for table `tb_hasil_tes`
 --
 ALTER TABLE `tb_hasil_tes`
-  ADD PRIMARY KEY (`id_hasil_tes`),
-  ADD KEY `no_pendaftaran` (`id_pendaftaran2`);
+  ADD PRIMARY KEY (`id_hasil_tes`);
 
 --
 -- Indexes for table `tb_intake`
