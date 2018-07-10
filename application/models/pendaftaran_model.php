@@ -201,12 +201,12 @@ class Pendaftaran_model extends CI_Model {
 
     }
 
-    public function save_update_status($id_pendaftaran){
+    public function save_update_status($id_tes){
     $data = array(
        'status_tes'     => 'done'
       );
 
-    $this->db->where('id_pendaftaran', $id_pendaftaran)
+    $this->db->where('id_hasil_tes2', $id_tes)
         ->update('tb_pendaftaran', $data);
 
     if ($this->db->affected_rows() > 0) {

@@ -14,6 +14,7 @@ class Hasil_tes extends CI_Controller {
 				$data['getPreschool'] = $this->pendaftaran_model->getPreschool();
 				$id_pendaftaran = $this->uri->segment(3);
 				$data['hasil_tes'] = $this->pendaftaran_model->get_pra_pendaftar($id_pendaftaran);
+				$data['id_pendaftaran'] = $id_pendaftaran;
 				$data['main_view'] = 'hasil_tes_view';
 				$this->load->view('template', $data);
 	}
@@ -23,6 +24,8 @@ class Hasil_tes extends CI_Controller {
 		$id_pendaftaran = $this->uri->segment(3);
 			
 			if($this->pendaftaran_model->save_hasil_tes() == TRUE){
+				$id_tes = $this->input->post('id_hasil_tes');
+				$this->pendaftaran_model->save_update_status($id_tes);
 				$hasil_tes = $this->input->post('nama_pendaftar');
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> esHasil t '.$hasil_tes.' berhasil didaftarkan. </div>');
             	redirect('pendaftaran/data_pra_pendaftar');
