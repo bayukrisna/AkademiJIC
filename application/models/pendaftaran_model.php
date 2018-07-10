@@ -74,6 +74,45 @@ class Pendaftaran_model extends CI_Model {
 
     }
 
+        public function daftar_ulang()
+    {        
+        $data = array(
+            'no_du'      => $this->input->post('no_du', TRUE),
+            'nama_du'      => $this->input->post('nama_du', TRUE),
+            'jk_daftar_du'      => $this->input->post('gender', TRUE),
+            'tpt_lahir_du'      => $this->input->post('tpt_lahir_du', TRUE),
+            'tgl_lahir_du'     => $this->input->post('tgl_lahir_du', TRUE),
+            'alamat_du'     => $this->input->post('alamat_du', TRUE),
+            'no_telp_du'     => $this->input->post('no_telp_du', TRUE),
+            'no_telpm_du'     => $this->input->post('no_telpm_du', TRUE),
+            'email_du'     => $this->input->post('email_du', TRUE),
+            'agama_du'      => $this->input->post('agama_du', TRUE),
+            'nik_du'      => $this->input->post('nik_du', TRUE),
+            'jurusan'      => $this->input->post('jurusan', TRUE),
+            'ibu_kandung_du'      => $this->input->post('ibu_kandung_du', TRUE),
+            'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
+            'id_prodi2'      => $this->input->post('id_prodi', TRUE),
+            'id_konsentrasi2'      => $this->input->post('concentrate', TRUE),
+            'intake'      => $this->input->post('intake', TRUE),
+            'waktu'      => 'pagi',
+            'status'      => 'Aktif',
+            'tanggal_du'      => date('Y-m-d')
+
+        );
+    
+        $this->db->insert('tb_du', $data);
+
+        if($this->db->affected_rows() > 0){
+            
+                return true;
+        } else {
+            return false;
+            
+        }
+
+    }
+
+    
     public function  buat_kode()   {
           $this->db->SELECT('RIGHT(tb_pendaftaran.id_pendaftaran,3) as kode', FALSE);
           $this->db->order_by('id_pendaftaran','DESC');    

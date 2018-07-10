@@ -19,6 +19,18 @@ class daftar_ulang extends CI_Controller {
 			$this->load->view('template', $data);
 	}
 
+	public function daftar_ulang()
+	{
+			if($this->pendaftaran_model->daftar_ulang() == TRUE){
+				$nama_pendaftar = $this->input->post('nama_du');
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$nama_pendaftar.' berhasil didaftarkan. </div>');
+            	redirect('daftar_ulang');
+			} else{
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
+            	redirect('daftar_ulang');
+			} 
+	} 
+
 	public function data_du()
 	{
 			$data['du'] = $this->daftar_ulang_model->data_du();
