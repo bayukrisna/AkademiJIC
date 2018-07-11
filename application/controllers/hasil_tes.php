@@ -19,6 +19,12 @@ class Hasil_tes extends CI_Controller {
 				$this->load->view('template', $data);
 	}
 
+	public function cetak_hasil_tes()
+	{
+				$data['main_view'] = 'Tes/hasil_tes_cetak_view';
+				$this->load->view('template', $data);
+	}
+
 	public function save_hasil_tes()
 	{
 		$id_pendaftaran = $this->uri->segment(3);
