@@ -59,7 +59,7 @@
                   <td>'.$data->email.'</td>
                   
                   <td>
-                     <a href="'.base_url('index.php/pendaftaran/print_pendaftaran/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print </a>
+                     <a href="'.base_url('index.php/hasil_tes/print_hasil_tes/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print Hasil Tes</a>
                      <a href="'.base_url('index.php/daftar_ulang/index/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm" >Daftar Ulang</a>
                      
                   </td>

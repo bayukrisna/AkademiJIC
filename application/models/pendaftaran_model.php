@@ -209,20 +209,6 @@ class Pendaftaran_model extends CI_Model {
 
     }
 
-    public function save_update_status_soal($id_tes){
-    $data = array(
-       'status_tes'     => 'done_soal'
-      );
-
-    $this->db->where('id_hasil_tes2', $id_tes)
-        ->update('tb_pendaftaran', $data);
-
-    if ($this->db->affected_rows() > 0) {
-      return TRUE;
-    } else {
-      return FALSE;
-    }
-  }
 
     public function save_update_status($id_tes){
     $data = array(
@@ -239,21 +225,7 @@ class Pendaftaran_model extends CI_Model {
     }
   }
 
-   public function save_update_status_cetak($id_tes){
-    $data = array(
-       'status_tes'     => 'done_cetak'
-      );
-
-    $this->db->where('id_hasil_tes2', $id_tes)
-        ->update('tb_pendaftaran', $data);
-
-    if ($this->db->affected_rows() > 0) {
-      return TRUE;
-    } else {
-      return FALSE;
-    }
-  }
-
+   
 
     
 
