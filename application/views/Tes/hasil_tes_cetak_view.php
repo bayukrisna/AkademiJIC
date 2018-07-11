@@ -97,7 +97,7 @@ function lI1IllI111IlI1I1llll1lIIl()
 <P class="p2 ft1"><SPAN class="ft0">Sdr </SPAN><?php echo $edit->nama_pendaftar; ?></P>
 <P class="p3 ft0">Di <?php echo $edit->alamat; ?></P>
 <P class="p1 ft0">Dengan hormat,</P>
-<P class="p4 ft3">Dengan datangnya surat ini kami ingin memberitahukan bahwa Anda telah lulus Tes di STIE Jakarta International College. Nilai yang diperoleh adalah “ <SPAN class="ft2"><?php echo $edit->total_nilai; ?> </SPAN>“ dengan beasiswa “ <SPAN class="ft2">GRADE <?php echo $edit->grade; ?></SPAN>“ dengan biaya RP. <NOBR>1.300.000,-/</NOBR> semester. Biaya tersebut include : Uang gedung, SPP, SKS, Uang Ujian, Kegiatan Mahasiswa dan Perpustakaan.</P>
+<P class="p4 ft3">Dengan datangnya surat ini kami ingin memberitahukan bahwa Anda telah lulus Tes di STIE Jakarta International College. Nilai yang diperoleh adalah “ <SPAN class="ft2"><?php echo $edit->total_nilai; ?> </SPAN>“ dengan beasiswa “ <SPAN class="ft2" id="grade">GRADE <?php echo $edit->grade; ?></SPAN>“ dengan biaya RP. <NOBR id="biaya">,-/</NOBR> semester. Biaya tersebut include : Uang gedung, SPP, SKS, Uang Ujian, Kegiatan Mahasiswa dan Perpustakaan.</P>
 <P class="p5 ft5">Sekolah Tinggi Ilmu Ekonomi Jakarta International College (STIE JIC) dengan pilihan program studi Manajemen (Pemasaran dan Keuangan) dan Akuntansi (Perpajakan Audit) terakreditasi “B” oleh BAN PT memberikan BEASISWA kepada Anda dengan cara yang mudah. BEASISWA diberikan sebagai bentuk CSR (<SPAN class="ft4">Cosporate Social Responsibility</SPAN>) dari beberapa perusahaan pendukung operasional STIE JIC.</P>
 <P class="p6 ft3">Cara mudah mendapatkan BEASISWA adalah melakukan registrasi dengan membawa surat undangan ini dan fotocopy persyaratan Admin yang ada di brosur. BEASISWA yang anda peroleh ke Bagian Pendaftaran STIE JIC Jalan Perunggu No. <NOBR>53-54</NOBR> Galur, Jakarta Pusat. Contact Person : Isthi dan Sheila Telp (021) 4207238, 4257368, 4257369.</P>
 <P class="p7 ft3">Mengingat kuota BEASISWA ini terbatas setiap gradenya maka diberlakukan <SPAN class="ft6">First In First Served </SPAN>(Pelayanan diutamakan bagi pendaftar terdahulu) jika kuota telah terpenuhi, maka akan masuk grade di bawahnya atau membayar biaya kuliah penuh.</P>
@@ -125,4 +125,15 @@ function lI1IllI111IlI1I1llll1lIIl()
 		window.print()
 		document.body.innerHTML = originalContents;
 	}
+		var biaya = document.getElementById("grade").innerHTML;
+            if (biaya == "GRADE A"){
+              document.getElementById("biaya").innerHTML = "1.300.000";
+            } else if(biaya == "GRADE B"){
+              document.getElementById("biaya").innerHTML = "1.780.000";
+            } else if(biaya == "GRADE C"){
+              document.getElementById("biaya").innerHTML = "2.150.000";
+            } else {
+              document.getElementById("biaya").innerHTML ="2.900.000";
+            }
+            
 </script>
