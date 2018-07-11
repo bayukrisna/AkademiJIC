@@ -3,9 +3,9 @@
 
 body {margin-top: 0px;margin-left: 0px;}
 
-#page_1 {position:relative; overflow: hidden;margin: 30px 0px px 50px;padding: 0px;border: none;width: 720px;}
+#page_1 {position:relative; overflow: hidden;margin: 50px 50px 50px 50px;padding: 0px;border: none;width: 1000px;}
 
-#page_1 #p1dimg1 {position:absolute;top:0px;left:0px;z-index:-1;width:513px;height:87px;}
+#page_1 #p1dimg1 {position:absolute;top:0px;left:0px;z-index:-1;width:600px;height:87px;}
 #page_1 #p1dimg1 #p1img1 {width:513px;height:87px;}
 
 
@@ -1941,7 +1941,7 @@ function lI1IllI111IlI1I1llll1lIIl()
 <P class="p5 ft1">Jurusan : <?php echo $edit->jurusan; ?></P>
 <P class="p2 ft1">Alamat : <?php echo $edit->alamat; ?></P>
 <P class="p2 ft1">Email : <?php echo $edit->email; ?></P>
-<P class="p5 ft1">No. Telp/ Hp : <?php echo $edit->no_telp; ?></P>
+<P class="p5 ft1">No. Telp/ Hp : <?php echo $edit->no_telp; ?></P> <br><br>
 <P class="p6 ft2">Isi dengan diberi tanda silang (X) pada jawaban yang benar.</P>
 <!-- To remove the JavaScript and access tabular data please reach out to BCL at pdf2html@bcltechnologies.com -->
 <TABLE id="l111l1llI1IIl1l1ll1lI1I11" cellpadding=0 cellspacing=0 class="t0"></TABLE>

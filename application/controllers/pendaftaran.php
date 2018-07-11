@@ -31,7 +31,7 @@ class Pendaftaran extends CI_Controller {
 			if($this->pendaftaran_model->save_pendaftaran_pagi() == TRUE){
 				$pendaftar = $this->input->post('nama_pendaftar');
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$pendaftar.' berhasil didaftarkan. </div>');
-            	redirect('pendaftaran');
+            	redirect('pendaftaran/data_pra_pendaftar');
 			} else{
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
             	redirect('pendaftaran');

@@ -40,7 +40,7 @@
                   <td>'.$data->email.'</td>
                   
                   <td>
-                     <a href="'.base_url('index.php/pendaftaran/print_pendaftaran/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print </a>
+                     <a href="'.base_url('index.php/pendaftaran/print_pendaftaran/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print Soal</a>
                     
                       <a href="'.base_url('index.php/hasil_tes/index/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm" >Input Nilai</a>
                   </td>
