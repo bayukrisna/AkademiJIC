@@ -175,6 +175,14 @@ class Pendaftaran_model extends CI_Model {
               ->row();
   }
 
+  public function get_hasil_tes($id_pendaftaran){
+      return $this->db->join('tb_sekolah','tb_sekolah.id_sekolah=tb_pendaftaran.id_sekolah2')
+              ->join('tb_hasil_tes','tb_hasil_tes.id_hasil_tes=tb_pendaftaran.id_hasil_tes2')
+              ->where('id_pendaftaran', $id_pendaftaran)
+              ->get('tb_pendaftaran')
+              ->row();
+  }
+
   public function save_hasil_tes()
     {        
         $data = array(
@@ -201,9 +209,39 @@ class Pendaftaran_model extends CI_Model {
 
     }
 
+    public function save_update_status_soal($id_tes){
+    $data = array(
+       'status_tes'     => 'done_soal'
+      );
+
+    $this->db->where('id_hasil_tes2', $id_tes)
+        ->update('tb_pendaftaran', $data);
+
+    if ($this->db->affected_rows() > 0) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  }
+
     public function save_update_status($id_tes){
     $data = array(
        'status_tes'     => 'done'
+      );
+
+    $this->db->where('id_hasil_tes2', $id_tes)
+        ->update('tb_pendaftaran', $data);
+
+    if ($this->db->affected_rows() > 0) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  }
+
+   public function save_update_status_cetak($id_tes){
+    $data = array(
+       'status_tes'     => 'done_cetak'
       );
 
     $this->db->where('id_hasil_tes2', $id_tes)

@@ -27,7 +27,7 @@ class Hasil_tes extends CI_Controller {
 
 	public function save_hasil_tes()
 	{
-		$id_pendaftaran = $this->uri->segment(3);
+		
 			
 			if($this->pendaftaran_model->save_hasil_tes() == TRUE){
 				$id_tes = $this->input->post('id_hasil_tes');
