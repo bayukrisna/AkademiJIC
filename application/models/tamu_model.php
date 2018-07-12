@@ -91,7 +91,8 @@ class Tamu_model extends CI_Model {
   
   public function save_bukti_transfer($upload_bukti, $id_pendaftaran)
    {
-    $data = array('bukti_transfer' => $upload_bukti['file_name'] )
+    $data = array('status_bayar'     => 'Proses Pengecekan',
+      'bukti_transfer' => $upload_bukti['file_name'] )
                   ;
     $this->db->where('id_pendaftaran', $id_pendaftaran)->update('tb_pendaftaran', $data);
     if ($this->db->affected_rows() > 0) {

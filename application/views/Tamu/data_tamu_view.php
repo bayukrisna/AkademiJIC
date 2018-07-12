@@ -50,6 +50,7 @@
                 ';
                 
               } else {
+                if ($data->waktu == 'Pagi') {
                   echo '
                   
                 <tr>
@@ -63,14 +64,38 @@
                   <td>'.$data->status_bayar.'</td>
                   
                   <td>
-                     <a href="'.base_url('index.php/tamu/hapus_tamu/'.$data->id_pendaftaran).'" class="btn btn-danger btn-sm">Hapus</a>
+                     
+                  
+                  </td>
+                </tr>
+                ';
+                }
+                else {
+                   echo '
+                  
+                <tr>
+                  <td>'.++$no.'</td>
+                  <td>'.$data->id_pendaftaran.'
+                  </td>
+                  <td>'.$data->nama_pendaftar.'</td>
+                  <td>'.$data->nama_sekolah.'</td>
+                  <td>'.$data->nama_prodi.'</td>
+                  <td>'.$data->waktu.'</td>
+                  <td>'.$data->status_bayar.'</td>
+                  
+                  <td>
+                     
                      
                   </td>
                 </tr>
                 ';
-
-              } }
+                }
+              } 
               ?>
+
+              <?php
+            }
+            ?>
                 </tbody>
               </table>
             </div>

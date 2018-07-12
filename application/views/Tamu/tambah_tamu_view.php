@@ -39,11 +39,11 @@
                   <input type="number" name="no_telp" class="form-control" id="no_telp" placeholder="Input Phone Number" required="">
                 </div>
                    <div class="form-group">
-                  <label for="gender">Waktu</label>
+                  <label for="waktu">Waktu</label>
                   <select id="waktu" name="waktu" class="form-control" ="" required="">
                     <option value="">Pilih Waktu Kuliah</option>
-                    <option value="laki-laki">Pagi</option>
-                    <option value="perempuan">Sore</option>
+                    <option value="Pagi">Pagi</option>
+                    <option value="Sore">Sore</option>
 
                   </select>                                     
                   
