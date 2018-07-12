@@ -124,11 +124,36 @@
                   <option value="rpl">Student get Student</option>
                 </select>                                     
                 </div>
-
-                 <div class="form-group">
-                  
-                  <input type="hidden" name="id_du2" class="form-control" id="id_du2" placeholder="Input Home Address" required="" value="<?php echo $kodeunik_du; ?>" readonly>
+                <label for="major">Student Get Student</label>
+                <div class="input-group">
+               
+                <!-- /btn-group -->
+                <input type="text" class="form-control">
+                 <div class="input-group-btn">
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-default"><i class="fa fa-search"></i></button>
                 </div>
+              </div>
+                <br>
+                  <input type="hidden" name="id_du2" class="form-control" id="id_du2" placeholder="Input Home Address" required="" value="<?php echo $kodeunik_du; ?>" readonly>
+                <div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Default Modal</h4>
+              </div>
+              <div class="modal-body">
+                <p>One fine body&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
 
                 
 
@@ -144,5 +169,9 @@
           </div>
 </div>
 </div>
-
+<script>
+function myFunction() {
+    document.getElementById("student").value = "hello";
+}
+</script>
        
