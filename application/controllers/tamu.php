@@ -20,6 +20,7 @@ class Tamu extends CI_Controller {
 
 	public function page_tambah_tamu(){
 				$data['kodeunik'] = $this->tamu_model->buat_kode();
+				$data['kodeunik_du'] = $this->tamu_model->buat_kode_du();
 				$data['getProdi'] = $this->daftar_ulang_model->getProdi();
 				$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
 				$data['main_view'] = 'Tamu/tambah_tamu_view';

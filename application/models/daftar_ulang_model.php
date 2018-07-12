@@ -8,7 +8,7 @@ class Daftar_ulang_model extends CI_Model {
         parent::__construct();
     }
 
-     public function  buat_kode_tes()   {
+     public function  buat_kode()   {
           $this->db->SELECT('RIGHT(tb_du.kode_tes,3) as kode', FALSE);
           $this->db->order_by('kode_tes','DESC');    
           $this->db->limit(1);    
@@ -56,9 +56,16 @@ class Daftar_ulang_model extends CI_Model {
       return $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_du.id_prodi2')
               ->join('tb_sekolah','tb_sekolah.id_sekolah=tb_du.id_sekolah2')
               ->join('tb_konsentrasi','tb_konsentrasi.id_konsentrasi=tb_du.id_konsentrasi2')
-              ->join('tb_pendaftaran','tb_pendaftaran.id_pendaftaran=tb_du.id_pendaftaran2')
               ->get('tb_du')
               ->result();
+  }
+
+  public function page_du_pagi($id_pendaftaran){
+      return $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_pendaftaran.id_prodi2')
+              ->join('tb_sekolah','tb_sekolah.id_sekolah=tb_pendaftaran.id_sekolah2')
+              ->where('id_pendaftaran', $id_pendaftaran)
+              ->get('tb_pendaftaran')
+              ->row();
   }
 
   public function save_du_pagi()
@@ -81,8 +88,8 @@ class Daftar_ulang_model extends CI_Model {
             'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
             'id_prodi2'      => $this->input->post('id_prodi', TRUE),
             'id_konsentrasi2'      => $this->input->post('concentrate', TRUE),
-            'intake'      => $this->input->post('intake', TRUE),
-            'waktu'      => $this->input->post('intake', TRUE),
+            'waktu'      => $this->input->post('waktu', TRUE),
+            'nim'      => $this->input->post('nim', TRUE),
             'tanggal_du'      => date('Y-m-d')
         );
     

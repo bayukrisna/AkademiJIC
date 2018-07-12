@@ -48,6 +48,19 @@
                   </select>                                     
                   
                 </div>
+                <div class="form-group">
+                  <label for="religion">Agama</label>
+                <select id="agama" name="agama" class="form-control" ="">
+                  <option value="">Pilih Agama</option>
+                  <option value="Kristen">Kristen</option>
+                  <option value="Islam">Islam</option>
+                  <option value="Hindu">Hindu</option>
+                  <option value="Budha">Buddha</option>
+                  <option value="Konghuchu">Konghuchu</option>
+
+                </select>                                     
+                </div>
+
               </div>
               <div class="col-md-6">
                 <div class="form-group">
@@ -111,6 +124,13 @@
                   <option value="rpl">Student get Student</option>
                 </select>                                     
                 </div>
+
+                 <div class="form-group">
+                  <label for="address">Kode</label>
+                  <input type="text" name="id_du2" class="form-control" id="id_du2" placeholder="Input Home Address" required="" value="<?php echo $kodeunik_du; ?>" readonly>
+                </div>
+
+                
 
                 <button type="submit" class="btn btn-info pull-right">Daftar</button>
               		<?php echo form_close();?>

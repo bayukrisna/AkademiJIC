@@ -1,6 +1,6 @@
 <div class="row"> 
   <?php echo $this->session->flashdata('message');?>
-  <?php echo form_open('daftar_ulang/daftar_ulang'); ?>
+  <?php echo form_open('daftar_ulang/save_du_pagi'); ?>
   <div class="col-md-12">
 
   <div class="box box-primary">
@@ -12,19 +12,19 @@
             <!-- form start -->
                 <div class="form-group">
                   <label for="no">No. Daftar Ulang</label>
-                  <input type="text" name="no_du" class="form-control" id="no_du" placeholder=""  .input-sm value="<?php echo $kodeunik; ?>" readonly>
+                  <input type="text" name="id_du" class="form-control" id="id_du" placeholder=""  .input-sm value="<?php echo $du_pagi->id_du2; ?>" readonly required="">
                 </div>
                 <div class="form-group">
                   <label for="no">Kode Tes</label>
-                  <input type="text" name="kode_tes" class="form-control" id="kode_tes" placeholder=""  .input-sm value="<?php echo $kodeuniktes; ?>" readonly>
+                  <input type="text" name="kode_tes" class="form-control" id="kode_tes" placeholder=""  .input-sm value="<?php echo $kodeunik; ?>" readonly required="">
                 </div>
                 <div class="form-group">
                   <label for="email">Nama Lengkap</label>
-                  <input type="text" name="nama_du" class="form-control" id="nama_du" placeholder="Input Full Name" value="<?php echo $du_pagi->nama_pendaftar; ?>">
+                  <input type="text" name="nama_du" class="form-control" id="nama_du" placeholder="Input Full Name" value="<?php echo $du_pagi->nama_pendaftar; ?>" required="">
                 </div>
                 <div class="form-group">
                   <label for="gender">Jenis Kelamin</label>
-                  <select id="gender" name="gender" class="form-control" ="">
+                  <select id="gender" name="gender" class="form-control" required="">
             <option value="">Select Gender</option>
             <option value="laki-laki">Laki - laki</option>
             <option value="perempuan">Perempuan</option>
@@ -34,16 +34,16 @@
                 </div>
                 <div class="form-group">
                   <label for="email">Tanggal Lahir</label>
-                  <input type="date" name="tgl_lahir_du" class="form-control" id="tgl_lahir_du" >
+                  <input type="date" name="tgl_lahir_du" class="form-control" id="tgl_lahir_du" required="">
                 </div>
                 <div class="form-group">
                   <label for="place">Tempat Lahir</label>
-                  <input type="text" name="tpt_lahir_du" class="form-control" id="tpt_lahir_du" placeholder="Input Birth Place" >
+                  <input type="text" name="tpt_lahir_du" class="form-control" id="tpt_lahir_du" placeholder="Input Birth Place" required="">
                 </div>
                 <div class="form-group">
                   <label for="religion">Agama</label>
-                <select id="agama_du" name="agama_du" class="form-control" ="">
-                  <option value="">Pilih Agama</option>
+                <select id="agama_du" name="agama_du" class="form-control" required="">
+                  <option value="<?php echo $du_pagi->agama; ?>"><?php echo $du_pagi->agama; ?></option>
                   <option value="kristen">Kristen</option>
                   <option value="islam">Islam</option>
                   <option value="hindu">Hindu</option>
@@ -54,26 +54,26 @@
                 </div>
                 <div class="form-group">
                   <label for="address">Alamat Rumah</label>
-                  <input type="text" name="alamat_du" class="form-control" id="alamat_du" placeholder="Input Home Address" >
+                  <input type="text" name="alamat_du" class="form-control" id="alamat_du" placeholder="Input Home Address" value="<?php echo $du_pagi->alamat; ?>" required="">
                 </div>
                 <div class="form-group">
                   <label for="phone">Nomor Telepon</label>
-                  <input type="number" name="no_telp_du" class="form-control" id="no_telp_du" placeholder="Input Phone Number" value="<?php echo $du_pagi->no_telp; ?>">
+                  <input type="number" name="no_telp_du" class="form-control" id="no_telp_du" placeholder="Input Phone Number" value="<?php echo $du_pagi->no_telp; ?>" required="">
                 </div>
                 <div class="form-group">
                   <label for="phone">Nomor HP</label>
-                  <input type="number" name="no_telpm_du" class="form-control" id="no_telpm_du" placeholder="Input Mobile Phone Number" >
+                  <input type="number" name="no_telpm_du" class="form-control" id="no_telpm_du" placeholder="Input Mobile Phone Number" required="">
                 </div>
 
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" name="email_du" class="form-control" id="email_du" placeholder="Input Email" value="<?php echo $du_pagi->email; ?>">
+                  <input type="email" name="email_du" class="form-control" id="email_du" placeholder="Input Email" value="<?php echo $du_pagi->email; ?>" required="">
                 </div>
                 <div class="form-group">
                   <label for="preschool">Asal Sekolah</label>
-                  <select id="id_sekolah" name="id_sekolah"class="form-control" ="">
+                  <select id="id_sekolah" name="id_sekolah"class="form-control" required="">
                   <option value="<?php echo $du_pagi->id_sekolah2; ?>"><?php echo $du_pagi->nama_sekolah; ?></option>
                   <?php 
 
@@ -87,7 +87,7 @@
                 </div>
                 <div class="form-group">
                   <label for="major">Jurusan Asal Sekolah</label>
-                <select id="jurusan" name="jurusan" class="form-control" ="">
+                <select id="jurusan" name="jurusan" class="form-control" required="">
                   <option value="<?php echo $du_pagi->jurusan; ?>"><?php echo $du_pagi->jurusan; ?></option>
                   <option value="ipa">IPA</option>
                   <option value="ips">IPS</option>
@@ -97,16 +97,16 @@
                 </div>
                 <div class="form-group">
                   <label for="nik">NIK</label>
-                  <input type="number" name="nik_du" class="form-control" id="nik_du" placeholder="Input NIK" >
+                  <input type="number" name="nik_du" class="form-control" id="nik_du" placeholder="Input NIK" required="">
                 </div>
                 <div class="form-group">
                   <label for="mother">Nama Ibu</label>
-                  <input type="text" name="ibu_kandung_du" class="form-control" id="ibu_kandung_du" placeholder="Input your mother Name" >
+                  <input type="text" name="ibu_kandung_du" class="form-control" id="ibu_kandung_du" placeholder="Input your mother Name" value="<?php echo $du_pagi->ibu_kandung; ?>" required="">
                 </div>
                 <div class="form-group">
                   <label for="prodi">Program Studi</label>
-                  <select id="id_prodi" class="form-control" name="id_prodi" ="" onchange="return get_concentrate(this.value)">
-                    <option value="">Pilih Program Studi</option>   
+                  <select id="id_prodi" class="form-control" required="" name="id_prodi" ="" onchange="return get_concentrate(this.value)">
+                    <option value="<?php echo $du_pagi->id_prodi2; ?>"><?php echo $du_pagi->nama_prodi; ?></option>   
                     <?php 
 
                   foreach($getProdi as $row)
@@ -118,18 +118,10 @@
                 </div>
                 <div class="form-group">
                   <label for="concentrate">Konsentrasi</label>
-                  <select id="concentrate" name="concentrate" class="form-control" ="">
+                  <select id="concentrate" name="concentrate" class="form-control" required="">
                   <option value="">Select Program Study First</option>
                   </select>                                     
-                </div>
-                <div class="form-group">
-                  <label for="intake">Intake</label>
-                  <select id="intake" name="intake" class="form-control" ="">
-                    <option value="">Pilih Intake</option>
-                    <option value="Januari">Januari</option>
-                    <option value="Februari">Februari</option>
-                  </select>                                                                          
-                </div>              
+                </div>            
                 <button type="submit" class="btn btn-info pull-right">Daftar</button>
                   <?php echo form_close();?>
             

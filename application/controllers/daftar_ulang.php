@@ -10,20 +10,20 @@ class daftar_ulang extends CI_Controller {
 		$this->load->model('pendaftaran_model');
 	}
 
-	public function index()
+	public function page_du_pagi()
 	{
-			$id_du = $this->uri->segment(3);
-			$data['du_pagi'] = $this->daftar_ulang_model->get_data_pagi($id_du);
+			$id_pendaftaran = $this->uri->segment(3);
+			$data['du_pagi'] = $this->daftar_ulang_model->page_du_pagi($id_pendaftaran);
 			$data['kodeunik'] = $this->daftar_ulang_model->buat_kode();
-			$data['main_view'] = 'registration';
 			$data['getProdi'] = $this->daftar_ulang_model->getProdi();
 			$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
+			$data['main_view'] = 'Daftar/daftarulang_pagi_view';
 			$this->load->view('template', $data);
 	}
 
-	public function daftar_ulang()
+	public function save_du_pagi()
 	{
-			if($this->pendaftaran_model->daftar_ulang() == TRUE){
+			if($this->daftar_ulang_model->save_du_pagi() == TRUE){
 				$nama_pendaftar = $this->input->post('nama_du');
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$nama_pendaftar.' berhasil didaftarkan. </div>');
             	redirect('daftar_ulang/data_du');
