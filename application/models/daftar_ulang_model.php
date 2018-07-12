@@ -107,8 +107,9 @@ class Daftar_ulang_model extends CI_Model {
             'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
             'id_prodi2'      => $this->input->post('id_prodi', TRUE),
             'id_konsentrasi2'      => $this->input->post('concentrate', TRUE),
-             'id_pendaftaran2'      => $this->input->post('id_pendaftaran2', TRUE),
+            'id_pendaftaran2'      => $this->input->post('id_pendaftaran2', TRUE),
             'waktu'      => 'Pagi',
+            'status_du'      => 'Belum Tes',
             'nim'      => $this->input->post('nim', TRUE),
             'tanggal_du'      => date('Y-m-d')
         );
@@ -155,6 +156,7 @@ class Daftar_ulang_model extends CI_Model {
             'id_konsentrasi2'      => $this->input->post('concentrate', TRUE),
             'id_pendaftaran2'      => $this->input->post('id_pendaftaran2', TRUE),
             'waktu'      => 'Sore',
+            'status_du'      => '',
             'nim'      => $this->input->post('nim', TRUE),
             'tanggal_du'      => date('Y-m-d')
         );

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2018 at 08:09 AM
+-- Generation Time: Jul 12, 2018 at 11:45 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -110,32 +110,26 @@ CREATE TABLE `tb_du` (
   `id_sekolah2` varchar(5) NOT NULL,
   `id_prodi2` varchar(5) NOT NULL,
   `id_konsentrasi2` varchar(6) NOT NULL,
-  `waktu_du` varchar(20) NOT NULL,
+  `waktu` varchar(20) NOT NULL,
   `jurusan_du` varchar(20) NOT NULL,
   `tanggal_du` date NOT NULL,
   `kode_tes` varchar(15) NOT NULL,
-  `nim` varchar(20) NOT NULL
+  `nim` varchar(20) NOT NULL,
+  `id_pendaftaran2` varchar(6) NOT NULL,
+  `status_du` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_du`
 --
 
-INSERT INTO `tb_du` (`id_du`, `nama_du`, `jk_daftar_du`, `tpt_lahir_du`, `tgl_lahir_du`, `alamat_du`, `no_telp_du`, `no_telpm_du`, `email_du`, `agama_du`, `nik_du`, `ibu_kandung_du`, `id_sekolah2`, `id_prodi2`, `id_konsentrasi2`, `waktu_du`, `jurusan_du`, `tanggal_du`, `kode_tes`, `nim`) VALUES
-('DU009', 'Bayu', 'laki-laki', 'Malang', '2018-07-13', 'PAnjen', '877856', '678', 'bayuchrisna3@gmai.com', 'kristen', '43636', 'gerg', 'SE002', 'PR002', 'KO003', 'sore', 'rpl', '2018-07-08', '', ''),
-('DU010', 'Paris Hilton', 'perempuan', 'erter', '2018-07-13', 'ewew', '43643', '466', 'bayuchrisna3@gmai.com', 'islam', '4535', 'gerg', 'SE001', 'PR002', 'KO003', 'sore', 'tjk', '2018-07-09', '', ''),
-('DU011', 'Jlo', 'laki-laki', 'erter', '2018-07-09', 'efef', '3463', '46436', 'lady@gaga.com', 'buddha', '44353', 'ELy', 'SE001', 'PR001', 'KO001', 'Sore', 'hello', '2018-07-09', '', ''),
-('DU012', 'Paris Hilton', 'perempuan', 'Malang blitar', '2018-07-21', 'efef', '8976', '8675', 'bayuchrisna3@gmai.com', 'kristen', '77865', 'ELy', 'SE001', 'PR001', 'KO001', 'Sore', 'ipa', '2018-07-10', '', ''),
-('DU013', 'Bayu', 'laki-laki', 'Malang', '2018-07-06', 'efef', '466', '45345', 'lady@gaga.com', 'islam', '45345', 'ELy', 'SE001', 'PR004', 'KO002', 'pagi', 'ipa', '2018-07-10', '', ''),
-('DU014', 'Jessica Jung', 'laki-laki', 'erter', '2018-07-06', 'PAnjen', '009875', '9876', 'bayuchrisna3@gmail.com', 'buddha', '98765', 'gerg', '', 'PR001', 'KO001', 'pagi', '', '2018-07-10', '', ''),
-('DU015', 'yaaa', 'laki-laki', 'Malang', '2018-07-06', 'efef', '87', '9786', 'yoona@gmail.com', 'buddha', '9876', 'ELy', 'SE001', 'PR002', 'KO004', 'pagi', 'IPS', '2018-07-10', '', ''),
-('DU016', 'Katy', 'laki-laki', 'Malang', '2018-07-07', 'PAnjen', '9876', '98765', 'lady@gaga.com', 'islam', '9786', 'ELy', 'SE001', 'PR001', 'KO001', 'Sore', 'ipa', '2018-07-10', '', ''),
-('DU017', 'yaaa', 'laki-laki', 'Malang blitar', '2018-07-20', '78', '87', '9876', 'yoona@gmail.com', 'islam', '90876', 'ELy', 'SMK T', 'PR003', 'KO005', 'Pagi', 'IPS', '2018-07-10', '', ''),
-('DU018', 'aldi', 'laki-laki', 'Malang', '2018-07-02', 'PAnjen', '1', '8976', 'as@asd.sads', 'kristen', '98', 'ELy', 'SE002', 'PR002', 'KO003', 'Pagi', 'TKJ', '2018-07-10', '', ''),
-('DU019', 'Orlando', 'laki-laki', 'f', '2018-07-13', 'efef', '8675', '978654', 'bayuchrisna3@gmai.com', 'islam', '7865', 'ELy', 'SE001', 'PR004', 'KO002', 'Sore', 'ipa', '2018-07-10', 'Tidak ', ''),
-('DU020', 'Paris Hilton', 'perempuan', 'Malang', '2018-07-13', 'efef', '87978675', '8786576', 'lady@gaga.com', 'hindu', '7865', 'ELy', 'SE001', 'PR003', 'KO005', 'Sore', 'ipa', '2018-07-10', 'Tidak Tes', ''),
-('TES002', 'Ariana', 'perempuan', 'Malang blitar', '2018-07-02', 'PAnjen', '98756', '789785', 'admin@gmail.com', 'hindu', '68765', 'Sewa', 'SE002', 'PR002', 'KO003', 'Pagi', 'IPA', '2018-07-11', '', ''),
-('TES003', 'Lala', 'laki-laki', 'erter', '2018-07-14', 'gyuf', '796', '678', 'lady@gaga.com', 'islam', '6785', 'ELy', 'SE001', 'PR001', 'KO001', 'Pagi', 'IPA', '2018-07-11', '', '');
+INSERT INTO `tb_du` (`id_du`, `nama_du`, `jk_daftar_du`, `tpt_lahir_du`, `tgl_lahir_du`, `alamat_du`, `no_telp_du`, `no_telpm_du`, `email_du`, `agama_du`, `nik_du`, `ibu_kandung_du`, `id_sekolah2`, `id_prodi2`, `id_konsentrasi2`, `waktu`, `jurusan_du`, `tanggal_du`, `kode_tes`, `nim`, `id_pendaftaran2`, `status_du`) VALUES
+('DU001', 'Paris ', 'laki-laki', 'ege', '2018-07-12', 'Los Angeles', '9876', '8675', 'yoona@gmail.com', 'Kristen', '675', 'ELy', 'SE001', 'PR001', 'KO001', 'Pagi', 'ipa', '2018-07-12', 'TES001', '8675', '', 'a'),
+('DU002', 'Ariana', 'laki-laki', 'Malang', '2018-07-12', 'Los Angeles', '546546', '89765', 'as@asd.sads', 'kristen', '89765', 'ELy', 'SE002', 'PR001', 'KO001', 'Sore', 'ips', '2018-07-12', '', '8765', 'TM002', 'b'),
+('DU003', 'Paris ', 'laki-laki', 'ijuy', '2018-07-11', 'Los Angeles', '9876', '98875', 'yoona@gmail.com', 'Kristen', '8785', 'ELy', 'SE001', 'PR002', 'KO003', 'Pagi', 'ipa', '2018-07-12', 'TES002', '9687', '', ''),
+('DU004', 'Paris ', 'laki-laki', 'Malang', '2018-07-08', 'Los Angeles', '9876', '9887', 'yoona@gmail.com', 'Kristen', '98765', 'ELy', 'SE001', 'PR003', 'KO005', 'Pagi', 'ipa', '2018-07-12', 'TES003', '8976', 'TM001', ''),
+('DU005', 'Paris ', 'laki-laki', 'Malang', '2018-07-27', 'Los Angeles', '9876', '7985', 'yoona@gmail.com', 'Kristen', '8765', 'ELy', 'SE001', 'PR003', 'KO005', 'Pagi', 'ipa', '2018-07-12', 'TES004', '8765', 'TM001', ''),
+('DU006', 'Jessica Jung', 'perempuan', 'Korea', '2018-07-04', 'Korea', '074875937', '645654', 'jessca@gmail.com', 'Konghuchu', '54656', 'ELy', 'SE001', 'PR001', 'KO001', 'Sore', 'ipa', '2018-07-12', '', '46546456', 'TM003', '');
 
 -- --------------------------------------------------------
 
@@ -221,10 +215,9 @@ CREATE TABLE `tb_pendaftaran` (
 --
 
 INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tanggal_pendaftaran`, `nama_pendaftar`, `jk_pendaftar`, `id_sekolah2`, `jurusan`, `alamat`, `email`, `no_telp`, `waktu`, `status_bayar`, `id_prodi2`, `sumber`, `ibu_kandung`, `bukti_transfer`, `agama`, `id_du2`) VALUES
-('TM001', '2018-07-12', 'yaaa', 'laki-laki', 'SE001', 'ipa', 'France', 'yoona@gmail.com', '89765', 'Pagi', 'Proses Pengecekan', 'PR001', 'ipa', '', 'IMG_0001.jpg', 'Islam', ''),
-('TM002', '2018-07-12', 'Paris ', 'perempuan', 'SE001', 'ipa', 'Los Angeles', 'yoona@gmail.com', '9876', 'laki-laki', 'Belum bayar', 'PR001', 'ipa', 'ELy', '', '', ''),
-('TM003', '2018-07-12', 'Katy', 'laki-laki', 'SE001', 'ipa', 'DU001', 'yoona@gmail.com', '0987', 'Pagi', 'Belum bayar', 'PR001', 'ipa', 'ELy', '', '', ''),
-('TM004', '2018-07-12', 'GAga', 'laki-laki', 'SE001', 'ipa', 'Los Angeles', 'yoona@gmail.com', '68565', 'Pagi', 'Belum bayar', 'PR001', 'ipa', 'ELy', '', 'Hindu', 'DU001');
+('TM001', '2018-07-12', 'Paris ', 'laki-laki', 'SE001', 'ipa', 'Los Angeles', 'yoona@gmail.com', '9876', 'Pagi', 'Lunas', 'PR001', 'ipa', 'ELy', 'IMG.jpg', 'Kristen', 'DU001'),
+('TM002', '2018-07-12', 'Ariana', 'laki-laki', 'SE002', 'ips', 'Los Angeles', 'as@asd.sads', '546546', 'Sore', 'Lunas', 'PR001', 'ipa', 'ELy', 'IMG_00011.jpg', 'Budha', 'DU002'),
+('TM003', '2018-07-12', 'Jessica Jung', 'perempuan', 'SE001', 'ipa', 'Korea', 'jessca@gmail.com', '074875937', 'Sore', 'Lunas', 'PR001', 'ips', 'ELy', 'IMG_0009.jpg', 'Konghuchu', 'DU003');
 
 -- --------------------------------------------------------
 
