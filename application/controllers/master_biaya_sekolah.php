@@ -6,44 +6,40 @@ class Master_biaya_sekolah extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('prodi_model');
-		$this->load->model('konsentrasi_model');
+		$this->load->model('biaya_sekolah_model');
 	}
 
 	public function index(){
-				$data['prodi'] = $this->prodi_model->data_prodi();
-				$data['konsentrasi'] = $this->konsentrasi_model->data_konsentrasi();
-				$data['main_view'] = 'Konsentrasi/master_konsentrasi_view';
+				$data['data_biaya'] = $this->biaya_sekolah_model->data_biaya();
+				$data['main_view'] = 'Biaya_sekolah/master_biaya_sekolah_view';
 				$this->load->view('template', $data);
 			
 		
 	}
 
-	public function page_tambah_konsentrasi(){
-				$data['kodeunik'] = $this->konsentrasi_model->buat_kode();
-				$data['drop_down_prodi'] = $this->konsentrasi_model->get_prodi();
-				$data['konsentrasi'] = $this->konsentrasi_model->data_konsentrasi();
-				$data['main_view'] = 'Konsentrasi/tambah_konsentrasi_view';
+	public function page_tambah_biaya_sekolah(){
+				$data['kodeunik'] = $this->biaya_sekolah_model->buat_kode();
+				$data['main_view'] = 'Biaya_sekolah/tambah_biaya_sekolah_view';
 				$this->load->view('template', $data);
 
 	}
 
-	public function save_konsentrasi()
+	public function save_biaya_sekolah()
 	{
 		//set rule di setiap form input
-		$this->form_validation->set_rules('id_konsentrasi', 'Id Konsnetrasi', 'trim|required');		
-		$this->form_validation->set_rules('nama_konsentrasi', 'Nama Konsentrasi', 'trim|required');	
-		$this->form_validation->set_rules('id_prodi', 'Nama Prodi', 'trim|required');	
+		$this->form_validation->set_rules('id_biaya', 'Id Biaya', 'trim|required');		
+
+		$this->form_validation->set_rules('nama_biaya', 'Nama Biaya', 'trim|required');	
 		
 		if ($this->form_validation->run() == TRUE){
-			if($this->konsentrasi_model->save_konsentrasi() == TRUE){
-				$username = $this->input->post('nama_konsentrasi');
-				$this->session->set_flashdata('message', '<div class="alert alert-success"> Registrasi '.$username.' berhasil didaftarkan. </div>');
-            	redirect('master_konsentrasi');
+			if($this->biaya_sekolah_model->save_biaya_sekolah() == TRUE){
+				$username = $this->input->post('nama_biaya');
+				$this->session->set_flashdata('message', '<div class="alert alert-success">'.$username.' berhasil ditambahkan. </div>');
+            	redirect('master_biaya_sekolah');
 			} 
 			} else{
 				$this->session->set_flashdata('message', '<div class="alert alert-danger"> '.validation_errors().' </div>');
-            	redirect('master_konsentrasi/page_tambah_konsentrasi');
+            	redirect('master_biaya_sekolah/page_tambah_biaya_sekolah');
 		}
 	}
 
@@ -57,25 +53,24 @@ class Master_biaya_sekolah extends CI_Controller {
 		}
 	}
 
-	public function edit_konsentrasi(){
-				$data['konsentrasi'] = $this->konsentrasi_model->data_konsentrasi();
-			    $data['drop_down_prodi'] = $this->konsentrasi_model->get_prodi();
-				$data['main_view'] = 'Konsentrasi/edit_konsentrasi_view';
-				$id_konsentrasi = $this->uri->segment(3);
-				$data['edit'] = $this->konsentrasi_model->get_konsentrasi_by_id($id_konsentrasi);
+	public function edit_biaya_sekolah(){
+				$data['data_biaya'] = $this->biaya_sekolah_model->data_biaya();
+				$data['main_view'] = 'Biaya_sekolah/edit_biaya_sekolah_view';
+				$id_biaya = $this->uri->segment(3);
+				$data['edit'] = $this->biaya_sekolah_model->get_biaya_by_id($id_biaya);
 				$this->load->view('template', $data);
 	}
 
 
-	public function save_edit_konsentrasi(){
-			$id_konsentrasi = $this->uri->segment(3);
-					if ($this->konsentrasi_model->save_edit_konsentrasi($id_konsentrasi) == TRUE) {
-						$data['message'] = 'Edit Konsentrasi berhasil';
-						redirect('master_konsentrasi');
+	public function save_edit_biaya_sekolah(){
+			$id_biaya = $this->uri->segment(3);
+					if ($this->biaya_sekolah_model->save_edit_biaya_sekolah($id_biaya) == TRUE) {
+						$data['message'] = 'Edit biaya berhasil';
+						redirect('master_biaya_sekolah');
 					} else {
-						$data['main_view'] = 'Prodi/master_konsentrasi_view';
-						$data['message'] = 'Edit Konsentrasi gagal';
-						redirect('master_konsentrasi/edit_konsentrasi');
+						$data['main_view'] = 'Biaya_sekolah/master_biaya_sekolah_view';
+						$data['message'] = 'Edit Biaya gagal';
+						redirect('master_biaya_sekolah/edit_biaya_sekolah');
 					}
 			}
 		
