@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Konsentrasi_model extends CI_Model {
+class Biaya_sekolah_model extends CI_Model {
 
 	public function __construct()
 	{
@@ -9,18 +9,13 @@ class Konsentrasi_model extends CI_Model {
 		
 	}
 
-	public function data_konsentrasi(){
-		$this->db->select('*');
-		 $this->db->from('tb_konsentrasi');
-		 $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_konsentrasi.id_prodi2');
-		 $query = $this->db->get();
-		 return $query->result();
+	public function data_biaya(){
+		return $this->db->get('tb_biaya')->result();
 	}
 
-   public function get_konsentrasi_by_id($id_konsentrasi){
-      return $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_konsentrasi.id_prodi2')
-              ->where('id_konsentrasi', $id_konsentrasi)
-              ->get('tb_konsentrasi')
+   public function get_biaya_by_id($id_biaya){
+      return $this->db->where('id_biaya', $id_biaya)
+              ->get('tb_biaya')
               ->row();
   }
 
@@ -29,10 +24,10 @@ class Konsentrasi_model extends CI_Model {
 	}
 
 	public function  buat_kode()   {
-          $this->db->SELECT('RIGHT(tb_konsentrasi.id_konsentrasi,3) as kode', FALSE);
-          $this->db->order_by('id_konsentrasi','DESC');    
+          $this->db->SELECT('RIGHT(tb_biaya.id_biaya,3) as kode', FALSE);
+          $this->db->order_by('id_biaya','DESC');    
           $this->db->limit(1);    
-          $query = $this->db->get('tb_konsentrasi');      //cek dulu apakah ada sudah ada kode di tabel.    
+          $query = $this->db->get('tb_biaya');      //cek dulu apakah ada sudah ada kode di tabel.    
           if($query->num_rows() <> 0){      
            //jika kode ternyata sudah ada.      
            $data = $query->row();      
@@ -43,20 +38,21 @@ class Konsentrasi_model extends CI_Model {
            $kode = 1;    
           }
           $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT); // angka 4 menunjukkan jumlah digit angka 0
-          $kodejadi = "KO".$kodemax;    // hasilnya ODJ-9921-0001 dst.
+          $kodejadi = "BS".$kodemax;    // hasilnya ODJ-9921-0001 dst.
           return $kodejadi; 
     }
 
-    public function save_konsentrasi()
+    public function save_biaya_sekolah()
     {
         $data = array(
-            'id_konsentrasi'        => $this->input->post('id_konsentrasi'),
-            'nama_konsentrasi'      	=> $this->input->post('nama_konsentrasi'),
-            'id_prodi2'      		=> $this->input->post('id_prodi')
+            'id_biaya'        => $this->input->post('id_biaya'),
+            'nama_biaya'      	=> $this->input->post('nama_biaya'),
+            'jumlah_biaya'      		=> $this->input->post('jumlah_biaya'),
+            'periode'          => $this->input->post('periode')
             
         );
     
-        $this->db->insert('tb_konsentrasi', $data);
+        $this->db->insert('tb_biaya', $data);
 
         if($this->db->affected_rows() > 0){
             
@@ -82,15 +78,16 @@ class Konsentrasi_model extends CI_Model {
    
 
 
-  public function save_edit_konsentrasi($id_sekolah){
+  public function save_edit_biaya_sekolah($id_biaya){
     $data = array(
-       'id_konsentrasi'     => $this->input->post('id_konsentrasi'),
-        'nama_konsentrasi'  => $this->input->post('nama_konsentrasi'),
-        'id_prodi2'         => $this->input->post('id_prodi')
+       'id_biaya'        => $this->input->post('id_biaya'),
+        'nama_biaya'        => $this->input->post('nama_biaya'),
+        'jumlah_biaya'          => $this->input->post('jumlah_biaya'),
+        'periode'          => $this->input->post('periode')
       );
 
-    $this->db->where('id_konsentrasi', $id_sekolah)
-        ->update('tb_konsentrasi', $data);
+    $this->db->where('id_biaya', $id_biaya)
+        ->update('tb_biaya', $data);
 
     if ($this->db->affected_rows() > 0) {
       return TRUE;
