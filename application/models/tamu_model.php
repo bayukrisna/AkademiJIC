@@ -82,6 +82,26 @@ class Tamu_model extends CI_Model {
 
 
 
+
+    public function get_tamu_by_id($id_pendaftaran){
+    return $this->db->where('id_pendaftaran', $id_pendaftaran)
+            ->get('tb_pendaftaran')
+            ->row();
+  }
+  
+  public function save_bukti_transfer($upload_bukti, $id_pendaftaran)
+   {
+    $data = array('bukti_transfer' => $upload_bukti['file_name'] )
+                  ;
+    $this->db->where('id_pendaftaran', $id_pendaftaran)->update('tb_pendaftaran', $data);
+    if ($this->db->affected_rows() > 0) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  } 
+
+
 }
 
 /* End of file konsentrasi_model.php */

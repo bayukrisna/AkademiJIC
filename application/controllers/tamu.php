@@ -49,6 +49,34 @@ class Tamu extends CI_Controller {
 		}
 	}
 
+
+	public function page_upload(){
+			$id_pendaftaran = $this->uri->segment(3);
+			$data['edit'] = $this->tamu_model->get_tamu_by_id($id_pendaftaran);
+			$data['main_view'] = 'Tamu/upload_bukti_view';
+			$this->load->view('template', $data);
+		
+	}
+	public function save_bukti_transfer(){
+	    $config['upload_path'] = './uploads/';
+	    $config['allowed_types'] = 'jpg|png|jpeg';
+	    $config['max_size']  = '500';
+	    $this->load->library('upload', $config);
+
+	    if($this->upload->do_upload('bukti_transfer')){
+	      if($this->tamu_model->save_bukti_transfer($this->upload->data(), $this->uri->segment(3)) == TRUE){
+	        $this->session->set_flashdata('success', 'Upload Bukti Berhasil');
+	            redirect('tamu');
+	      } else {
+	        $this->session->set_flashdata('failed', 'Update foto gagal');
+	            redirect('tamu/page_upload');
+	      }
+	    } else {
+	      $this->session->set_flashdata('failed', $this->upload->display_errors());
+	        redirect('tamu/page_upload');
+	    }
+	  } 
+
 	
 
 		
