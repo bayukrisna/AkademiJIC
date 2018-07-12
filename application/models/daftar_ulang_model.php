@@ -83,12 +83,57 @@ class Daftar_ulang_model extends CI_Model {
             'email_du'     => $this->input->post('email_du', TRUE),
             'agama_du'      => $this->input->post('agama_du', TRUE),
             'nik_du'      => $this->input->post('nik_du', TRUE),
-            'jurusan'      => $this->input->post('jurusan', TRUE),
+            'jurusan_du'      => $this->input->post('jurusan', TRUE),
             'ibu_kandung_du'      => $this->input->post('ibu_kandung_du', TRUE),
             'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
             'id_prodi2'      => $this->input->post('id_prodi', TRUE),
             'id_konsentrasi2'      => $this->input->post('concentrate', TRUE),
-            'waktu'      => $this->input->post('waktu', TRUE),
+            'waktu'      => 'Pagi',
+            'nim'      => $this->input->post('nim', TRUE),
+            'tanggal_du'      => date('Y-m-d')
+        );
+    
+        $this->db->insert('tb_du', $data);
+
+        if($this->db->affected_rows() > 0){
+            
+                return true;
+        } else {
+            return false;
+            
+        }
+
+    }
+
+    public function page_du_sore($id_pendaftaran){
+      return $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_pendaftaran.id_prodi2')
+              ->join('tb_sekolah','tb_sekolah.id_sekolah=tb_pendaftaran.id_sekolah2')
+              ->where('id_pendaftaran', $id_pendaftaran)
+              ->get('tb_pendaftaran')
+              ->row();
+  }
+
+  public function save_du_sore()
+    {        
+        $data = array(
+            'id_du'      => $this->input->post('id_du', TRUE),
+            'kode_tes'      => $this->input->post('kode_tes', TRUE),
+            'nama_du'      => $this->input->post('nama_du', TRUE),
+            'jk_daftar_du'      => $this->input->post('gender', TRUE),
+            'tpt_lahir_du'      => $this->input->post('tpt_lahir_du', TRUE),
+            'tgl_lahir_du'     => $this->input->post('tgl_lahir_du', TRUE),
+            'alamat_du'     => $this->input->post('alamat_du', TRUE),
+            'no_telp_du'     => $this->input->post('no_telp_du', TRUE),
+            'no_telpm_du'     => $this->input->post('no_telpm_du', TRUE),
+            'email_du'     => $this->input->post('email_du', TRUE),
+            'agama_du'      => $this->input->post('agama_du', TRUE),
+            'nik_du'      => $this->input->post('nik_du', TRUE),
+            'jurusan_du'      => $this->input->post('jurusan', TRUE),
+            'ibu_kandung_du'      => $this->input->post('ibu_kandung_du', TRUE),
+            'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
+            'id_prodi2'      => $this->input->post('id_prodi', TRUE),
+            'id_konsentrasi2'      => $this->input->post('concentrate', TRUE),
+            'waktu'      => 'Sore',
             'nim'      => $this->input->post('nim', TRUE),
             'tanggal_du'      => date('Y-m-d')
         );

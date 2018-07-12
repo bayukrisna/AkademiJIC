@@ -126,8 +126,8 @@
                 </div>
 
                  <div class="form-group">
-                  <label for="address">Kode</label>
-                  <input type="text" name="id_du2" class="form-control" id="id_du2" placeholder="Input Home Address" required="" value="<?php echo $kodeunik_du; ?>" readonly>
+                  
+                  <input type="hidden" name="id_du2" class="form-control" id="id_du2" placeholder="Input Home Address" required="" value="<?php echo $kodeunik_du; ?>" readonly>
                 </div>
 
                 

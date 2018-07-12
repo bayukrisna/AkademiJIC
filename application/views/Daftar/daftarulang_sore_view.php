@@ -1,6 +1,6 @@
 <div class="row"> 
   <?php echo $this->session->flashdata('message');?>
-  <?php echo form_open('daftar_ulang/save_du_pagi'); ?>
+  <?php echo form_open('daftar_ulang/save_du_sore'); ?>
   <div class="col-md-12">
 
   <div class="box box-primary">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                   <label for="no">Kode Tes</label>
-                  <input type="text" name="kode_tes" class="form-control" id="kode_tes" placeholder=""  .input-sm value="<?php echo $kodeunik; ?>" readonly required="">
+                  <input type="text" name="kode_tes" class="form-control" id="kode_tes" placeholder=""  .input-sm value="Tidak Tes" readonly required="">
                 </div>
                 <div class="form-group">
                   <label for="email">Nama Lengkap</label>

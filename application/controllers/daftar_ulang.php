@@ -21,9 +21,31 @@ class daftar_ulang extends CI_Controller {
 			$this->load->view('template', $data);
 	}
 
+	public function page_du_sore()
+	{
+			$id_pendaftaran = $this->uri->segment(3);
+			$data['du_pagi'] = $this->daftar_ulang_model->page_du_sore($id_pendaftaran);
+			$data['getProdi'] = $this->daftar_ulang_model->getProdi();
+			$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
+			$data['main_view'] = 'Daftar/daftarulang_sore_view';
+			$this->load->view('template', $data);
+	}
+
 	public function save_du_pagi()
 	{
 			if($this->daftar_ulang_model->save_du_pagi() == TRUE){
+				$nama_pendaftar = $this->input->post('nama_du');
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$nama_pendaftar.' berhasil didaftarkan. </div>');
+            	redirect('daftar_ulang/data_du');
+			} else{
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
+            	redirect('daftar_ulang');
+			} 
+	} 
+
+	public function save_du_sore()
+	{
+			if($this->daftar_ulang_model->save_du_sore() == TRUE){
 				$nama_pendaftar = $this->input->post('nama_du');
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$nama_pendaftar.' berhasil didaftarkan. </div>');
             	redirect('daftar_ulang/data_du');
