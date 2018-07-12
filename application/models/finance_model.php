@@ -18,7 +18,7 @@ class Finance_model extends CI_Model {
 	public function save_konfirmasi($id_pendaftaran){
     $data = array(
        'id_pendaftaran'     => $id_pendaftaran,
-        'status_bayar'  => 'lunas'
+        'status_bayar'  => 'Lunas'
       );
 
     $this->db->where('id_pendaftaran', $id_pendaftaran)
