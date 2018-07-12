@@ -28,8 +28,28 @@
                 <?php 
                 $no = 0;
                 foreach ($du as $data) {
-                  echo '
+                  if ($data->waktu == 'Pagi') {
+                       echo '
                   
+                <tr>
+                  <td>'.++$no.'</td>
+                  <td>'.$data->nama_du.'
+                  </td>
+                  <td>'.$data->jk_daftar_du.'</td>
+                  <td>'.$data->tgl_lahir_du.'</td>
+                  <td>'.$data->nama_sekolah.'</td>
+                  <td>'.$data->nama_prodi.'</td>
+                  <td>'.$data->nama_konsentrasi.'</td>
+                  <td>'.$data->waktu.'</td>
+                  <td>
+                    <a href="'.base_url('index.php/daftar_ulang/detail_du/'.$data->id_du).'" class="btn btn-warning btn-sm" >Detail</a>
+                     <a href="'.base_url('index.php/daftar_ulang/print_ljk/'.$data->id_du).'" class="btn btn-info btn-sm" >Print</a>
+                  </td>
+                </tr>
+                ';
+
+                 } else {
+                  echo '               
                 <tr>
                   <td>'.++$no.'</td>
                   <td>'.$data->nama_du.'
@@ -45,8 +65,10 @@
                   </td>
                 </tr>
                 ';
-                
-              }
+                  }
+               
+                }
+              
               ?>
                 </tbody>
               </table>

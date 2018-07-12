@@ -12,11 +12,12 @@
             <!-- form start -->
                 <div class="form-group">
                   <label for="no">No. Daftar Ulang</label>
-                  <input type="text" name="id_du" class="form-control" id="id_du" placeholder=""  .input-sm value="<?php echo $du_pagi->id_du2; ?>" readonly required="">
+                  <input type="text" name="id_du" class="form-control" id="id_du" placeholder=""  .input-sm value="<?php echo $kodeunik2; ?>" readonly >
                 </div>
-                <div class="form-group">
-                  <label for="no">Kode Tes</label>
-                  <input type="text" name="kode_tes" class="form-control" id="kode_tes" placeholder=""  .input-sm value="Tidak Tes" readonly required="">
+                 <input type="hidden" name="id_pendaftaran2" class="form-control" id="id_pendaftaran2" placeholder=""  .input-sm value="<?php echo $du_pagi->id_pendaftaran; ?>" readonly >
+                 <div class="form-group">
+                  <label for="no">No. Tamu</label>
+                  <input type="text" name="id_pendaftaran2" class="form-control" id="id_pendaftaran2" placeholder=""  .input-sm value="<?php echo $du_pagi->id_pendaftaran; ?>" readonly >
                 </div>
                 <div class="form-group">
                   <label for="email">Nama Lengkap</label>

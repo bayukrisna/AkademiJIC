@@ -9,7 +9,7 @@ class Daftar_ulang_model extends CI_Model {
     }
 
      public function  buat_kode()   {
-          $this->db->SELECT('RIGHT(tb_du.kode_tes,3) as kode', FALSE);
+          $this->db->SELECT('RIGHT(tb_du.kode_tes,3) as kode', FALSE); 
           $this->db->order_by('kode_tes','DESC');    
           $this->db->limit(1);    
           $query = $this->db->get('tb_du');      //cek dulu apakah ada sudah ada kode di tabel.    
@@ -24,6 +24,25 @@ class Daftar_ulang_model extends CI_Model {
           }
           $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT); // angka 4 menunjukkan jumlah digit angka 0
           $kodejadi = "TES".$kodemax;    // hasilnya ODJ-9921-0001 dst.
+          return $kodejadi; 
+    }
+
+     public function  buat_kode2()   {
+          $this->db->SELECT('RIGHT(tb_du.id_du,3) as kode', FALSE);
+          $this->db->order_by('id_du','DESC');    
+          $this->db->limit(1);    
+          $query = $this->db->get('tb_du');      //cek dulu apakah ada sudah ada kode di tabel.    
+          if($query->num_rows() <> 0){      
+           //jika kode ternyata sudah ada.      
+           $data = $query->row();      
+           $kode = intval($data->kode) + 1;    
+          }
+          else {      
+           //jika kode belum ada      
+           $kode = 1;    
+          }
+          $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT); // angka 4 menunjukkan jumlah digit angka 0
+          $kodejadi = "DU".$kodemax;    // hasilnya ODJ-9921-0001 dst.
           return $kodejadi; 
     }
 
@@ -88,6 +107,7 @@ class Daftar_ulang_model extends CI_Model {
             'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
             'id_prodi2'      => $this->input->post('id_prodi', TRUE),
             'id_konsentrasi2'      => $this->input->post('concentrate', TRUE),
+             'id_pendaftaran2'      => $this->input->post('id_pendaftaran2', TRUE),
             'waktu'      => 'Pagi',
             'nim'      => $this->input->post('nim', TRUE),
             'tanggal_du'      => date('Y-m-d')
@@ -133,6 +153,7 @@ class Daftar_ulang_model extends CI_Model {
             'id_sekolah2'      => $this->input->post('id_sekolah', TRUE),
             'id_prodi2'      => $this->input->post('id_prodi', TRUE),
             'id_konsentrasi2'      => $this->input->post('concentrate', TRUE),
+            'id_pendaftaran2'      => $this->input->post('id_pendaftaran2', TRUE),
             'waktu'      => 'Sore',
             'nim'      => $this->input->post('nim', TRUE),
             'tanggal_du'      => date('Y-m-d')
