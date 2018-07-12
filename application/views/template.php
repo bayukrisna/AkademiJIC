@@ -47,10 +47,7 @@
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        
       </a>
 
     </nav>
@@ -62,7 +59,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo base_url(); ?>/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url(); ?>/assets/img/jic.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>
@@ -94,14 +91,15 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span> Data Tes </span>
+            <i class="fa fa-dashboard"></i> <span> Pendaftaran </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>pendaftaran"><i class="fa fa-circle-o"></i> Pra Pendaftaran</a></li>
-            <li><a href="<?php echo base_url(); ?>hasil_tes"><i class="fa fa-circle-o"></i> Hasil Tes</a></li>
+            <li><a href="<?php echo base_url(); ?>pendaftaran"><i class="fa fa-circle-o"></i>Pendaftaran</a></li>
+            <li><a href="<?php echo base_url(); ?>pendaftaran/data_pra_pendaftar"><i class="fa fa-circle-o"></i>Data Peserta Tes</a></li>
+             <li><a href="<?php echo base_url(); ?>daftar_ulang/data_du"><i class="fa fa-circle-o"></i>Data Daftar Ulang</a></li>
           </ul>
         </li>
       </ul>

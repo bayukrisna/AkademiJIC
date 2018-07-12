@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2018 at 11:32 AM
+-- Generation Time: Jul 12, 2018 at 05:19 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -90,7 +90,7 @@ CREATE TABLE `tb_du` (
   `id_sekolah2` varchar(5) NOT NULL,
   `id_prodi2` varchar(5) NOT NULL,
   `id_konsentrasi2` varchar(6) NOT NULL,
-  `intake` varchar(6) NOT NULL,
+  `intake` varchar(10) NOT NULL,
   `waktu` text NOT NULL,
   `status` enum('aktif','non-aktif') NOT NULL,
   `jurusan` varchar(20) NOT NULL,
@@ -114,7 +114,9 @@ INSERT INTO `tb_du` (`no_du`, `nama_du`, `jk_daftar_du`, `tpt_lahir_du`, `tgl_la
 ('DU017', 'yaaa', 'laki-laki', 'Malang blitar', '2018-07-20', '78', '87', '9876', 'yoona@gmail.com', 'islam', '90876', 'ELy', 'SMK T', 'PR003', 'KO005', 'Januar', 'Pagi', 'aktif', 'IPS', '2018-07-10', ''),
 ('DU018', 'aldi', 'laki-laki', 'Malang', '2018-07-02', 'PAnjen', '1', '8976', 'as@asd.sads', 'kristen', '98', 'ELy', 'SE002', 'PR002', 'KO003', 'Januar', 'Pagi', 'aktif', 'TKJ', '2018-07-10', ''),
 ('DU019', 'Orlando', 'laki-laki', 'f', '2018-07-13', 'efef', '8675', '978654', 'bayuchrisna3@gmai.com', 'islam', '7865', 'ELy', 'SE001', 'PR004', 'KO002', 'Januar', 'Sore', 'aktif', 'ipa', '2018-07-10', 'Tidak '),
-('DU020', 'Paris Hilton', 'perempuan', 'Malang', '2018-07-13', 'efef', '87978675', '8786576', 'lady@gaga.com', 'hindu', '7865', 'ELy', 'SE001', 'PR003', 'KO005', 'Januar', 'Sore', 'aktif', 'ipa', '2018-07-10', 'Tidak Tes');
+('DU020', 'Paris Hilton', 'perempuan', 'Malang', '2018-07-13', 'efef', '87978675', '8786576', 'lady@gaga.com', 'hindu', '7865', 'ELy', 'SE001', 'PR003', 'KO005', 'Januar', 'Sore', 'aktif', 'ipa', '2018-07-10', 'Tidak Tes'),
+('TES002', 'Ariana', 'perempuan', 'Malang blitar', '2018-07-02', 'PAnjen', '98756', '789785', 'admin@gmail.com', 'hindu', '68765', 'Sewa', 'SE002', 'PR002', 'KO003', 'Februari', 'Pagi', 'aktif', 'IPA', '2018-07-11', ''),
+('TES003', 'Lala', 'laki-laki', 'erter', '2018-07-14', 'gyuf', '796', '678', 'lady@gaga.com', 'islam', '6785', 'ELy', 'SE001', 'PR001', 'KO001', 'Februari', 'Pagi', 'aktif', 'IPA', '2018-07-11', '');
 
 -- --------------------------------------------------------
 
@@ -138,23 +140,11 @@ CREATE TABLE `tb_hasil_tes` (
 --
 
 INSERT INTO `tb_hasil_tes` (`id_hasil_tes`, `nilai_mat`, `nilai_bing`, `nilai_psikotes`, `total_nilai`, `total_jawaban`, `grade`, `tanggal_hasil_tes`) VALUES
-('TES001', 21, 21, 20, 69, 62, 'B', '2018-07-10'),
-('TES002', 21, 15, 20, 62, 56, 'B', '2018-07-10'),
-('TES003', 21, 23, 21, 72, 65, 'B', '2018-07-10'),
-('TES004', 6, 2, 4, 13, 12, 'D', '2018-07-10'),
-('TES005', 12, 12, 12, 40, 36, 'C', '2018-07-10'),
-('TES006', 0, 0, 0, 0, 0, '', '2018-07-10');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_intake`
---
-
-CREATE TABLE `tb_intake` (
-  `id_intake` varchar(6) NOT NULL,
-  `intake` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+('TES001', 4, 6, 3, 14, 13, 'D', '2018-07-11'),
+('TES002', 10, 30, 20, 67, 60, 'B', '2018-07-11'),
+('TES003', 21, 22, 20, 70, 63, 'B', '2018-07-11'),
+('TES004', 23, 30, 21, 82, 74, 'A', '2018-07-11'),
+('TES007', 23, 23, 23, 77, 69, 'A', '2018-07-11');
 
 -- --------------------------------------------------------
 
@@ -191,32 +181,26 @@ CREATE TABLE `tb_pendaftaran` (
   `id_pendaftaran` varchar(6) NOT NULL,
   `tanggal_pendaftaran` date NOT NULL,
   `nama_pendaftar` varchar(50) NOT NULL,
+  `jk_pendaftar` varchar(20) NOT NULL,
   `id_sekolah2` varchar(6) NOT NULL,
   `jurusan` varchar(20) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `email` varchar(30) NOT NULL,
   `no_telp` varchar(15) NOT NULL,
   `waktu` varchar(10) NOT NULL,
-  `id_hasil_tes2` varchar(6) NOT NULL,
-  `status_tes` varchar(6) NOT NULL
+  `status_bayar` varchar(20) NOT NULL,
+  `id_prodi2` varchar(6) NOT NULL,
+  `sumber` varchar(30) NOT NULL,
+  `ibu_kandung` varchar(30) NOT NULL,
+  `bukti_transfer` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_pendaftaran`
 --
 
-INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tanggal_pendaftaran`, `nama_pendaftar`, `id_sekolah2`, `jurusan`, `alamat`, `email`, `no_telp`, `waktu`, `id_hasil_tes2`, `status_tes`) VALUES
-('PE001', '2018-07-06', 'Jessica Jung', 'SE002', 'mb', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875', '', '', 'done'),
-('PE002', '2018-07-06', 'Jessica Jung', 'SE002', 'mb', 'Jakarta Barat', 'bayuchrisna3@gmail.com', '009875', '', '', ''),
-('PE003', '2018-07-06', 'taeyeon', 'SE001', 'iya', 'malang', 'bayu_krisna_24rpl@student.smkt', '545435', '', '', ''),
-('PE004', '2018-07-08', 'yaaa', 'SE001', '', 'as', 'as@asd.sads', '123', '', '', ''),
-('PE005', '2018-07-08', 'aldi', 'SE002', 'TKJ', 'as', 'as@asd.sads', '1', '', '', 'done'),
-('PE006', '2018-07-08', 'LAdy Gaga', 'SE001', 'TKJ', 'Los Angeles', 'lady@gaga.com', '8987675645', '', '', ''),
-('PE007', '2018-07-08', 'Yoona', 'SE001', 'IPS', 'MAlang', 'yoona@gmail.com', '9786786', 'pagi', '', ''),
-('PE008', '2018-07-09', 'Paris ', 'SE001', 'IPA', 'gyugwd', 'as@asd.sads', '865786578', 'pagi', '', ''),
-('PE009', '2018-07-09', 'uyewf', 'SE001', 'IPA', 'wre', 'as@asd.sads', '53', 'pagi', '', ''),
-('PE010', '2018-07-10', 'yaaa', 'SE001', 'IPS', 'as', 'yoona@gmail.com', '87', 'pagi', 'TES001', 'done'),
-('PE011', '2018-07-10', 'LAdy Gaga', 'SE001', 'IPS', 'France', 'lady@gaga.com', '89765', 'pagi', 'TES002', 'not do');
+INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tanggal_pendaftaran`, `nama_pendaftar`, `jk_pendaftar`, `id_sekolah2`, `jurusan`, `alamat`, `email`, `no_telp`, `waktu`, `status_bayar`, `id_prodi2`, `sumber`, `ibu_kandung`, `bukti_transfer`) VALUES
+('TM001', '2018-07-12', 'yaaa', 'laki-laki', 'SE001', 'ipa', 'France', 'yoona@gmail.com', '89765', 'laki-laki', 'Belum bayar', 'PR001', 'ipa', '', 'IMG_00021.jpg');
 
 -- --------------------------------------------------------
 
@@ -294,12 +278,6 @@ ALTER TABLE `tb_du`
 --
 ALTER TABLE `tb_hasil_tes`
   ADD PRIMARY KEY (`id_hasil_tes`);
-
---
--- Indexes for table `tb_intake`
---
-ALTER TABLE `tb_intake`
-  ADD PRIMARY KEY (`id_intake`);
 
 --
 -- Indexes for table `tb_konsentrasi`

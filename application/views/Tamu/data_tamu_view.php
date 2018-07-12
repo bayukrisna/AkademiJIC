@@ -4,7 +4,7 @@
           <div class="box">
             <div class="box-header">
               <?php echo $this->session->flashdata('message');?>
-              <h3 class="box-title">Data Peserta Tes</h3>
+              <h3 class="box-title">Data Tamu</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -13,10 +13,12 @@
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>No. Pendafataran</th>
-                  <th>Nama Pendaftaran</th>
+                  <th>No. Tamu</th>
+                  <th>Nama Tamu</th>
                   <th>Asal Sekolah</th>
-                  <th>Email</th>
+                  <th>Minat Prodi</th>
+                  <th>Waktu</th>
+                  <th>Status</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -24,8 +26,8 @@
 
                 <?php 
                 $no = 0;
-                foreach ($pra_pendaftar as $data) {
-                  if ($data->status_tes != 'done') {
+                foreach ($tamu as $data) {
+                  if ($data->status_bayar == 'Belum bayar') {
                   
                   echo '
                   
@@ -35,12 +37,14 @@
                   </td>
                   <td>'.$data->nama_pendaftar.'</td>
                   <td>'.$data->nama_sekolah.'</td>
-                  <td>'.$data->email.'</td>
+                  <td>'.$data->nama_prodi.'</td>
+                  <td>'.$data->waktu.'</td>
+                  <td>'.$data->status_bayar.'</td>
                   
                   <td>
-                     <a href="'.base_url('index.php/pendaftaran/print_pendaftaran/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print Soal</a>
-                    
-                      <a href="'.base_url('index.php/hasil_tes/index/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm" >Input Nilai</a>
+                     <a href="'.base_url('index.php/tamu/hapus_tamu/'.$data->id_pendaftaran).'" class="btn btn-danger btn-sm">Hapus</a>
+                     <a href="'.base_url('index.php/tamu/page_upload/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm">Upload</a>
+
                   </td>
                 </tr>
                 ';
@@ -54,12 +58,12 @@
                   </td>
                   <td>'.$data->nama_pendaftar.'</td>
                   <td>'.$data->nama_sekolah.'</td>
-                  <td>'.$data->email.'</td>
+                  <td>'.$data->nama_prodi.'</td>
+                  <td>'.$data->waktu.'</td>
+                  <td>'.$data->status_bayar.'</td>
                   
                   <td>
-                     <a href="'.base_url('index.php/hasil_tes/print_hasil_tes/'.$data->id_pendaftaran).'" class="btn btn-warning btn-sm" >Print Hasil Tes</a>
-                      <a href="'.base_url('index.php/hasil_tes/detail_tes/'.$data->id_pendaftaran).'" class="btn btn-danger btn-sm" >Detail</a>
-                     <a href="'.base_url('index.php/daftar_ulang/index/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm" >Daftar Ulang</a>
+                     <a href="'.base_url('index.php/tamu/hapus_tamu/'.$data->id_pendaftaran).'" class="btn btn-danger btn-sm">Hapus</a>
                      
                   </td>
                 </tr>
