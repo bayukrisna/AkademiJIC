@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2018 at 05:19 AM
+-- Generation Time: Jul 12, 2018 at 08:09 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -71,11 +71,31 @@ INSERT INTO `matkul_akuntansi` (`id_matkul_akuntansi`, `subject_code`, `subject_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_biaya`
+--
+
+CREATE TABLE `tb_biaya` (
+  `id_biaya` varchar(6) NOT NULL,
+  `nama_biaya` varchar(25) NOT NULL,
+  `jumlah_biaya` int(10) NOT NULL,
+  `periode` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_biaya`
+--
+
+INSERT INTO `tb_biaya` (`id_biaya`, `nama_biaya`, `jumlah_biaya`, `periode`) VALUES
+('BS001', 'Rangking 1', 360000, '2019/2022');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_du`
 --
 
 CREATE TABLE `tb_du` (
-  `no_du` varchar(6) NOT NULL,
+  `id_du` varchar(6) NOT NULL,
   `nama_du` varchar(100) NOT NULL,
   `jk_daftar_du` varchar(12) NOT NULL,
   `tpt_lahir_du` varchar(20) NOT NULL,
@@ -90,33 +110,32 @@ CREATE TABLE `tb_du` (
   `id_sekolah2` varchar(5) NOT NULL,
   `id_prodi2` varchar(5) NOT NULL,
   `id_konsentrasi2` varchar(6) NOT NULL,
-  `intake` varchar(10) NOT NULL,
-  `waktu` text NOT NULL,
-  `status` enum('aktif','non-aktif') NOT NULL,
-  `jurusan` varchar(20) NOT NULL,
+  `waktu_du` varchar(20) NOT NULL,
+  `jurusan_du` varchar(20) NOT NULL,
   `tanggal_du` date NOT NULL,
-  `id_hasil_tes2` varchar(15) NOT NULL
+  `kode_tes` varchar(15) NOT NULL,
+  `nim` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_du`
 --
 
-INSERT INTO `tb_du` (`no_du`, `nama_du`, `jk_daftar_du`, `tpt_lahir_du`, `tgl_lahir_du`, `alamat_du`, `no_telp_du`, `no_telpm_du`, `email_du`, `agama_du`, `nik_du`, `ibu_kandung_du`, `id_sekolah2`, `id_prodi2`, `id_konsentrasi2`, `intake`, `waktu`, `status`, `jurusan`, `tanggal_du`, `id_hasil_tes2`) VALUES
-('DU009', 'Bayu', 'laki-laki', 'Malang', '2018-07-13', 'PAnjen', '877856', '678', 'bayuchrisna3@gmai.com', 'kristen', '43636', 'gerg', 'SE002', 'PR002', 'KO003', 'Januar', 'sore', 'aktif', 'rpl', '2018-07-08', ''),
-('DU010', 'Paris Hilton', 'perempuan', 'erter', '2018-07-13', 'ewew', '43643', '466', 'bayuchrisna3@gmai.com', 'islam', '4535', 'gerg', 'SE001', 'PR002', 'KO003', 'Februa', 'sore', 'aktif', 'tjk', '2018-07-09', ''),
-('DU011', 'Jlo', 'laki-laki', 'erter', '2018-07-09', 'efef', '3463', '46436', 'lady@gaga.com', 'buddha', '44353', 'ELy', 'SE001', 'PR001', 'KO001', 'Januar', 'Sore', 'aktif', 'hello', '2018-07-09', ''),
-('DU012', 'Paris Hilton', 'perempuan', 'Malang blitar', '2018-07-21', 'efef', '8976', '8675', 'bayuchrisna3@gmai.com', 'kristen', '77865', 'ELy', 'SE001', 'PR001', 'KO001', 'Januar', 'Sore', 'aktif', 'ipa', '2018-07-10', ''),
-('DU013', 'Bayu', 'laki-laki', 'Malang', '2018-07-06', 'efef', '466', '45345', 'lady@gaga.com', 'islam', '45345', 'ELy', 'SE001', 'PR004', 'KO002', 'Februa', 'pagi', 'aktif', 'ipa', '2018-07-10', ''),
-('DU014', 'Jessica Jung', 'laki-laki', 'erter', '2018-07-06', 'PAnjen', '009875', '9876', 'bayuchrisna3@gmail.com', 'buddha', '98765', 'gerg', '', 'PR001', 'KO001', 'Januar', 'pagi', 'aktif', '', '2018-07-10', ''),
-('DU015', 'yaaa', 'laki-laki', 'Malang', '2018-07-06', 'efef', '87', '9786', 'yoona@gmail.com', 'buddha', '9876', 'ELy', 'SE001', 'PR002', 'KO004', 'Januar', 'pagi', 'aktif', 'IPS', '2018-07-10', ''),
-('DU016', 'Katy', 'laki-laki', 'Malang', '2018-07-07', 'PAnjen', '9876', '98765', 'lady@gaga.com', 'islam', '9786', 'ELy', 'SE001', 'PR001', 'KO001', 'Februa', 'Sore', 'aktif', 'ipa', '2018-07-10', ''),
-('DU017', 'yaaa', 'laki-laki', 'Malang blitar', '2018-07-20', '78', '87', '9876', 'yoona@gmail.com', 'islam', '90876', 'ELy', 'SMK T', 'PR003', 'KO005', 'Januar', 'Pagi', 'aktif', 'IPS', '2018-07-10', ''),
-('DU018', 'aldi', 'laki-laki', 'Malang', '2018-07-02', 'PAnjen', '1', '8976', 'as@asd.sads', 'kristen', '98', 'ELy', 'SE002', 'PR002', 'KO003', 'Januar', 'Pagi', 'aktif', 'TKJ', '2018-07-10', ''),
-('DU019', 'Orlando', 'laki-laki', 'f', '2018-07-13', 'efef', '8675', '978654', 'bayuchrisna3@gmai.com', 'islam', '7865', 'ELy', 'SE001', 'PR004', 'KO002', 'Januar', 'Sore', 'aktif', 'ipa', '2018-07-10', 'Tidak '),
-('DU020', 'Paris Hilton', 'perempuan', 'Malang', '2018-07-13', 'efef', '87978675', '8786576', 'lady@gaga.com', 'hindu', '7865', 'ELy', 'SE001', 'PR003', 'KO005', 'Januar', 'Sore', 'aktif', 'ipa', '2018-07-10', 'Tidak Tes'),
-('TES002', 'Ariana', 'perempuan', 'Malang blitar', '2018-07-02', 'PAnjen', '98756', '789785', 'admin@gmail.com', 'hindu', '68765', 'Sewa', 'SE002', 'PR002', 'KO003', 'Februari', 'Pagi', 'aktif', 'IPA', '2018-07-11', ''),
-('TES003', 'Lala', 'laki-laki', 'erter', '2018-07-14', 'gyuf', '796', '678', 'lady@gaga.com', 'islam', '6785', 'ELy', 'SE001', 'PR001', 'KO001', 'Februari', 'Pagi', 'aktif', 'IPA', '2018-07-11', '');
+INSERT INTO `tb_du` (`id_du`, `nama_du`, `jk_daftar_du`, `tpt_lahir_du`, `tgl_lahir_du`, `alamat_du`, `no_telp_du`, `no_telpm_du`, `email_du`, `agama_du`, `nik_du`, `ibu_kandung_du`, `id_sekolah2`, `id_prodi2`, `id_konsentrasi2`, `waktu_du`, `jurusan_du`, `tanggal_du`, `kode_tes`, `nim`) VALUES
+('DU009', 'Bayu', 'laki-laki', 'Malang', '2018-07-13', 'PAnjen', '877856', '678', 'bayuchrisna3@gmai.com', 'kristen', '43636', 'gerg', 'SE002', 'PR002', 'KO003', 'sore', 'rpl', '2018-07-08', '', ''),
+('DU010', 'Paris Hilton', 'perempuan', 'erter', '2018-07-13', 'ewew', '43643', '466', 'bayuchrisna3@gmai.com', 'islam', '4535', 'gerg', 'SE001', 'PR002', 'KO003', 'sore', 'tjk', '2018-07-09', '', ''),
+('DU011', 'Jlo', 'laki-laki', 'erter', '2018-07-09', 'efef', '3463', '46436', 'lady@gaga.com', 'buddha', '44353', 'ELy', 'SE001', 'PR001', 'KO001', 'Sore', 'hello', '2018-07-09', '', ''),
+('DU012', 'Paris Hilton', 'perempuan', 'Malang blitar', '2018-07-21', 'efef', '8976', '8675', 'bayuchrisna3@gmai.com', 'kristen', '77865', 'ELy', 'SE001', 'PR001', 'KO001', 'Sore', 'ipa', '2018-07-10', '', ''),
+('DU013', 'Bayu', 'laki-laki', 'Malang', '2018-07-06', 'efef', '466', '45345', 'lady@gaga.com', 'islam', '45345', 'ELy', 'SE001', 'PR004', 'KO002', 'pagi', 'ipa', '2018-07-10', '', ''),
+('DU014', 'Jessica Jung', 'laki-laki', 'erter', '2018-07-06', 'PAnjen', '009875', '9876', 'bayuchrisna3@gmail.com', 'buddha', '98765', 'gerg', '', 'PR001', 'KO001', 'pagi', '', '2018-07-10', '', ''),
+('DU015', 'yaaa', 'laki-laki', 'Malang', '2018-07-06', 'efef', '87', '9786', 'yoona@gmail.com', 'buddha', '9876', 'ELy', 'SE001', 'PR002', 'KO004', 'pagi', 'IPS', '2018-07-10', '', ''),
+('DU016', 'Katy', 'laki-laki', 'Malang', '2018-07-07', 'PAnjen', '9876', '98765', 'lady@gaga.com', 'islam', '9786', 'ELy', 'SE001', 'PR001', 'KO001', 'Sore', 'ipa', '2018-07-10', '', ''),
+('DU017', 'yaaa', 'laki-laki', 'Malang blitar', '2018-07-20', '78', '87', '9876', 'yoona@gmail.com', 'islam', '90876', 'ELy', 'SMK T', 'PR003', 'KO005', 'Pagi', 'IPS', '2018-07-10', '', ''),
+('DU018', 'aldi', 'laki-laki', 'Malang', '2018-07-02', 'PAnjen', '1', '8976', 'as@asd.sads', 'kristen', '98', 'ELy', 'SE002', 'PR002', 'KO003', 'Pagi', 'TKJ', '2018-07-10', '', ''),
+('DU019', 'Orlando', 'laki-laki', 'f', '2018-07-13', 'efef', '8675', '978654', 'bayuchrisna3@gmai.com', 'islam', '7865', 'ELy', 'SE001', 'PR004', 'KO002', 'Sore', 'ipa', '2018-07-10', 'Tidak ', ''),
+('DU020', 'Paris Hilton', 'perempuan', 'Malang', '2018-07-13', 'efef', '87978675', '8786576', 'lady@gaga.com', 'hindu', '7865', 'ELy', 'SE001', 'PR003', 'KO005', 'Sore', 'ipa', '2018-07-10', 'Tidak Tes', ''),
+('TES002', 'Ariana', 'perempuan', 'Malang blitar', '2018-07-02', 'PAnjen', '98756', '789785', 'admin@gmail.com', 'hindu', '68765', 'Sewa', 'SE002', 'PR002', 'KO003', 'Pagi', 'IPA', '2018-07-11', '', ''),
+('TES003', 'Lala', 'laki-laki', 'erter', '2018-07-14', 'gyuf', '796', '678', 'lady@gaga.com', 'islam', '6785', 'ELy', 'SE001', 'PR001', 'KO001', 'Pagi', 'IPA', '2018-07-11', '', '');
 
 -- --------------------------------------------------------
 
@@ -192,15 +211,20 @@ CREATE TABLE `tb_pendaftaran` (
   `id_prodi2` varchar(6) NOT NULL,
   `sumber` varchar(30) NOT NULL,
   `ibu_kandung` varchar(30) NOT NULL,
-  `bukti_transfer` text NOT NULL
+  `bukti_transfer` text NOT NULL,
+  `agama` varchar(10) NOT NULL,
+  `id_du2` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_pendaftaran`
 --
 
-INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tanggal_pendaftaran`, `nama_pendaftar`, `jk_pendaftar`, `id_sekolah2`, `jurusan`, `alamat`, `email`, `no_telp`, `waktu`, `status_bayar`, `id_prodi2`, `sumber`, `ibu_kandung`, `bukti_transfer`) VALUES
-('TM001', '2018-07-12', 'yaaa', 'laki-laki', 'SE001', 'ipa', 'France', 'yoona@gmail.com', '89765', 'laki-laki', 'Belum bayar', 'PR001', 'ipa', '', 'IMG_00021.jpg');
+INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tanggal_pendaftaran`, `nama_pendaftar`, `jk_pendaftar`, `id_sekolah2`, `jurusan`, `alamat`, `email`, `no_telp`, `waktu`, `status_bayar`, `id_prodi2`, `sumber`, `ibu_kandung`, `bukti_transfer`, `agama`, `id_du2`) VALUES
+('TM001', '2018-07-12', 'yaaa', 'laki-laki', 'SE001', 'ipa', 'France', 'yoona@gmail.com', '89765', 'Pagi', 'Proses Pengecekan', 'PR001', 'ipa', '', 'IMG_0001.jpg', 'Islam', ''),
+('TM002', '2018-07-12', 'Paris ', 'perempuan', 'SE001', 'ipa', 'Los Angeles', 'yoona@gmail.com', '9876', 'laki-laki', 'Belum bayar', 'PR001', 'ipa', 'ELy', '', '', ''),
+('TM003', '2018-07-12', 'Katy', 'laki-laki', 'SE001', 'ipa', 'DU001', 'yoona@gmail.com', '0987', 'Pagi', 'Belum bayar', 'PR001', 'ipa', 'ELy', '', '', ''),
+('TM004', '2018-07-12', 'GAga', 'laki-laki', 'SE001', 'ipa', 'Los Angeles', 'yoona@gmail.com', '68565', 'Pagi', 'Belum bayar', 'PR001', 'ipa', 'ELy', '', 'Hindu', 'DU001');
 
 -- --------------------------------------------------------
 
@@ -264,10 +288,16 @@ ALTER TABLE `matkul_akuntansi`
   ADD PRIMARY KEY (`id_matkul_akuntansi`);
 
 --
+-- Indexes for table `tb_biaya`
+--
+ALTER TABLE `tb_biaya`
+  ADD PRIMARY KEY (`id_biaya`);
+
+--
 -- Indexes for table `tb_du`
 --
 ALTER TABLE `tb_du`
-  ADD PRIMARY KEY (`no_du`),
+  ADD PRIMARY KEY (`id_du`),
   ADD KEY `id_sekolah` (`id_sekolah2`),
   ADD KEY `id_prodi` (`id_prodi2`),
   ADD KEY `id_prodi_2` (`id_prodi2`),
