@@ -91,15 +91,25 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span> Pendaftaran </span>
+            <i class="fa fa-dashboard"></i> <span> Pemasaran </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>pendaftaran"><i class="fa fa-circle-o"></i>Pendaftaran</a></li>
-            <li><a href="<?php echo base_url(); ?>pendaftaran/data_pra_pendaftar"><i class="fa fa-circle-o"></i>Data Peserta Tes</a></li>
-             <li><a href="<?php echo base_url(); ?>daftar_ulang/data_du"><i class="fa fa-circle-o"></i>Data Daftar Ulang</a></li>
+            <li><a href="<?php echo base_url(); ?>tamu"><i class="fa fa-circle-o"></i>Data Tamu</a></li>
+            <li><a href="<?php echo base_url(); ?>daftar_ulang/data_du"><i class="fa fa-circle-o"></i>Data Pendaftar</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span> Keuangan </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url(); ?>finance"><i class="fa fa-circle-o"></i>Konfirmasi Registrasi</a></li>
           </ul>
         </li>
       </ul>
