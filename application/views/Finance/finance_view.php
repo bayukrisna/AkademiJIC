@@ -4,20 +4,19 @@
           <?php echo $this->session->flashdata('message');?>
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Program Studi</h3>
+              <h3 class="box-title">Data Pendaftar</h3>
             </div>
 
             
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
-              <a href="<?php echo base_url() ?>master_prodi/page_tambah_prodi" class="btn btn-info btn-sm" > Tambah Prodi</a> <br> <br>
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>Id Prodi</th>
-                  <th>Nama Prodi</th>
-                  <th>Ketua Prodi</th>
+                  <th>Id Pendaftaran</th>
+                  <th>Nama Pendaftar</th>
+                  <th>Status Pendaftar</th>
                   <th>Gambar</th>
                   <th>Aksi</th>
                 </tr>
