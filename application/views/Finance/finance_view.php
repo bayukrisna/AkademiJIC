@@ -17,6 +17,7 @@
                   <th>Id Prodi</th>
                   <th>Nama Prodi</th>
                   <th>Ketua Prodi</th>
+                  <th>Gambar</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -29,15 +30,38 @@
                   
                 <tr>
                   <td>'.++$no.'</td>
-                  <td>'.$data->id_prodi.'
+                  <td name="id_pendaftaran">'.$data->id_pendaftaran.'
                   </td>
-                  <td>'.$data->nama_prodi.'</td>
-                  <td>'.$data->ketua_prodi.'</td>
+                  <td>'.$data->nama_pendaftar.'</td>
+                  <td>'.$data->status_bayar.'</td>
+                  <td> <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                    Lihat
+              </button>
+                  </td>
                   <td>
-                      <a href="'.base_url('index.php/master_prodi/edit_prodi/'.$data->id_prodi).'" class="btn btn-warning btn-sm" >Edit </a>
-                      <a href="'.base_url('index.php/master_prodi/hapus_prodi/'.$data->id_prodi).'" class="btn btn-danger btn-sm">Hapus</a>
-                  </td>
+                  <a href="'.base_url('finance/konfirmasi/'.$data->id_pendaftaran).'" class="btn btn-success btn-sm" >konfirmasi </a>
+                  
                 </tr>
+                <div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Default Modal</h4>
+              </div>
+              <div class="modal-body">
+                <img style="height:400px;" src= '.base_url('uploads/'.$data->bukti_transfer.''). '>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
                 ';
                 
               }
@@ -45,6 +69,7 @@
                 </tbody>
               </table>
             </div>
+            
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
