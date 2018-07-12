@@ -106,7 +106,7 @@
                 <div class="form-group">
                   <label for="prodi">Program Studi</label>
                   <select id="id_prodi" class="form-control" required="" name="id_prodi" ="" onchange="return get_concentrate(this.value)">
-                    <option value="<?php echo $du_pagi->id_prodi2; ?>"><?php echo $du_pagi->nama_prodi; ?></option>   
+                    <option value="">Pilih Prodi</option>   
                     <?php 
 
                   foreach($getProdi as $row)
