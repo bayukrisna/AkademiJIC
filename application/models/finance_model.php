@@ -15,6 +15,21 @@ class Finance_model extends CI_Model {
 		->get('tb_pendaftaran')
 		->result();
 	}
+	public function save_konfirmasi($id_pendaftaran){
+    $data = array(
+       'id_pendaftaran'     => $id_pendaftaran,
+        'status_bayar'  => 'lunas'
+      );
+
+    $this->db->where('id_pendaftaran', $id_pendaftaran)
+        ->update('tb_pendaftaran', $data);
+
+    if ($this->db->affected_rows() > 0) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  }
 }
 
 /* End of file prodi_model.php */

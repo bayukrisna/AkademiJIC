@@ -15,12 +15,14 @@ class Finance extends CI_Controller {
 		$data['mahasiswa'] = $this->finance_model->data_mahasiswa();
 		$this->load->view('template', $data);
 	}
-	public function konfirmasi($id_pendaftaran){
-				$data['data_biaya'] = $this->biaya_sekolah_model->data_biaya();
-				$data['main_view'] = 'Biaya_sekolah/edit_biaya_sekolah_view';
-				$id_biaya = $this->uri->segment(3);
-				$data['edit'] = $this->biaya_sekolah_model->get_biaya_by_id($id_biaya);
-				$this->load->view('template', $data);
-	}
-
+	public function konfirmasi($id_pendaftaran){				
+				$id_pendaftaran = $this->uri->segment(3);
+				if ($this->finance_model->save_konfirmasi($id_pendaftaran) == TRUE) {
+						$this->session->set_flashdata('message', '<div class="alert alert-success"> konfirmasi Berhasil </div>');
+						redirect('finance');
+					} else {
+						$this->session->set_flashdata('message', '<div class="alert alert-danger"> Konfirmasi Gagal </div>');
+						redirect('finance');
+					}
+			}
 }

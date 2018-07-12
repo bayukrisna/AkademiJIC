@@ -1,6 +1,7 @@
 <section class="content">
       <div class="row">
         <div class="col-xs-12">
+          <?php echo $this->session->flashdata('message');?>
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Data Program Studi</h3>
