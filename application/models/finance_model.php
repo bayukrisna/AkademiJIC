@@ -9,9 +9,10 @@ class Finance_model extends CI_Model {
 		parent::__construct();
 	}
 
-	public function data_prodi(){
-		return $this->db->order_by('id_prodi','ASC')
-		->get('tb_prodi')
+	public function data_mahasiswa(){
+		return $this->db->where('status_bayar' , 'Proses Pengecekan')
+		->order_by('id_pendaftaran','ASC')
+		->get('tb_pendaftaran')
 		->result();
 	}
 }
