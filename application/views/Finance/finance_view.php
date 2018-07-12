@@ -40,6 +40,7 @@
                   </td>
                   <td>
                   <a href="'.base_url('finance/konfirmasi/'.$data->id_pendaftaran).'" class="btn btn-success btn-sm" >konfirmasi </a>
+                  <a href="'.base_url('finance/konfirmasi_gagal/'.$data->id_pendaftaran).'" class="btn btn-success btn-sm" >Data Tidak Valid </a>
                   
                 </tr>
                 <div class="modal fade" id="modal-default">

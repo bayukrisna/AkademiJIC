@@ -25,4 +25,14 @@ class Finance extends CI_Controller {
 						redirect('finance');
 					}
 			}
+	public function konfirmasi_gagal($id_pendaftaran){				
+				$id_pendaftaran = $this->uri->segment(3);
+				if ($this->finance_model->gagal_konfirmasi($id_pendaftaran) == TRUE) {
+						$this->session->set_flashdata('message', '<div class="alert alert-success"> Data tidak valid </div>');
+						redirect('finance');
+					} else {
+						$this->session->set_flashdata('message', '<div class="alert alert-danger"> Konfirmasi Gagal </div>');
+						redirect('finance');
+					}
+			}
 }
