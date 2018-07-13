@@ -66,13 +66,13 @@ class daftar_ulang extends CI_Controller {
 			$this->load->view('template', $data);
 	}
 
-	public function detail_du()
+	public function detail_nilai()
 	{
 			$id_du = $this->uri->segment(3);
-			$data['du'] = $this->daftar_ulang_model->detail_du($id_du);
+			$data['edit'] = $this->daftar_ulang_model->detail_nilai($id_du);
 			$data['getProdi'] = $this->daftar_ulang_model->getProdi();
 			$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
-			$data['main_view'] = 'Daftar/edit_daftarulang_view';
+			$data['main_view'] = 'Tes/detail_hasil_tes_view';
 			$this->load->view('template', $data);
 	}
 

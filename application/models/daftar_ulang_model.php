@@ -171,11 +171,12 @@ class Daftar_ulang_model extends CI_Model {
 
     }
 
-  public function detail_du($id_du){
+  public function detail_nilai($id_du){
       return $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_du.id_prodi2')
               ->join('tb_sekolah','tb_sekolah.id_sekolah=tb_du.id_sekolah2')
               ->join('tb_konsentrasi','tb_konsentrasi.id_konsentrasi=tb_du.id_konsentrasi2')
-              ->where('no_du', $id_du)
+              ->join('tb_hasil_tes','tb_hasil_tes.id_hasil_tes=tb_du.kode_tes')
+              ->where('id_du', $id_du)
               ->get('tb_du')
               ->row();
   }

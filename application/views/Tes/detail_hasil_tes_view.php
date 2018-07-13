@@ -14,7 +14,7 @@
                   <label for="inputEmail3" class="control-label pull-left">No Daftar</label>
                 </div>
                   <div class="col-md-4">
-                    <input type="input" class="form-control input-sm" id="id_hasil_tes2" name="id_hasil_tes2" placeholder="Email" value="<?php echo $edit->id_hasil_tes2; ?>" readonly>
+                    <input type="input" class="form-control input-sm" id="id_hasil_tes2" name="id_hasil_tes2" placeholder="Email" value="<?php echo $edit->kode_tes; ?>" readonly>
                   </div>
                 </div>
                 <div class="form-group">
@@ -34,7 +34,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Nama</label>
                 </div>
                   <div class="col-md-9">
-                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $edit->nama_pendaftar; ?>">
+                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $edit->nama_du; ?>">
                   </div>
                 </div>
                 <div class="form-group">
@@ -42,7 +42,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Alamat</label>
                 </div>
                   <div class="col-md-9">
-                    <textarea type="text" class="form-control input-sm" id="inputEmail3" placeholder=""><?php echo $edit->alamat; ?>
+                    <textarea type="text" class="form-control input-sm" id="inputEmail3" placeholder=""><?php echo $edit->alamat_du; ?>
                       </textarea>
                   </div>
                 </div>
@@ -59,7 +59,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Email</label>
                 </div>
                   <div class="col-md-9">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $edit->email; ?>">
+                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $edit->email_du; ?>">
                   </div>
                 </div>
                 <div class="form-group">
@@ -67,7 +67,7 @@
                   <label for="inputEmail3" class="control-label pull-left">No. Telp</label>
                 </div>
                   <div class="col-md-6">
-                    <input type="number" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $edit->no_telp; ?>">
+                    <input type="number" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $edit->no_telp_du; ?>">
                   </div>
                 </div>
                 <div class="box-header with-border">
@@ -156,7 +156,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Jenis Sekolah</label>
                   </div>
                   <div class="col-md-2">
-                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" >
+                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $edit->jenis_sekolah; ?>">
                   </div>
                 </div>
                 <br><br>
@@ -186,7 +186,7 @@
                   <div class="col-md-5">
                   <label for="inputEmail3" class="control-label pull-left">Ranking</label>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-5">
                     <input id="grade" name="grade" type="text" class="form-control input-sm" placeholder="" readonly="" value="<?php echo $edit->grade; ?>">
                   </div>
                 </div>
@@ -213,11 +213,11 @@
             if (nilai <= 75){
               grade = "Non-Beasiswa"
             } else if(nilai <= 79.9){
-              grade = "3"
+              grade = "Ranking 3"
             } else if(nilai <= 89.9){
-              grade = "2"
+              grade = "Ranking 2"
             } else {
-              grade ="1"
+              grade ="Ranking 1"
             }
             if (!isNaN(result)) {
             document.getElementById('total_jawaban').value = result;
