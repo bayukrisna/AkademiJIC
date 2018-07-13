@@ -4,7 +4,7 @@
           <div class="box">
             <div class="box-header">
               <?php echo $this->session->flashdata('message');?>
-              <h3 class="box-title">Data Biaya</h3>
+              <h3 class="box-title">Data Mahasiswa</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -25,7 +25,6 @@
 
                 <?php 
                 $no = 0;
-                $alert = "'Apakah anda yakin mengapus data ini ?'";
                 foreach ($mahasiswa as $data) {
                   echo '
                   

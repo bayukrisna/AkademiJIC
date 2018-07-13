@@ -98,7 +98,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url(); ?>tamu"><i class="fa fa-circle-o"></i>Data Tamu</a></li>
-            <li><a href="<?php echo base_url(); ?>daftar_ulang/data_du"><i class="fa fa-circle-o"></i>Data Pendaftar</a></li>
+            <li><a href="<?php echo base_url(); ?>daftar_ulang/data_du"><i class="fa fa-circle-o"></i>Data Peserta Tes</a></li>
             <li><a href="<?php echo base_url(); ?>mahasiswa"><i class="fa fa-circle-o"></i>Data Mahasiswa</a></li>
           </ul>
         </li>

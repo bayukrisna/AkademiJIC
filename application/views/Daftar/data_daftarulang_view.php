@@ -4,7 +4,7 @@
           <div class="box">
             <div class="box-header">
               <?php echo $this->session->flashdata('message');?>
-              <h3 class="box-title">Data Daftar Ulang</h3>
+              <h3 class="box-title">Data Peserta Tes</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

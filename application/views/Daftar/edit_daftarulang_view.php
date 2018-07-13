@@ -4,7 +4,7 @@
         <div>
           <div class="panel panel-primary">
             <div class="panel-heading">
-            <i class="fa fa-user-plus"></i> Detail Daftar Ulang <?php echo $du->nama_du; ?></div>
+            <i class="fa fa-user-plus"></i> Detail Peserta Tes <?php echo $du->nama_du; ?></div>
             <div class="panel-body">
               <div class="row">
                 <div class="col-lg-6">
