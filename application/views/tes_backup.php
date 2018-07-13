@@ -1936,12 +1936,12 @@ function lI1IllI111IlI1I1llll1lIIl()
 <P class="p2 ft1">Jl. Perunggu No. <NOBR>53-54</NOBR></P>
 <P class="p3 ft1">Cempaka Putih</P>
 <P class="p3 ft1">Jakarta Pusat 10640</P>
-<P class="p4 ft1">Nama : <?php echo $edit->nama_pendaftar; ?></P> 
+<P class="p4 ft1">Nama : <?php echo $edit->nama_du; ?></P> 
 <P class="p2 ft1">Asal Sekolah : <?php echo $edit->nama_sekolah; ?></P>
-<P class="p5 ft1">Jurusan : <?php echo $edit->jurusan; ?></P>
-<P class="p2 ft1">Alamat : <?php echo $edit->alamat; ?></P>
-<P class="p2 ft1">Email : <?php echo $edit->email; ?></P>
-<P class="p5 ft1">No. Telp/ Hp : <?php echo $edit->no_telp; ?></P> <br><br>
+<P class="p5 ft1">Jurusan : <?php echo $edit->jurusan_du; ?></P>
+<P class="p2 ft1">Alamat : <?php echo $edit->alamat_du; ?></P>
+<P class="p2 ft1">Email : <?php echo $edit->email_du; ?></P>
+<P class="p5 ft1">No. Telp/ Hp : <?php echo $edit->no_telp_du; ?></P> <br><br>
 <P class="p6 ft2">Isi dengan diberi tanda silang (X) pada jawaban yang benar.</P>
 <!-- To remove the JavaScript and access tabular data please reach out to BCL at pdf2html@bcltechnologies.com -->
 <TABLE id="l111l1llI1IIl1l1ll1lI1I11" cellpadding=0 cellspacing=0 class="t0"></TABLE>

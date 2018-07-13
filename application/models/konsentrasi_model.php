@@ -24,6 +24,8 @@ class Konsentrasi_model extends CI_Model {
               ->row();
   }
 
+  
+
 	public function get_prodi(){
 		return $this->db->get('tb_prodi')->result();
 	}

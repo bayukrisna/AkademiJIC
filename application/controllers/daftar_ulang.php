@@ -7,7 +7,7 @@ class daftar_ulang extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('daftar_ulang_model');
-		$this->load->model('pendaftaran_model');
+		$this->load->model('tamu_model');
 	}
 
 	public function page_du_pagi()
@@ -74,17 +74,13 @@ class daftar_ulang extends CI_Controller {
 			$this->load->view('template', $data);
 	}
 
-	public function save_pendaftaran_sore()
-	{
-			if($this->pendaftaran_model->save_pendaftaran_sore() == TRUE){
-				$nama_du = $this->input->post('nama_du');
-				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$nama_du.' berhasil didaftarkan. </div>');
-            	redirect('daftar_ulang/data_du');
-			} else{
-				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
-            	redirect('pendaftaran');
-			} 
-	} 
+	public function print_ljk(){
+        
+        $id_du= $this->uri->segment(3);
+        $data['edit'] = $this->daftar_ulang_model->get_du_by_id($id_du);
+        $data['main_view'] = 'tes_backup';
+        $this->load->view('template', $data);
+   }
 
 	public function get_concentrate($param = NULL) {
 		// $layanan =$this->input->post('layanan');
