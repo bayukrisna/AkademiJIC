@@ -8,6 +8,7 @@ class Tamu extends CI_Controller {
 		parent::__construct();
 		$this->load->model('tamu_model');
 		$this->load->model('daftar_ulang_model');
+		$this->load->model('mahasiswa_model');
 	}
 
 	public function index(){
@@ -19,6 +20,7 @@ class Tamu extends CI_Controller {
 	}
 
 	public function page_tambah_tamu(){
+				$data['mahasiswa'] = $this->mahasiswa_model->data_mahasiswa();
 				$data['kodeunik'] = $this->tamu_model->buat_kode();
 				$data['getProdi'] = $this->daftar_ulang_model->getProdi();
 				$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();

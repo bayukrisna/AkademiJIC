@@ -125,10 +125,10 @@
                 </select>                                     
                 </div>
                 <label for="major">Student Get Student</label>
-                <div class="input-group">
+                <div class="input-group" >
                
                 <!-- /btn-group -->
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="student" >
                  <div class="input-group-btn">
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-default"><i class="fa fa-search"></i></button>
                 </div>
@@ -144,7 +144,39 @@
                 <h4 class="modal-title">Default Modal</h4>
               </div>
               <div class="modal-body">
-                <p>One fine body&hellip;</p>
+                <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>NIM</th>
+                  <th>Nama</th>
+                  <th>Nama Prodi</th>
+                  <th>Waktu</th>
+                  <th>Aksi</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <?php 
+                $no = 0;
+                foreach ($mahasiswa as $data) {
+                  echo '
+                  
+                <tr>
+                  <td id="nim">'.$data->nim.'
+                  </td>
+                  <td>'.$data->nama_du.'</td>
+                  <td>'.$data->nama_prodi.'</td>
+                  <td>'.$data->waktu.'</td>
+                  <td><p class="btn btn-default btn-sm" onclick="myFunction('.$data->nim.')">Pilih</p></td>
+                </tr>
+                ';
+                
+              }
+              ?>
+                </tbody>
+              </table>
+            </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
@@ -170,8 +202,8 @@
 </div>
 </div>
 <script>
-function myFunction() {
-    document.getElementById("student").value = "hello";
+function myFunction(name) {
+    document.getElementById("student").value = name;
 }
 </script>
        
