@@ -11,10 +11,10 @@
             <!-- form start -->
                 <div class="form-group">
                   <div class="col-md-2">
-                  <label for="inputEmail3" class="control-label pull-left">No Daftar</label>
+                  <label for="inputEmail3" class="control-label pull-left">Kode Tes</label>
                 </div>
                   <div class="col-md-4">
-                    <input type="input" class="form-control input-sm" id="id_hasil_tes" name="id_hasil_tes" placeholder="Email" value="<?php echo $hasil_tes->id_hasil_tes2; ?>" readonly>
+                    <input type="input" class="form-control input-sm" id="id_hasil_tes" name="id_hasil_tes" placeholder="Email" value="<?php echo $hasil_tes->kode_tes; ?>" readonly>
                   </div>
                 </div>
                 <div class="form-group">
@@ -34,7 +34,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Nama</label>
                 </div>
                   <div class="col-md-9">
-                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->nama_pendaftar; ?>">
+                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->nama_du; ?>">
                   </div>
                 </div>
                 <div class="form-group">
@@ -42,7 +42,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Alamat</label>
                 </div>
                   <div class="col-md-9">
-                    <textarea type="text" class="form-control input-sm" id="inputEmail3" placeholder=""><?php echo $hasil_tes->alamat; ?>
+                    <textarea type="text" class="form-control input-sm" id="inputEmail3" placeholder=""><?php echo $hasil_tes->alamat_du; ?>
                       </textarea>
                   </div>
                 </div>
@@ -59,7 +59,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Email</label>
                 </div>
                   <div class="col-md-9">
-                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->email; ?>">
+                    <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->email_du; ?>">
                   </div>
                 </div>
                 <div class="form-group">
@@ -67,7 +67,7 @@
                   <label for="inputEmail3" class="control-label pull-left">No. Telp</label>
                 </div>
                   <div class="col-md-6">
-                    <input type="number" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->no_telp; ?>">
+                    <input type="number" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->no_telp_du; ?>">
                   </div>
                 </div>
                 <div class="box-header with-border">

@@ -74,7 +74,7 @@ class Tamu_model extends CI_Model {
             'id_prodi2' => $this->input->post('id_prodi', TRUE),
             'ibu_kandung' => $this->input->post('ibu_kandung', TRUE),
             'agama' => $this->input->post('agama', TRUE),
-            'id_du2' => $this->input->post('id_du2', TRUE)
+            
             
         );
     

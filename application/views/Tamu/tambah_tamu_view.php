@@ -134,7 +134,7 @@
                 </div>
               </div>
                 <br>
-                  <input type="hidden" name="id_du2" class="form-control" id="id_du2" placeholder="Input Home Address" required="" value="<?php echo $kodeunik_du; ?>" readonly>
+                 
                 <div class="modal fade" id="modal-default">
           <div class="modal-dialog">
             <div class="modal-content">

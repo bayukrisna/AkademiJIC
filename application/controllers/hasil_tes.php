@@ -6,15 +6,14 @@ class Hasil_tes extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('pendaftaran_model');
+		$this->load->model('daftar_ulang_model');
 	}
 
-	public function index()
+	public function page_input_nilai()
 	{
-				$data['getPreschool'] = $this->pendaftaran_model->getPreschool();
-				$id_pendaftaran = $this->uri->segment(3);
-				$data['hasil_tes'] = $this->pendaftaran_model->get_pra_pendaftar($id_pendaftaran);
-				$data['id_pendaftaran'] = $id_pendaftaran;
+				$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
+				$id_du = $this->uri->segment(3);
+				$data['hasil_tes'] = $this->daftar_ulang_model->get_du_by_id($id_du);
 				$data['main_view'] = 'hasil_tes_view';
 				$this->load->view('template', $data);
 	}
@@ -29,22 +28,22 @@ class Hasil_tes extends CI_Controller {
 	{
 		
 			
-			if($this->pendaftaran_model->save_hasil_tes() == TRUE){
-				$id_tes = $this->input->post('id_hasil_tes');
-				$this->pendaftaran_model->save_update_status($id_tes);
-				$hasil_tes = $this->input->post('nama_pendaftar');
+			if($this->daftar_ulang_model->save_hasil_tes() == TRUE){
+				$id_tes = $this->input->post('kode_tes');
+				$this->daftar_ulang_model->save_update_status($id_tes);
+				$hasil_tes = $this->input->post('nama_du');
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> esHasil t '.$hasil_tes.' berhasil didaftarkan. </div>');
-            	redirect('pendaftaran/data_pra_pendaftar');
+            	redirect('daftar_ulang/data_du');
 			} else{
-				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
-            	redirect('pendaftaran');
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Kode Tes Sudah Ada </div>');
+            	redirect('hasil_tes/page_input_nilai');
 			} 
 	} 
 
 	 public function print_hasil_tes(){
         
-        $id_pendaftaran = $this->uri->segment(3);
-        $data['edit'] = $this->pendaftaran_model->get_hasil_tes($id_pendaftaran);
+        $id_du = $this->uri->segment(3);
+        $data['edit'] = $this->daftar_ulang_model->get_hasil_tes($id_du);
         $data['main_view'] = 'Tes/hasil_tes_cetak_view';
         $this->load->view('template', $data);
   }

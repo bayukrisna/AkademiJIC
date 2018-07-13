@@ -227,6 +227,57 @@ class Daftar_ulang_model extends CI_Model {
             ->get('tb_du')
             ->row();
   }
+
+  public function save_hasil_tes()
+    {        
+        $data = array(
+            'id_hasil_tes'      => $this->input->post('id_hasil_tes', TRUE),
+            'nilai_mat'      => $this->input->post('mtk', TRUE),
+            'nilai_bing'      => $this->input->post('bing', TRUE),
+            'nilai_psikotes'     => $this->input->post('psikotes', TRUE),
+            'total_nilai'     => $this->input->post('nilai', TRUE),
+            'total_jawaban'     => $this->input->post('total_jawaban', TRUE),
+            'grade'     => $this->input->post('grade', TRUE),
+            'tanggal_hasil_tes'     => date('Y-m-d')
+
+        );
+    
+        $this->db->insert('tb_hasil_tes', $data);
+
+        if($this->db->affected_rows() > 0){
+            
+                return true;
+        } else {
+            return false;
+            
+        }
+
+    }
+
+    public function get_hasil_tes($id_du){
+      return $this->db->join('tb_sekolah','tb_sekolah.id_sekolah=tb_du.id_sekolah2')
+              ->join('tb_hasil_tes','tb_hasil_tes.id_hasil_tes=tb_du.kode_tes')
+              ->where('id_du', $id_du)
+              ->get('tb_du')
+              ->row();
+  }
+
+
+    public function save_update_status($id_tes){
+    $data = array(
+       'status_du'     => 'Mahasiswa'
+      );
+
+    $this->db->where('kode_tes', $id_tes)
+        ->update('tb_du', $data);
+
+    if ($this->db->affected_rows() > 0) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  }
+
 }
    // return $this->db->where('status', 'Tersedia')->where($data)->get('service')->result();
 /* End of file dosen_model.php */

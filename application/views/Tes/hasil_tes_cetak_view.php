@@ -91,11 +91,11 @@ function lI1IllI111IlI1I1llll1lIIl()
 
 
 <P class="p0 ft0">Jakarta, <?php echo date('d M Y') ?></P>
-<P class="p1 ft0">Nomor : <?php echo $edit->id_pendaftaran; ?> /Mkt/Ekst/ I /17</P>
+<P class="p1 ft0">Nomor : <?php echo $edit->id_du; ?> /Mkt/Ekst/ I /17</P>
 <P class="p2 ft0">Perihal : Pemberitahuan Hasil Tes</P>
 <P class="p3 ft0">Kepada Yth,</P>
-<P class="p2 ft1"><SPAN class="ft0">Sdr </SPAN><?php echo $edit->nama_pendaftar; ?></P>
-<P class="p3 ft0">Di <?php echo $edit->alamat; ?></P>
+<P class="p2 ft1"><SPAN class="ft0">Sdr </SPAN><?php echo $edit->nama_du; ?></P>
+<P class="p3 ft0">Di <?php echo $edit->alamat_du; ?></P>
 <P class="p1 ft0">Dengan hormat,</P>
 <P class="p4 ft3">Dengan datangnya surat ini kami ingin memberitahukan bahwa Anda telah lulus Tes di STIE Jakarta International College. Nilai yang diperoleh adalah “ <SPAN class="ft2"><?php echo $edit->total_nilai; ?> </SPAN>“ dengan beasiswa “ <SPAN class="ft2" id="grade">GRADE <?php echo $edit->grade; ?></SPAN>“ dengan biaya RP. <NOBR id="biaya">,-/</NOBR> semester. Biaya tersebut include : Uang gedung, SPP, SKS, Uang Ujian, Kegiatan Mahasiswa dan Perpustakaan.</P>
 <P class="p5 ft5">Sekolah Tinggi Ilmu Ekonomi Jakarta International College (STIE JIC) dengan pilihan program studi Manajemen (Pemasaran dan Keuangan) dan Akuntansi (Perpajakan Audit) terakreditasi “B” oleh BAN PT memberikan BEASISWA kepada Anda dengan cara yang mudah. BEASISWA diberikan sebagai bentuk CSR (<SPAN class="ft4">Cosporate Social Responsibility</SPAN>) dari beberapa perusahaan pendukung operasional STIE JIC.</P>
