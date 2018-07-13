@@ -86,7 +86,7 @@
                   <td>'.$data->waktu.'</td>
                   <td>'.$data->status_du.'</td>
                   <td>
-                    <a href="'.base_url('index.php/daftar_ulang/detail_du/'.$data->id_du).'" class="btn btn-warning btn-sm" >Detail</a>
+                  
                   </td>
                 </tr>
                 ';

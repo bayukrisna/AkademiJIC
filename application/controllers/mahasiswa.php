@@ -20,7 +20,7 @@ class Mahasiswa extends CI_Controller {
 	public function detail_mahasiswa()
 	{
 			$id_du = $this->uri->segment(3);
-			$data['du'] = $this->daftar_ulang_model->detail_nilai($id_du);
+			$data['du'] = $this->daftar_ulang_model->detail_du($id_du);
 			$data['getProdi'] = $this->daftar_ulang_model->getProdi();
 			$data['getPreschool'] = $this->daftar_ulang_model->getPreschool();
 			$data['main_view'] = 'Mahasiswa/detail_mahasiswa_view';

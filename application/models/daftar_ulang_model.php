@@ -181,6 +181,15 @@ class Daftar_ulang_model extends CI_Model {
               ->row();
   }
 
+  public function detail_du($id_du){
+      return $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_du.id_prodi2')
+              ->join('tb_sekolah','tb_sekolah.id_sekolah=tb_du.id_sekolah2')
+              ->join('tb_konsentrasi','tb_konsentrasi.id_konsentrasi=tb_du.id_konsentrasi2')
+              ->where('id_du', $id_du)
+              ->get('tb_du')
+              ->row();
+  }
+
   public function get_data_pagi($id_pendaftaran){
       return $this->db->join('tb_sekolah','tb_sekolah.id_sekolah=tb_pendaftaran.id_sekolah2')
               ->where('id_pendaftaran', $id_pendaftaran)
