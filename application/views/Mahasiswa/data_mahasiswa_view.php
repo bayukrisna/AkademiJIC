@@ -39,7 +39,8 @@
                   <td>'.$data->waktu.'</td>
                   <td>'.$data->status_du.'</td>
                   <td>
-                      <p>ea</p>
+                       <a href="'.base_url('index.php/mahasiswa/detail_mahasiswa/'.$data->id_du).'" class="btn btn-info btn-sm">Detail</a>
+
                   </td>
                 </tr>
                 ';

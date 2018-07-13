@@ -75,6 +75,7 @@ class Daftar_ulang_model extends CI_Model {
       return $this->db->join('tb_prodi','tb_prodi.id_prodi=tb_du.id_prodi2')
               ->join('tb_sekolah','tb_sekolah.id_sekolah=tb_du.id_sekolah2')
               ->join('tb_konsentrasi','tb_konsentrasi.id_konsentrasi=tb_du.id_konsentrasi2')
+              ->where('waktu','Pagi')
               ->get('tb_du')
               ->result();
   }
