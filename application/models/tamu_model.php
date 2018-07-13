@@ -120,12 +120,12 @@ class Tamu_model extends CI_Model {
     }
   } 
 
-  public function save_update_status2($id_tes){
+  public function save_update_status2($id_pendaftaran){
     $data = array(
        'status_bayar'     => 'Daftar Ulang'
       );
 
-    $this->db->where('id_pendaftaran', $id_tes)
+    $this->db->where('id_du2', $id_pendaftaran)
         ->update('tb_pendaftaran', $data);
 
     if ($this->db->affected_rows() > 0) {
