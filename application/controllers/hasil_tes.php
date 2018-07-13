@@ -59,4 +59,16 @@ class Hasil_tes extends CI_Controller {
         $data['main_view'] = 'Tes/detail_hasil_tes_view';
         $this->load->view('template', $data);
   }
+
+  public function save_edit_hasil_tes(){
+      $id_du = $this->uri->segment(3);
+          if ($this->daftar_ulang_model->save_edit_hasil_tes($id_du) == TRUE) {
+            $data['message'] = 'Edit Hasil Tes berhasil';
+            redirect('daftar_ulang/data_du');
+          } else {
+            $data['main_view'] = 'Prodi/master_konsentrasi_view';
+            $data['message'] = 'Edit Konsentrasi gagal';
+            redirect('master_konsentrasi/edit_konsentrasi');
+          }
+        }
 }
