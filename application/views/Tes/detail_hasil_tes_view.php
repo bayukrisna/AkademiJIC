@@ -184,7 +184,7 @@
                 </div>
                 <div class="form-group">
                   <div class="col-md-5">
-                  <label for="inputEmail3" class="control-label pull-left">Grade</label>
+                  <label for="inputEmail3" class="control-label pull-left">Ranking</label>
                   </div>
                   <div class="col-md-2">
                     <input id="grade" name="grade" type="text" class="form-control input-sm" placeholder="" readonly="" value="<?php echo $edit->grade; ?>">
@@ -210,14 +210,14 @@
             var nilai = result / 9 * 10;
             var pembulatan = nilai.toFixed(1);
             var grade = ""
-            if (nilai <= 25){
-              grade = "D"
-            } else if(nilai <= 50){
-              grade = "C"
-            } else if(nilai <= 75){
-              grade = "B"
+            if (nilai <= 75){
+              grade = "Non-Beasiswa"
+            } else if(nilai <= 79.9){
+              grade = "3"
+            } else if(nilai <= 89.9){
+              grade = "2"
             } else {
-              grade ="A"
+              grade ="1"
             }
             if (!isNaN(result)) {
             document.getElementById('total_jawaban').value = result;
