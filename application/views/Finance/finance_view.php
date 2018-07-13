@@ -26,6 +26,11 @@
                 <?php 
                 $no = 0;
                 foreach ($mahasiswa as $data) {
+                  $form_konfirmasi = '';
+                $form_close = '';
+                $form_konfirmasi .= form_open('finance/konfirmasi/'.$data->id_pendaftaran);
+                $form_close .= form_close();
+
                   echo '
                   
                 <tr>
@@ -39,12 +44,25 @@
               </button>
                   </td>
                   <td>
-                  <a href="'.base_url('finance/konfirmasi/'.$data->id_pendaftaran).'" class="btn btn-success btn-sm" >konfirmasi </a>
+                  <a type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-default2">
+                    Konfirmasi
+              </a>
                   <a href="'.base_url('finance/konfirmasi_gagal/'.$data->id_pendaftaran).'" class="btn btn-success btn-sm" >Data Tidak Valid </a>
                   
                 </tr>
                 <div class="modal fade" id="modal-default">
           <div class="modal-dialog">
+              <div class="modal-body">
+                <img src= '.base_url('uploads/'.$data->bukti_transfer.''). '>
+              </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        
+        <div class="modal fade" id="modal-default2">
+          <div class="modal-dialog">
+          '.$form_konfirmasi.'
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -52,18 +70,28 @@
                 <h4 class="modal-title">Default Modal</h4>
               </div>
               <div class="modal-body">
-                <img style="height:400px;" src= '.base_url('uploads/'.$data->bukti_transfer.''). '>
+              <div class="form-horizontal">
+                <div class="form-group">
+                  <div class="col-md-3">
+                  <label for="inputEmail3" class="control-label pull-left">ID Daftar Ulang</label>
+                </div>
+                  <div class="col-md-3">
+                    <input type="text" name="id_daftar_ulang" class="form-control input-sm pull-left" id="inputEmail3" placeholder="" required="">
+                  </div>
+                </div>
+              </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-info pull-right">Konfirmasi</button>
               </div>
             </div>
+            '.$form_close.'
             <!-- /.modal-content -->
           </div>
           <!-- /.modal-dialog -->
         </div>
-                ';
+                ' ;
                 
               }
               ?>
