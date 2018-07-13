@@ -36,6 +36,8 @@ class daftar_ulang extends CI_Controller {
 	public function save_du_pagi()
 	{
 			if($this->daftar_ulang_model->save_du_pagi() == TRUE){
+				$id_pendaftaran = $this->input->post('id_pendaftaran');
+				$this->tamu_model->save_update_status2($id_pendaftaran);
 				$nama_pendaftar = $this->input->post('nama_du');
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$nama_pendaftar.' berhasil didaftarkan. </div>');
             	redirect('daftar_ulang/data_du');
