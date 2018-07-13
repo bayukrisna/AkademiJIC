@@ -186,7 +186,7 @@
                   <div class="col-md-5">
                   <label for="inputEmail3" class="control-label pull-left">Ranking</label>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-5">
                     <input id="grade" name="grade" type="text" class="form-control input-sm" placeholder="" readonly="">
                   </div>
                 </div>
@@ -213,11 +213,11 @@
             if (nilai <= 75){
               grade = "Non-Beasiswa"
             } else if(nilai <= 79.9){
-              grade = "3"
+              grade = "Ranking 3"
             } else if(nilai <= 89.9){
-              grade = "2"
+              grade = "Ranking 2"
             } else {
-              grade ="1"
+              grade ="Ranking 1"
             }
             if (!isNaN(result)) {
             document.getElementById('total_jawaban').value = result;
