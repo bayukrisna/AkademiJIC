@@ -260,6 +260,12 @@ class Daftar_ulang_model extends CI_Model {
               ->row();
   }
 
+    public function get_biaya($cek){
+      return $this->db->where('nama_biaya', $cek)
+              ->get('tb_biaya')
+              ->row();
+  }
+
 
     public function save_update_status($id_tes){
     $data = array(

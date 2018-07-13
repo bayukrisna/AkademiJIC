@@ -43,7 +43,11 @@ class Hasil_tes extends CI_Controller {
 	 public function print_hasil_tes(){
         
         $id_du = $this->uri->segment(3);
-        $data['edit'] = $this->daftar_ulang_model->get_hasil_tes($id_du);
+        $edit = $this->daftar_ulang_model->get_hasil_tes($id_du);
+        $cek = $edit->grade;
+        $data['biaya'] = $this->daftar_ulang_model->get_biaya($cek);
+        $data['edit'] = $edit;
+
         $data['main_view'] = 'Tes/hasil_tes_cetak_view';
         $this->load->view('template', $data);
   }
