@@ -18,6 +18,12 @@ class Tamu_model extends CI_Model {
 		 return $query->result();
 	}
 
+  public function get_tamu_by_id($id_pendaftaran){
+      return $this->db->where('id_pendaftaran', $id_pendaftaran)
+              ->get('tb_pendaftaran')
+              ->row();
+  }
+
 	public function  buat_kode()   {
           $this->db->SELECT('RIGHT(tb_pendaftaran.id_pendaftaran,3) as kode', FALSE);
           $this->db->order_by('id_pendaftaran','DESC');    
@@ -73,8 +79,7 @@ class Tamu_model extends CI_Model {
             'sumber' => $this->input->post('sumber', TRUE),
             'id_prodi2' => $this->input->post('id_prodi', TRUE),
             'ibu_kandung' => $this->input->post('ibu_kandung', TRUE),
-            'agama' => $this->input->post('agama', TRUE),
-            
+            'agama' => $this->input->post('agama', TRUE)
             
         );
     
@@ -101,7 +106,6 @@ class Tamu_model extends CI_Model {
       }
     }
 
-    
   
   public function save_bukti_transfer($upload_bukti, $id_pendaftaran)
    {

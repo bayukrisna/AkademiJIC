@@ -8,17 +8,14 @@
     <h3 style="text-align:center">Daftar Ulang</h3>
   <div class="box-body">
     <div class="col-md-6">
+      <?php echo $this->session->flashdata('message');?>
             <!-- /.box-header -->
             <!-- form start -->
                 <div class="form-group">
                   <label for="no">No. Daftar Ulang</label>
-                  <input type="text" name="id_du" class="form-control" id="id_du" placeholder=""  .input-sm value="<?php echo $kodeunik2; ?>" readonly >
+                  <input type="text" name="id_du" class="form-control" id="id_du" placeholder=""  .input-sm value="<?php echo $du_pagi->id_du2; ?>" readonly >
                 </div>
                  <input type="hidden" name="id_pendaftaran2" class="form-control" id="id_pendaftaran2" placeholder=""  .input-sm value="<?php echo $du_pagi->id_pendaftaran; ?>" readonly >
-                 <div class="form-group">
-                  <label for="no">No. Tamu</label>
-                  <input type="text" name="id_pendaftaran2" class="form-control" id="id_pendaftaran2" placeholder=""  .input-sm value="<?php echo $du_pagi->id_pendaftaran; ?>" readonly >
-                </div>
                 <div class="form-group">
                   <label for="email">Nama Lengkap</label>
                   <input type="text" name="nama_du" class="form-control" id="nama_du" placeholder="Input Full Name" value="<?php echo $du_pagi->nama_pendaftar; ?>" required="">

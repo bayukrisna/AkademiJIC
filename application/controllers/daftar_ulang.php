@@ -40,8 +40,8 @@ class daftar_ulang extends CI_Controller {
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> Data '.$nama_pendaftar.' berhasil didaftarkan. </div>');
             	redirect('daftar_ulang/data_du');
 			} else{
-				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Username/password sudah ada. </div>');
-            	redirect('daftar_ulang');
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Data  '.$nama_pendaftar.' Sudah Ada </div>');
+            	redirect('daftar_ulang/page_du_pagi');
 			} 
 	} 
 
