@@ -101,14 +101,7 @@ class Tamu_model extends CI_Model {
       }
     }
 
-
-
-
-    public function get_tamu_by_id($id_pendaftaran){
-    return $this->db->where('id_pendaftaran', $id_pendaftaran)
-            ->get('tb_pendaftaran')
-            ->row();
-  }
+    
   
   public function save_bukti_transfer($upload_bukti, $id_pendaftaran)
    {

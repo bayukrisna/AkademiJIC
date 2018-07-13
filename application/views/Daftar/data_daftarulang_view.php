@@ -45,7 +45,7 @@
                   <td>
                     
                      <a href="'.base_url('index.php/daftar_ulang/print_ljk/'.$data->id_du).'" class="btn btn-info btn-sm" >Print</a>
-                     <a href="'.base_url('index.php/daftar_ulang/print_ljk/'.$data->id_du).'" class="btn btn-success  btn-sm" >Nilai</a>
+                     <a href="'.base_url('index.php/daftar_ulang/data_du'.$data->id_du).'" class="btn btn-success  btn-sm" >Nilai</a>
                   </td>
                 </tr>
                 ';

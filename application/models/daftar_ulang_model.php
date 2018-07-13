@@ -219,6 +219,14 @@ class Daftar_ulang_model extends CI_Model {
       return FALSE;
     }
   }
+
+  public function get_du_by_id($id_du){
+    return $this->db->join('tb_sekolah','tb_sekolah.id_sekolah=tb_du.id_sekolah2')
+            ->join('tb_prodi','tb_prodi.id_prodi=tb_du.id_prodi2')
+            ->where('id_du', $id_du)
+            ->get('tb_du')
+            ->row();
+  }
 }
    // return $this->db->where('status', 'Tersedia')->where($data)->get('service')->result();
 /* End of file dosen_model.php */
