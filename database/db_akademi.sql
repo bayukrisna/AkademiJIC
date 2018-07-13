@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2018 at 11:45 AM
+-- Generation Time: Jul 13, 2018 at 03:18 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -124,7 +124,7 @@ CREATE TABLE `tb_du` (
 --
 
 INSERT INTO `tb_du` (`id_du`, `nama_du`, `jk_daftar_du`, `tpt_lahir_du`, `tgl_lahir_du`, `alamat_du`, `no_telp_du`, `no_telpm_du`, `email_du`, `agama_du`, `nik_du`, `ibu_kandung_du`, `id_sekolah2`, `id_prodi2`, `id_konsentrasi2`, `waktu`, `jurusan_du`, `tanggal_du`, `kode_tes`, `nim`, `id_pendaftaran2`, `status_du`) VALUES
-('DU001', 'Paris ', 'laki-laki', 'ege', '2018-07-12', 'Los Angeles', '9876', '8675', 'yoona@gmail.com', 'Kristen', '675', 'ELy', 'SE001', 'PR001', 'KO001', 'Pagi', 'ipa', '2018-07-12', 'TES001', '8675', '', 'a'),
+('DU001', 'Paris ', 'laki-laki', 'ege', '2018-07-12', 'Los Angeles', '9876', '8675', 'yoona@gmail.com', 'Kristen', '675', 'ELy', 'SE001', 'PR001', 'KO001', 'Pagi', 'ipa', '2018-07-12', 'TES001', '8675', '', 'Nilai Kosong'),
 ('DU002', 'Ariana', 'laki-laki', 'Malang', '2018-07-12', 'Los Angeles', '546546', '89765', 'as@asd.sads', 'kristen', '89765', 'ELy', 'SE002', 'PR001', 'KO001', 'Sore', 'ips', '2018-07-12', '', '8765', 'TM002', 'b'),
 ('DU003', 'Paris ', 'laki-laki', 'ijuy', '2018-07-11', 'Los Angeles', '9876', '98875', 'yoona@gmail.com', 'Kristen', '8785', 'ELy', 'SE001', 'PR002', 'KO003', 'Pagi', 'ipa', '2018-07-12', 'TES002', '9687', '', ''),
 ('DU004', 'Paris ', 'laki-laki', 'Malang', '2018-07-08', 'Los Angeles', '9876', '9887', 'yoona@gmail.com', 'Kristen', '98765', 'ELy', 'SE001', 'PR003', 'KO005', 'Pagi', 'ipa', '2018-07-12', 'TES003', '8976', 'TM001', ''),
