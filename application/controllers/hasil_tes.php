@@ -29,10 +29,10 @@ class Hasil_tes extends CI_Controller {
 		
 			
 			if($this->daftar_ulang_model->save_hasil_tes() == TRUE){
-				$id_tes = $this->input->post('kode_tes');
+				$id_tes = $this->input->post('id_hasil_tes');
 				$this->daftar_ulang_model->save_update_status($id_tes);
 				$hasil_tes = $this->input->post('nama_du');
-				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success"> esHasil t '.$hasil_tes.' berhasil didaftarkan. </div>');
+				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-success">Hasil '.$hasil_tes.' berhasil didaftarkan. </div>');
             	redirect('daftar_ulang/data_du');
 			} else{
 				$this->session->set_flashdata('message', '<div class="col-md-12 alert alert-danger"> Kode Tes Sudah Ada </div>');

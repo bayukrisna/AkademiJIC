@@ -34,7 +34,7 @@
                   <label for="inputEmail3" class="control-label pull-left">Nama</label>
                 </div>
                   <div class="col-md-9">
-                    <input type="text" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->nama_du; ?>">
+                    <input type="text" name="nama_du" class="form-control input-sm" id="inputEmail3" placeholder="" value="<?php echo $hasil_tes->nama_du; ?>">
                   </div>
                 </div>
                 <div class="form-group">
