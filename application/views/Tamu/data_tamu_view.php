@@ -43,8 +43,8 @@
                   <td>'.$data->status_bayar.'</td>
                   
                   <td>
-                     <a href="'.base_url('index.php/tamu/hapus_tamu/'.$data->id_pendaftaran).'" class="btn btn-danger btn-sm">Hapus</a>
-                     <a href="'.base_url('index.php/tamu/page_upload/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm">Upload</a>
+                     <a href="'.base_url('tamu/hapus_tamu/'.$data->id_pendaftaran).'" class="btn btn-danger btn-sm">Hapus</a>
+                     <a href="'.base_url('tamu/page_upload/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm">Upload</a>
                   
 
                   </td>
@@ -67,7 +67,7 @@
                   
                   <td>
                      
-                  <a href="'.base_url('index.php/daftar_ulang/page_du_pagi/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm">Daftar Ulang</a>
+                  <a href="'.base_url('daftar_ulang/page_du_pagi/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm">Daftar Ulang</a>
 
                   </td>
                 </tr>
@@ -87,7 +87,7 @@
                   <td>'.$data->status_bayar.'</td>
                   
                   <td>
-                      <a href="'.base_url('index.php/daftar_ulang/page_du_sore/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm">Daftar Ulang</a>
+                      <a href="'.base_url('daftar_ulang/page_du_sore/'.$data->id_pendaftaran).'" class="btn btn-info btn-sm">Daftar Ulang</a>
                      
                   </td>
                 </tr>

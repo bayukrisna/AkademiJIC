@@ -89,7 +89,7 @@ function lI1IllI111IlI1I1llll1lIIl()
 <P class="p2 ft1">Jl. Perunggu No. <NOBR>53-54</NOBR></P>
 <P class="p3 ft1">Cempaka Putih</P>
 <P class="p3 ft1">Jakarta Pusat 10640</P>
-<a href="<?php echo base_url("index.php/tes/cetak"); ?>">Cetak Data</a><br><br>
+<a href="<?php echo base_url("tes/cetak"); ?>">Cetak Data</a><br><br>
 </DIV>
 
 
