@@ -1,4 +1,4 @@
-<form  method="post" action="<?php echo base_url(); ?>index.php/master_asal_sekolah/save_edit_asal_sekolah/<?php echo $edit->id_sekolah; ?>" enctype="multipart/form-data">
+<form  method="post" action="<?php echo base_url(); ?>master_asal_sekolah/save_edit_asal_sekolah/<?php echo $edit->id_sekolah; ?>" enctype="multipart/form-data">
 <div class="row"> 
     <div class="col-md-12">
         <div>

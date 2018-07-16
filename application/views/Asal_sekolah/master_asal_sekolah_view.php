@@ -35,8 +35,8 @@
                   <td>'.$data->alamat_sekolah.'</td>
                   <td>'.$data->jenis_sekolah.'</td>
                   <td>
-                      <a href="'.base_url('index.php/master_asal_sekolah/edit_asal_sekolah/'.$data->id_sekolah).'" class="btn btn-warning btn-sm" >Edit </a>
-                      <a href="'.base_url('index.php/master_asal_sekolah/hapus_asal_sekolah/'.$data->id_sekolah).'" class="btn btn-danger btn-sm">Hapus</a>
+                      <a href="'.base_url('master_asal_sekolah/edit_asal_sekolah/'.$data->id_sekolah).'" class="btn btn-warning btn-sm" >Edit </a>
+                      <a href="'.base_url('master_asal_sekolah/hapus_asal_sekolah/'.$data->id_sekolah).'" class="btn btn-danger btn-sm">Hapus</a>
                   </td>
                 </tr>
                 ';

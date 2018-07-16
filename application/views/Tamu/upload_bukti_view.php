@@ -1,4 +1,4 @@
-<form  method="post" action="<?php echo base_url(); ?>index.php/tamu/save_bukti_transfer/<?php echo $edit->id_pendaftaran; ?>" enctype="multipart/form-data">
+<form  method="post" action="<?php echo base_url(); ?>tamu/save_bukti_transfer/<?php echo $edit->id_pendaftaran; ?>" enctype="multipart/form-data">
 <div class="row"> 
     <div class="col-md-12">
         <div>

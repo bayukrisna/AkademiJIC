@@ -215,7 +215,7 @@
             } else if(nilai <= 79.9){
               grade = "Ranking 3"
             } else if(nilai <= 89.9){
-              grade = "Rangking 2"
+              grade = "Ranking 2"
             } else {
               grade ="Ranking 1"
             }

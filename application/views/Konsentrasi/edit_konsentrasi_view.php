@@ -1,4 +1,4 @@
-<form  method="post" action="<?php echo base_url(); ?>index.php/master_konsentrasi/save_edit_konsentrasi/<?php echo $edit->id_konsentrasi; ?>" enctype="multipart/form-data">
+<form  method="post" action="<?php echo base_url(); ?>master_konsentrasi/save_edit_konsentrasi/<?php echo $edit->id_konsentrasi; ?>" enctype="multipart/form-data">
 <div class="row"> 
     <div class="col-md-12">
         <div>

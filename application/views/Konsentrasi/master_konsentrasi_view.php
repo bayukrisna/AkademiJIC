@@ -33,8 +33,8 @@
                   <td>'.$data->nama_konsentrasi.'</td>
                   <td>'.$data->nama_prodi.'</td>
                   <td>
-                      <a href="'.base_url('index.php/master_konsentrasi/edit_konsentrasi/'.$data->id_konsentrasi).'" class="btn btn-warning btn-sm" >Edit </a>
-                      <a href="'.base_url('index.php/master_konsentrasi/hapus_konsentrasi/'.$data->id_konsentrasi).'" class="btn btn-danger btn-sm">Hapus</a>
+                      <a href="'.base_url('master_konsentrasi/edit_konsentrasi/'.$data->id_konsentrasi).'" class="btn btn-warning btn-sm" >Edit </a>
+                      <a href="'.base_url('master_konsentrasi/hapus_konsentrasi/'.$data->id_konsentrasi).'" class="btn btn-danger btn-sm">Hapus</a>
                   </td>
                 </tr>
                 ';
